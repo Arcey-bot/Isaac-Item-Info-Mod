@@ -91,15 +91,6 @@ function mod:onRender()
         savePlayerItems()
     end
 
-    -- if Input.IsButtonTriggered(Keyboard.KEY_N, 0) then
-    --     local spry = Sprite()
-    --     local ent = Isaac.GetItemConfig():GetCollectible(1) -- Sad onion
-    --     spry:Load("gfx/ui/menuitem.anm2", true)
-    --     spry:ReplaceSpriteSheet(0, ent.GfxFileName)
-    --     spry:LoadGraphics()
-    --     -- spry:Render(Vector(100,100), Vector(0,0), Vector(500,500))
-    -- end
-
     if menuOpen then
         -- Close menu
         if Input.IsActionTriggered(ButtonAction.ACTION_MENUBACK, 0) then
