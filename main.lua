@@ -1,39 +1,18 @@
 local mod = RegisterMod("Item Info", 1)
-local json = require("json")
 
--- If we check items that do not exist within the game, we will receive arbitrary T/F responses
-local AfterbirthPlusItems = 552 -- Number of items in AB+
-local RepentenceItems = 730 -- Number of items in Repentence
+-- Highest valid Item ID in this game's version
+local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 
-
--- TODO:
-
--- On first frame/initial load, run check to determine collected items
---    Save items in a json to read from when continuing?
--- Determine when to run check for new items again (Every new room perhaps?)
--- Store collected items in table, if size changes between frames, recheck items?
--- Ensure not to insert duplicate items when rechecking items
-
--- (LAST) Remove lost items from item pool
-
-local menuOpen = false
-local itemMenu = Sprite()
-
--- Table holding ID of every item owned
+-- Table holding Item object of every item owned
 local collectedItems = {}
-
-local menuPos = Vector(70,85)
+-- Table holding ID of every item owned
+local collectedItemIDs = {}
 
 local str = 'Hello'
-local extra = ''
 local str2 = ''
+local str3 = ''
 
-itemMenu:Load("gfx/ui/itemmenu.anm2", true)
-
-local function initMenu()
-    itemMenu:SetFrame("Idle", 0)
-    itemMenu:RenderLayer(0, Isaac.WorldToRenderPosition(menuPos))
-end
+local itemAvail = false
 
 -- Check if table contains value
 local function contains(tbl, val)
@@ -45,100 +24,69 @@ local function contains(tbl, val)
     return false
 end
 
-local function savePlayerItems()
+-- Update collectedItemIDs list with ID of every currently held collectible
+local function heldCollectibles()
     local player = Isaac.GetPlayer(0)
 
-    str = 'Checking...'
-
-    for i=1, AfterbirthPlusItems do
-        -- Save item if player owns it
+    for i=1, NUM_ITEMS do
         if player:HasCollectible(i) then
             local item = Isaac.GetItemConfig():GetCollectible(i)
 
-            -- If we don't have the item saved, save it
-            if not contains(collectedItems, item.ID) then
-                Isaac.DebugString('Item already owned - '..item.Name)
-            else
-                table.insert(collectedItems, item.ID)
-                Isaac.DebugString('Saved item - '..item.Name)
+            if not contains(collectedItemIDs, item.ID) then
+                table.insert(collectedItems, item)
+                table.insert(collectedItemIDs, item.ID)
+                itemAvail = true
             end
         end
-    end
-
-    str = "Completed"
-    str2 = #collectedItems
-end
-
-local function showPlayerItems()
-    -- This literally only works for one item right now, it might render them over each other
-    for i = 1, #collectedItems do
-        local item = Sprite()
-        item:Load("gfx/ui/menuitem.anm2", true)
-        Isaac.DebugString(collectedItems[i].GfxFileName)
-        -- -- Must load first, otherwise there is no spritesheet to replace
-        item:ReplaceSpriteSheet(0, collectedItems[i].GfxFileName)
-        -- -- item:Load(collectedItems[i].GfxFileName, true)
-        item:LoadGraphics()
     end
 end
 
 function mod:onRender()
-    if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() then
-        menuOpen = not menuOpen
-    end
+    -- local player = Isaac.GetPlayer(0)
 
-    if Input.IsButtonTriggered(Keyboard.KEY_L, 0) then
-        savePlayerItems()
-    end
+    -- if Input.IsButtonTriggered(Keyboard.KEY_J, 0) then       
+    --     str = 'Checking'
 
-    if menuOpen then
-        -- Close menu
-        if Input.IsActionTriggered(ButtonAction.ACTION_MENUBACK, 0) then
-            menuOpen = false
-        end
+    --     -- Ensure our item table is up to date
+    --     heldCollectibles()
 
-        local player = Isaac.GetPlayer(0)
+    --     Isaac.DebugString('Items table size - '..tostring(#collectedItems))
 
-        local stuff = {}
+    --     -- Ensure table is not empty 
+    --     if next(collectedItems) ~= nil then
+    --         for i=1, #collectedItemIDs do
+    --             Isaac.DebugString('Players has item - '..tostring(collectedItems[i].Name))
+    --         end
+    --     else
+    --         Isaac.DebugString('Table empty - no data to display')
+    --     end    
+    -- end
 
-        for i=1, AfterbirthPlusItems do
-            if player:HasCollectible(i) then
-                table.insert(collectedItems, Isaac.GetItemConfig():GetCollectible(i))
-                Isaac.DebugString('Isaac has item - '..collectedItems[i].Name)
-            end
-        end
-        
-        for i=1, #collectedItems do
-            local tmp = Sprite()
-            tmp:Load("gfx/ui/menuitem.anm2", true)
-            table.insert(stuff, tmp)
-        end
+    -- str = 'Completed'
 
-        for i=1, #collectedItems do
-            -- Isaac.DebugString(collectedItems[i].GfxFileName)
-            Isaac.DebugString('STUFF BREAKDOWN- ')
-            for j=1, #stuff do
-                Isaac.DebugString('Stuff '..j..' - '..tostring(stuff[j]))
-            end
-            Isaac.DebugString('ITEMS BREAKDOWN - '..type(collectedItems[i]))
-            for j=1, #collectedItems do
-                Isaac.DebugString('Stuff '..j..' - '..tostring(collectedItems[j]))
-            end
-            -- -- Must load first, otherwise there is no spritesheet to replace
-            stuff[i]:ReplaceSpriteSheet(0, collectedItems[i].GfxFileName)
-            stuff[i]:LoadGraphics()
-            -- stuff[i].Render(Vector(100,100))
-        end
+    -- -- Try to display the sprite
+    -- if itemAvail then
+    --     pic:Load("gfx/ui/menuitem.anm2", true)
+    --     -- pic:ReplaceSpriteSheet(0, collectedItems[1].GfxFileName)
+    --     pic:LoadGraphics()
+    --     pic:SetOverlayRenderPriority(true)
+    --     pic:Render(Vector(75,75), Vector(0,0), Vector(0,0))
+    --     pic:SetOverlayRenderPriority(true)
+    --     pic:RenderLayer(0, Isaac.WorldToRenderPosition(Vector(75,100)))
+    -- end
 
+    
+    -- THIS WORKS FUCK
 
-        itemMenu:SetFrame("Idle", 0)
-        itemMenu:RenderLayer(0, Isaac.WorldToRenderPosition(menuPos))
-
-        -- UI movment logic goes here
-        if not Game():IsPaused() then
-            
-        end
-
+    if Input.IsButtonPressed(Keyboard.KEY_J, 0) then
+        local sprite = Sprite()
+        sprite:Load("gfx/ui/menuitem.anm2", true)
+        sprite:ReplaceSpritesheet(0, "gfx/collectibles_004_cricketshead.png")
+        sprite:LoadGraphics()
+        sprite:SetFrame("Idle", 0)
+        -- sprite:Render(Vector(75,75), Vector(0,0), Vector(0,0))
+        sprite:SetOverlayRenderPriority(true)
+        sprite:RenderLayer(0, Isaac.WorldToRenderPosition(Vector(75,100)))
     end
 
 end
@@ -154,10 +102,9 @@ function mod:onInput(entity, hook, button)
 end
 
 function mod:debugText()
-    extra = tostring(menuOpen)
     Isaac.RenderText(str, 100, 100, 255, 0, 0, 255)
-    Isaac.RenderText(extra, 100, 125, 0, 255, 0, 255)
-    Isaac.RenderText(str2, 100, 150, 0, 0, 255, 255)
+    Isaac.RenderText(str2, 100, 125, 0, 255, 0, 255)
+    Isaac.RenderText(str3, 100, 150, 0, 0, 255, 255)
 end
 
 
