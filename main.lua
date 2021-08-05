@@ -7,12 +7,12 @@ local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 local collectedItems = {}
 -- Table holding ID of every item owned
 local collectedItemIDs = {}
+-- Table holding sprite of every item owned
+local collectedItemSprites = {}
 
 local str = 'Hello'
 local str2 = ''
 local str3 = ''
-
-local itemAvail = false
 
 -- Check if table contains value
 local function contains(tbl, val)
@@ -35,57 +35,54 @@ local function heldCollectibles()
             if not contains(collectedItemIDs, item.ID) then
                 table.insert(collectedItems, item)
                 table.insert(collectedItemIDs, item.ID)
-                itemAvail = true
+                table.insert(collectedItemSprites, Sprite())
             end
         end
     end
 end
 
 function mod:onRender()
-    -- local player = Isaac.GetPlayer(0)
+    local player = Isaac.GetPlayer(0)
 
-    -- if Input.IsButtonTriggered(Keyboard.KEY_J, 0) then       
-    --     str = 'Checking'
+    if Input.IsButtonPressed(Keyboard.KEY_J, 0) then       
+        str = 'Checking'
 
-    --     -- Ensure our item table is up to date
-    --     heldCollectibles()
+        -- Ensure our item table is up to date
+        heldCollectibles()
 
-    --     Isaac.DebugString('Items table size - '..tostring(#collectedItems))
+        -- Ensure table is not empty 
+        if next(collectedItems) ~= nil then 
+        
+            str = 'Completed'
 
-    --     -- Ensure table is not empty 
-    --     if next(collectedItems) ~= nil then
-    --         for i=1, #collectedItemIDs do
-    --             Isaac.DebugString('Players has item - '..tostring(collectedItems[i].Name))
-    --         end
-    --     else
-    --         Isaac.DebugString('Table empty - no data to display')
-    --     end    
-    -- end
+            local offset = 75
+            
+            for i=1, #collectedItems do
+                collectedItemSprites[i]:Load("gfx/ui/menuitem.anm2", true)
+                collectedItemSprites[i]:ReplaceSpritesheet(0, collectedItems[i].GfxFileName)
+                collectedItemSprites[i]:LoadGraphics()
+                collectedItemSprites[i]:SetFrame("Idle", 0)
+                collectedItemSprites[i]:RenderLayer(0, Isaac.WorldToRenderPosition(Vector(offset, 75)))
+                offset = offset + 25
+            end
+        end
+        
+    end
 
-    -- str = 'Completed'
-
-    -- -- Try to display the sprite
-    -- if itemAvail then
-    --     pic:Load("gfx/ui/menuitem.anm2", true)
-    --     -- pic:ReplaceSpriteSheet(0, collectedItems[1].GfxFileName)
-    --     pic:LoadGraphics()
-    --     pic:SetOverlayRenderPriority(true)
-    --     pic:Render(Vector(75,75), Vector(0,0), Vector(0,0))
-    --     pic:SetOverlayRenderPriority(true)
-    --     pic:RenderLayer(0, Isaac.WorldToRenderPosition(Vector(75,100)))
-    -- end
-
-    
-    -- THIS WORKS FUCK
-
-    if Input.IsButtonPressed(Keyboard.KEY_J, 0) then
+    if Input.IsButtonPressed(Keyboard.KEY_L, 0) then
+        -- THIS WORKS FUCK
         local sprite = Sprite()
+        
+        -- THIS ORDER MATTERS, ITS WHY THIS TOOK TWO DAYS
         sprite:Load("gfx/ui/menuitem.anm2", true)
         sprite:ReplaceSpritesheet(0, "gfx/collectibles_004_cricketshead.png")
         sprite:LoadGraphics()
         sprite:SetFrame("Idle", 0)
         -- sprite:Render(Vector(75,75), Vector(0,0), Vector(0,0))
-        sprite:SetOverlayRenderPriority(true)
+        
+        -- Not completely necessary, perhaps needed to display over menu
+        -- sprite:SetOverlayRenderPriority(true)
+        
         sprite:RenderLayer(0, Isaac.WorldToRenderPosition(Vector(75,100)))
     end
 
