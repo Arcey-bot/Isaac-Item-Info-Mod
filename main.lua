@@ -1,10 +1,8 @@
 local mod = RegisterMod("Item Info", 1)
 local json = require("json")
 
--- If we check items that do not exist within the game, we will receive arbitrary T/F responses
-local AfterbirthPlusItems = 552 -- Number of items in AB+
-local RepentenceItems = 730 -- Number of items in Repentence
-
+-- Highest valid Item ID in this game's version
+local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 
 -- TODO:
 
