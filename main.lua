@@ -52,12 +52,6 @@ local str = ''
 local str2 = ''
 local str3 = ''
 
-
-local function initMenu()
-    itemMenu:SetFrame("Idle", 0)
-    itemMenu:RenderLayer(0, Isaac.WorldToRenderPosition(menuPos))
-end
-
 -- Check if table contains value
 local function contains(tbl, val)
     for _, v in pairs(tbl) do
@@ -66,43 +60,6 @@ local function contains(tbl, val)
         end
     end
     return false
-end
-
-local function savePlayerItems()
-    local player = Isaac.GetPlayer(0)
-
-    str = 'Checking...'
-
-    for i=1, AfterbirthPlusItems do
-        -- Save item if player owns it
-        if player:HasCollectible(i) then
-            local item = Isaac.GetItemConfig():GetCollectible(i)
-
-            -- If we don't have the item saved, save it
-            if not contains(collectedItems, item.ID) then
-                Isaac.DebugString('Item already owned - '..item.Name)
-            else
-                table.insert(collectedItems, item.ID)
-                Isaac.DebugString('Saved item - '..item.Name)
-            end
-        end
-    end
-
-    str = "Completed"
-    str2 = #collectedItems
-end
-
-local function showPlayerItems()
-    -- This literally only works for one item right now, it might render them over each other
-    for i = 1, #collectedItems do
-        local item = Sprite()
-        item:Load("gfx/ui/menuitem.anm2", true)
-        Isaac.DebugString(collectedItems[i].GfxFileName)
-        -- -- Must load first, otherwise there is no spritesheet to replace
-        item:ReplaceSpriteSheet(0, collectedItems[i].GfxFileName)
-        -- -- item:Load(collectedItems[i].GfxFileName, true)
-        item:LoadGraphics()
-    end
 end
 
 -- TODO: This will likely become an onEvent function once finalized
@@ -122,28 +79,19 @@ local function heldCollectibles()
     end
 end
 
+-- TODO: Will be a more abstract version of renderMenuItems to work with multiple 
+--      kinds of data
+local function renderMenuIcons(offset)
+end
+
 -- Render the collected item's icons to the menu screen
 -- Offset is int denoting starting position in collectedItemSprites
 --      Used to display items when there are more than can fit on one screen
 local function renderMenuItems(offset)
     offset = offset or 0
-    -- Does not yet support item rows. Will just render all items in a single row infinitely
-    -- if next(collectedItemIDs) then
-    --     local offset
-    --     for i=1, #collectedItemIDs do
-    --         collectedItemSprites[i]:Load("gfx/ui/menuitem.anm2", true)
-    --         collectedItemSprites[i]:ReplaceSpritesheet(0, Isaac.GetItemConfig():GetCollectible(collectedItemIDs[i]).GfxFileName)
-    --         collectedItemSprites[i]:LoadGraphics()
-    --         collectedItemSprites[i]:SetFrame("Idle", 0)
 
-    --         offset = Vector(itemMenuAttrs.spacing.X * i, 0)
-
-    --         collectedItemSprites[i]:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.origin + offset))
-    --     end
-    -- end
-
-    -- Ensure player has >= 1 item(s) to render
-    if next(collectedItemIDs) then
+    -- Ensure player has at least one item to render
+    if collectedItemIDs[1] then
         local itemPosInMenu
         local index
         local item
@@ -154,25 +102,28 @@ local function renderMenuItems(offset)
                 if collectedItemSprites[offset + index] then
                     item = collectedItemSprites[offset + index]
                     item:Load("gfx/ui/menuitem.anm2", true)
-                    item:ReplaceSpritesheet(0, Isaac.GetItemConfig():GetCollectible(collectedItemIDs[i]).GfxFileName)
+                    item:ReplaceSpritesheet(0, Isaac.GetItemConfig():GetCollectible(collectedItemIDs[index]).GfxFileName)
                     item:LoadGraphics()
                     item:SetFrame("Idle", 0)
 
-                    itemPosInMenu = Vector(itemMenuAttrs.spacing.X * j + itemMenuAttrs.origin.X, itemMenuAttrs.spacing.Y * i + itemMenuAttrs.origin.Y)
+                    itemPosInMenu = Vector(itemMenuAttrs.spacing.X * j + itemMenuAttrs.origin.X, 
+                        itemMenuAttrs.spacing.Y * i + itemMenuAttrs.origin.Y)
 
-                    item:SetOverlayRenderPriority(true)
-                    item:RenderLayer(1, Isaac.WorldToRenderPosition(itemPosInMenu))
                     item:RenderLayer(0, Isaac.WorldToRenderPosition(itemPosInMenu))
-                    item:SetOverlayRenderPriority(true)
+                    -- item:SetOverlayRenderPriority(true)
                 else
                     item:Load("gfx/ui/menuitem.anm2", true)
-                    item:SetFrame("Idle", 0)
+                    item:SetFrame("Active", 0)
                     item:LoadGraphics()
 
-                    itemPosInMenu = Vector(itemMenuAttrs.spacing.X * j + itemMenuAttrs.origin.X,
-                         itemMenuAttrs.spacing.Y * i + itemMenuAttrs.origin.Y)
+                    itemPosInMenu = Vector(itemMenuAttrs.spacing.X * j + itemMenuAttrs.origin.X, 
+                        itemMenuAttrs.spacing.Y * i + itemMenuAttrs.origin.Y)
 
-                    item:RenderLayer(0, Isaac.WorldToRenderPosition(itemPosInMenu))
+                    -- Layer 0 is transparency layer, 1 is gray bg, 2 is square brackets
+                    -- item:RenderLayer(0, Isaac.WorldToRenderPosition(itemPosInMenu))
+
+                    item:RenderLayer(2, Isaac.WorldToRenderPosition(itemPosInMenu))
+                    
                 end
             end
         end
