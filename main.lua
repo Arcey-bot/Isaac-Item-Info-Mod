@@ -123,19 +123,58 @@ local function heldCollectibles()
 end
 
 -- Render the collected item's icons to the menu screen
-local function renderMenuItems()
+-- Offset is int denoting starting position in collectedItemSprites
+--      Used to display items when there are more than can fit on one screen
+local function renderMenuItems(offset)
+    offset = offset or 0
     -- Does not yet support item rows. Will just render all items in a single row infinitely
+    -- if next(collectedItemIDs) then
+    --     local offset
+    --     for i=1, #collectedItemIDs do
+    --         collectedItemSprites[i]:Load("gfx/ui/menuitem.anm2", true)
+    --         collectedItemSprites[i]:ReplaceSpritesheet(0, Isaac.GetItemConfig():GetCollectible(collectedItemIDs[i]).GfxFileName)
+    --         collectedItemSprites[i]:LoadGraphics()
+    --         collectedItemSprites[i]:SetFrame("Idle", 0)
+
+    --         offset = Vector(itemMenuAttrs.spacing.X * i, 0)
+
+    --         collectedItemSprites[i]:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.origin + offset))
+    --     end
+    -- end
+
+    -- Ensure player has >= 1 item(s) to render
     if next(collectedItemIDs) then
-        local offset
-        for i=1, #collectedItemIDs do
-            collectedItemSprites[i]:Load("gfx/ui/menuitem.anm2", true)
-            collectedItemSprites[i]:ReplaceSpritesheet(0, Isaac.GetItemConfig():GetCollectible(collectedItemIDs[i]).GfxFileName)
-            collectedItemSprites[i]:LoadGraphics()
-            collectedItemSprites[i]:SetFrame("Idle", 0)
+        local itemPosInMenu
+        local index
+        local item
+        for i=1, itemMenuAttrs.layout.Y do
+            for j=1, itemMenuAttrs.layout.X do
+                index = (i - 1) * itemMenuAttrs.layout.X + j
+                -- Ensure we do not try to render more items than we have
+                if collectedItemSprites[offset + index] then
+                    item = collectedItemSprites[offset + index]
+                    item:Load("gfx/ui/menuitem.anm2", true)
+                    item:ReplaceSpritesheet(0, Isaac.GetItemConfig():GetCollectible(collectedItemIDs[i]).GfxFileName)
+                    item:LoadGraphics()
+                    item:SetFrame("Idle", 0)
 
-            offset = Vector(itemMenuAttrs.spacing.X * i, 0)
+                    itemPosInMenu = Vector(itemMenuAttrs.spacing.X * j + itemMenuAttrs.origin.X, itemMenuAttrs.spacing.Y * i + itemMenuAttrs.origin.Y)
 
-            collectedItemSprites[i]:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.origin + offset))
+                    item:SetOverlayRenderPriority(true)
+                    item:RenderLayer(1, Isaac.WorldToRenderPosition(itemPosInMenu))
+                    item:RenderLayer(0, Isaac.WorldToRenderPosition(itemPosInMenu))
+                    item:SetOverlayRenderPriority(true)
+                else
+                    item:Load("gfx/ui/menuitem.anm2", true)
+                    item:SetFrame("Idle", 0)
+                    item:LoadGraphics()
+
+                    itemPosInMenu = Vector(itemMenuAttrs.spacing.X * j + itemMenuAttrs.origin.X,
+                         itemMenuAttrs.spacing.Y * i + itemMenuAttrs.origin.Y)
+
+                    item:RenderLayer(0, Isaac.WorldToRenderPosition(itemPosInMenu))
+                end
+            end
         end
     end
 end
@@ -161,19 +200,6 @@ function mod:onRender()
         itemMenu:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.pos))
 
         -- Does not yet support item rows. Will just render all items in a single row infinitely
-        -- if next(collectedItemIDs) then
-        --     local offset
-        --     for i=1, #collectedItemIDs do
-        --         collectedItemSprites[i]:Load("gfx/ui/menuitem.anm2", true)
-        --         collectedItemSprites[i]:ReplaceSpritesheet(0, Isaac.GetItemConfig():GetCollectible(collectedItemIDs[i]).GfxFileName)
-        --         collectedItemSprites[i]:LoadGraphics()
-        --         collectedItemSprites[i]:SetFrame("Idle", 0)
-
-        --         offset = Vector(itemMenuAttrs.spacing.X * i, 0)
-
-        --         collectedItemSprites[i]:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.origin + offset))
-        --     end
-        -- end
 
         renderMenuItems()
 
