@@ -16,6 +16,9 @@ local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 -- (LAST) Remove lost items from item pool
 -- Shader to darken screen slightly when opening menu?
 
+-- An offset may be necessary to render items if there are more items held
+--      than available spaces to display them in one menu
+
 -- Table holding ID of every item owned
 local collectedItemIDs = {}
 -- Table holding sprite of every item owned
@@ -119,6 +122,24 @@ local function heldCollectibles()
     end
 end
 
+-- Render the collected item's icons to the menu screen
+local function renderMenuItems()
+    -- Does not yet support item rows. Will just render all items in a single row infinitely
+    if next(collectedItemIDs) then
+        local offset
+        for i=1, #collectedItemIDs do
+            collectedItemSprites[i]:Load("gfx/ui/menuitem.anm2", true)
+            collectedItemSprites[i]:ReplaceSpritesheet(0, Isaac.GetItemConfig():GetCollectible(collectedItemIDs[i]).GfxFileName)
+            collectedItemSprites[i]:LoadGraphics()
+            collectedItemSprites[i]:SetFrame("Idle", 0)
+
+            offset = Vector(itemMenuAttrs.spacing.X * i, 0)
+
+            collectedItemSprites[i]:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.origin + offset))
+        end
+    end
+end
+
 function mod:onRender()
     local player = Isaac.GetPlayer(0)
 
@@ -134,25 +155,27 @@ function mod:onRender()
 
         heldCollectibles()
         
-        -- Create menu to load items on top of
-        itemMenu.Scale = itemMenuAttrs.scale
+        -- Create menu to load items on upon
+        -- itemMenu.Scale = itemMenuAttrs.scale
         itemMenu:SetFrame("Idle", 0)
         itemMenu:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.pos))
 
         -- Does not yet support item rows. Will just render all items in a single row infinitely
-        if next(collectedItemIDs) then
-            local offset
-            for i=1, #collectedItemIDs do
-                collectedItemSprites[i]:Load("gfx/ui/menuitem.anm2", true)
-                collectedItemSprites[i]:ReplaceSpritesheet(0, Isaac.GetItemConfig():GetCollectible(collectedItemIDs[i]).GfxFileName)
-                collectedItemSprites[i]:LoadGraphics()
-                collectedItemSprites[i]:SetFrame("Idle", 0)
+        -- if next(collectedItemIDs) then
+        --     local offset
+        --     for i=1, #collectedItemIDs do
+        --         collectedItemSprites[i]:Load("gfx/ui/menuitem.anm2", true)
+        --         collectedItemSprites[i]:ReplaceSpritesheet(0, Isaac.GetItemConfig():GetCollectible(collectedItemIDs[i]).GfxFileName)
+        --         collectedItemSprites[i]:LoadGraphics()
+        --         collectedItemSprites[i]:SetFrame("Idle", 0)
 
-                offset = Vector(itemMenuAttrs.spacing.X * i, 0)
+        --         offset = Vector(itemMenuAttrs.spacing.X * i, 0)
 
-                collectedItemSprites[i]:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.origin + offset))
-            end
-        end
+        --         collectedItemSprites[i]:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.origin + offset))
+        --     end
+        -- end
+
+        renderMenuItems()
 
 
         -- UI movment logic goes here
