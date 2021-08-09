@@ -1,0 +1,1 @@
+return {title = "Old Bandage", id = 219, description = {'The given heart container is empty', 'The chance to drop hearts is affected by your luck stat and at +29 Luck it will activate 50% of the time', 'When you get hit, you will sometimes cause hearts to drop on the floor', '+1 HP Up'}}

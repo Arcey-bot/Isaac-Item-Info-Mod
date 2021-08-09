@@ -1,0 +1,1 @@
+return {title = "The Candle", id = 164, description = {'The flame destroys enemy shots, making it useful for bullet hell bosses', 'Can cause up to a total of 276 potential damage', 'A spacebar item which allows Isaac to fire a blue flame that damages anything in its path for 23 damage per tick'}}

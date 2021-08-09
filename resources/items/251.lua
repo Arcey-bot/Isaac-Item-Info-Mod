@@ -1,0 +1,1 @@
+return {title = "Starter Deck", id = 251, description = {'An item only available in the Shop room', 'All future pill drops will now instead become cards', 'Isaac can now hold 2 cards or runes at once. Tap the drop button to cycle between each one', 'Spawns a random card'}}

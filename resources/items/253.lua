@@ -1,0 +1,1 @@
+return {title = "Magic Scab", id = 253, description = {'Heals one red heart container when picked up', '+1.0 Luck Up', '+1 HP Up'}}

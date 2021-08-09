@@ -1,0 +1,1 @@
+return {title = "Blanket", id = 535, description = {'Added as part of the Afterbirth+ Booster Pack #5. Based on the Steam Workshop mod created by Ratlah', 'Grants you a shield when entering the Boss Room, which prevents damage from 1 hit, then disappears', '+1 Soul Heart', 'Heals 1 red heart when picked up'}}

@@ -1,0 +1,1 @@
+return {title = "Restock", id = 376, description = {'REPENTANCE - Restock now exponentially increases the asking price with every shop purchase, and no longer spawns random pickups when the item is obtained', 'Causes your shops to instantly restock their items when you buy them'}}

@@ -1,0 +1,1 @@
+return {title = "Black Lotus", id = 226, description = {'An item only found in the secret room pool', '+1 Soul Heart', 'Heals one red heart container when picked up', 'When depleted, Black Hearts deal 40 damage to the entire room, in a Necronomicon style effect', '+1 HP Up', '+1 Black Heart'}}

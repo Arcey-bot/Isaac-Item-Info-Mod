@@ -1,0 +1,1 @@
+return {title = "Charm of the Vampire", id = 62, description = {'Works with the Keeper for restoring coin HP', 'Heals half a heart after every 13 enemies killed', 'REPENTANCE - Also gives +0.3 Damage Up'}}

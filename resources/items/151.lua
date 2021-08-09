@@ -1,0 +1,1 @@
+return {title = "The Mulligan", id = 151, description = {'Isaac has a 1/6 chance to spawn a blue fly when one of his tears hits an enemy', 'The chance to activate this effect is not changed with your Luck stat', 'Blue Flies do double your tear damage', 'Counts as 1 of 3 fly items needed towards the Beelzebub transformation'}}

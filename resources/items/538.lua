@@ -1,0 +1,1 @@
+return {title = "Marbles", id = 538, description = {'Upon taking damage, you have a random chance to consume one of your currently held trinkets, gaining its effect permanently', 'Spawns 3 random trinkets when picked up', 'Added as part of the Afterbirth+ Booster Pack #5. Based on the Steam Workshop mod created by Amethyst'}}

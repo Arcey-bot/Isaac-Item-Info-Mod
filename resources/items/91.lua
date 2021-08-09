@@ -1,0 +1,1 @@
+return {title = "Spelunker Hat", id = 91, description = {"Reveals adjacent room types, this includes revealing if you're next to a Secret Room or Super Secret Rooms", 'Gives Isaac a slight glow when Curse of Darkness is active'}}

@@ -1,0 +1,1 @@
+return {title = "How To Jump", id = 282, description = {'Can be used in the Isaac boss fight to jump over the beams of light he spawns', 'If you already have an item which gives you flying, this item becomes a dash effect instead', 'When used, makes Isaac leap in the air, similar to the leaper enemies', 'Maintains momentum if you are already moving in the same direction'}}

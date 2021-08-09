@@ -1,0 +1,1 @@
+return {title = "Echo Chamber", id = 700, description = {'When using a pill or card, Echo Chamber activates one of every pill type and card type that has been previously used since obtaining Echo Chamber', 'Counts as 1 of 3 astrology items needed in the same run to unlock Planetariums'}}

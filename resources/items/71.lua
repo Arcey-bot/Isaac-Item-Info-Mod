@@ -1,0 +1,1 @@
+return {title = "Mini Mush", id = 71, description = {'+1.5 Range Up', '+0.3 Speed Up', 'Can be dropped when exploding mushrooms in the environment that are usually found in the Caves/Catacombs and in secret rooms', 'Counts as 1 of 3 mushroom items needed towards the Fun Guy transformation', 'Causes Isaac to shrink in size (including hitbox slightly)'}}

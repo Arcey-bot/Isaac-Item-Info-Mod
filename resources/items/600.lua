@@ -1,0 +1,1 @@
+return {title = "Eye Drops", id = 600, description = {'Causes your tears to be fired at staggered rates', 'Tears fired from your left eye gain roughly +28% fire rate increase'}}

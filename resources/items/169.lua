@@ -1,0 +1,1 @@
+return {title = "Polyphemus", id = 169, description = {'If a tear kills an enemy, it continues to travel forward with the leftover damage', 'High Damage Up - (damage + 4) * 2', 'Tears Down significantly (Tear delay * 2.1 + 3)'}}

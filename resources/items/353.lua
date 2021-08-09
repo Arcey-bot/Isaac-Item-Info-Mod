@@ -1,0 +1,1 @@
+return {title = "Bomber Boy", id = 353, description = {"Isaac's bombs will now explode in a large cross-shaped pattern (roughly 5 bombs explosions wide)", '+5 bombs', 'This also affects troll bombs'}}

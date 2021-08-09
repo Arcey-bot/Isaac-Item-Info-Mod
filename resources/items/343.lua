@@ -1,0 +1,1 @@
+return {title = "Latch Key", id = 343, description = {'Spawns 2 keys on the ground', '+1 Luck Up', '+1 Soul Heart'}}

@@ -1,0 +1,1 @@
+return {title = "Spider Bite", id = 89, description = {'Tears now have a chance of slowing enemies and their projectiles for 2.5 seconds', 'The chance to slow enemies is affected by your luck stat and at +15 Luck it will activate every time'}}

@@ -1,0 +1,1 @@
+return {title = "A Quarter", id = 74, description = {'+25 Coins', 'Has a very small chance to drop after destroying one of the pots that appear in the Basement and Cellar floors', 'Has a chance to drop from the Super Greed miniboss fight'}}

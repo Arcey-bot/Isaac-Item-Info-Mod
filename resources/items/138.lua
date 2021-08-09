@@ -1,0 +1,1 @@
+return {title = "Stigmata", id = 138, description = {'Heals one red heart container when picked up', '+0.3 Damage Up', '+1 HP Up'}}

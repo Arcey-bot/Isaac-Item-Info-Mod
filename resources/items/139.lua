@@ -1,0 +1,1 @@
+return {title = "Mom's Purse", id = 139, description = {'Isaac can now hold two trinkets at the same time', 'Counts as 1 of 3 mom items needed towards the Mom transformation', 'Allows you to pick up more trinkets while also holding The Tick', 'Drops a random trinket on the floor when picked up'}}

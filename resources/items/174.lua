@@ -1,0 +1,1 @@
+return {title = "Rainbow Baby", id = 174, description = {"Rainbow Baby's tears can choose from any of the other familiars, such as homing, spectral, tar shots etc", 'Counts as 1 of 3 familiar items needed towards the Conjoined transformation.', 'A familiar the follows Isaac and fires random tears'}}

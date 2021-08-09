@@ -1,0 +1,1 @@
+return {title = "Iron Bar", id = 201, description = {'+0.3 Damage Up', 'The chance to concuss enemies is affected by your luck stat and at +27 Luck it will activate every time', 'Tears now have a chance to concuss enemies, causing them to walk around dazed and confused for a short period of time'}}

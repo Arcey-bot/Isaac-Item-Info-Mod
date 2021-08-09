@@ -1,0 +1,1 @@
+return {title = "Ventricle Razor", id = 396, description = {'Very useful in the boss rush and challenge rooms', 'Allows you to create one brown tunnel and one blue tunnel in the floor, that can be used to teleport between wherever you placed each one', 'This item will let you port out of the devil room but not back into it'}}

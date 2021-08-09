@@ -1,0 +1,1 @@
+return {title = "Sulfuric Acid", id = 463, description = {'Acidic tears can also be used to open secret rooms', 'Each tear has a chance to become acidic, allowing it to break rocks, pots and other breakable objects', '+0.3 Damage Up'}}

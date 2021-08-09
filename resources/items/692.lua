@@ -1,0 +1,1 @@
+return {title = "Sanguine Bond", id = 692, description = {'6 Pennies - 35% chance', 'Spawns a special set of spikes in the Devil Room', 'Leviathan trasformation - 1% chance', '2 Black Hearts - 5% chance', 'Taking damage from the spikes has a chance to spawn a reward', 'Random Item - 2% chance', '+0.5 Damage Up - 15% chance'}}

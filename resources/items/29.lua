@@ -1,0 +1,1 @@
+return {title = "Mom's Underwear", id = 29, description = {'+1.5 Range Up', 'Gives 3-6 blue attack flies when picked up', 'Counts as 1 of 3 mom items needed towards the Mom transformation'}}

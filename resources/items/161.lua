@@ -1,0 +1,1 @@
+return {title = "Ankh", id = 161, description = {'Upon death, the player respawns as Blue Baby with three Soul hearts', 'This is a one time use item and all new heart containers will be soul hearts', "Can be used to unlock some of Blue Baby's secrets before having the character available"}}

@@ -1,0 +1,1 @@
+return {title = "Apple!", id = 443, description = {'The chance to fire a razor blade depends on your luck stat, and at +14 luck you will fire a razor blade every time', 'This item also turns your tears red, but does not change your actual damage stat or the damage your normal tears do', '+0.3 Tears Up', 'Gives you a 6.66% chance to fire a razor blade which deals x4 damage'}}

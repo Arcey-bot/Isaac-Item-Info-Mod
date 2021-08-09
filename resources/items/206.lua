@@ -1,0 +1,1 @@
+return {title = "The Guillotine", id = 206, description = {"Tears are still fired from Isaac's head but the hitbox remains around his body", '+1.0 Damage Up', '-1 Tear Delay (Tears Up)', 'BFFs will cause the Guillotine head to do double damage (14 damage per tick)', "Causes Isaac's head to detach and orbit his body, blocking shots and dealing 7 contact damage per tick"}}

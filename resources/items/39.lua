@@ -1,0 +1,1 @@
+return {title = "Mom's Bra", id = 39, description = {'Counts as 1 of 3 mom items needed towards the Mom transformation', 'When used, freezes all enemies in the current room for about 4 seconds'}}

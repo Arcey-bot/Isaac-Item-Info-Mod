@@ -1,0 +1,1 @@
+return {title = "Broken Watch", id = 337, description = {'Upon entering every 4th unexplored room, the Broken Watch will either slow down or speed up all enemies in the room', 'An item only found in the Shop item pool', 'The slow effect is much more common than the speed up'}}

@@ -1,0 +1,1 @@
+return {title = "Cricket's Head", id = 4, description = {'Can be found in golden chests', "Cricket's Head used to be known as Max's Head in the original game and was renamed for Rebirth", 'x1.5 times Damage Multiplier (Does not stack with the Magic Mushroom multiplier)', '+0.5 Damage Up'}}

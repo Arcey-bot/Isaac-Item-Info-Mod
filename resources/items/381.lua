@@ -1,0 +1,1 @@
+return {title = "Eden's Blessing", id = 381, description = {'Gives you a random item at the start of your next run (You need to start a fresh run to receive the item)', "Important progression items such as Key Pieces or the Mom's Shovel pieces cannot be given by Eden's Blessing", '+0.7 Tears Up'}}

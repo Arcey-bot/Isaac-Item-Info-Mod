@@ -1,0 +1,1 @@
+return {title = "Spear of Destiny", id = 400, description = {"The spear cannot be thrown like Mom's Knife but deals damage while it is in contact with an enemy", 'The spear occasionally inflicts fear on enemies it damages.', 'In addition to tears, Isaac now holds a spear infront of him which deals damage equal to 2 times your tear damage'}}

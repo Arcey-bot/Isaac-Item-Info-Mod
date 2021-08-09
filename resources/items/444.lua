@@ -1,0 +1,1 @@
+return {title = "Lead Pencil", id = 444, description = {'Causes your normal tears to fire out of one eye, which means tears will fire in a near-perfect line instead of slightly off-center', "REPENTANCE - Lead Pencil's tear barrage no longer deals double damage", 'With every 15 tears fired, Isaac will fire a cluster of 12 tears instead of your normal tear'}}

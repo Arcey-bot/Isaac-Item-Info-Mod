@@ -1,0 +1,1 @@
+return {title = "Mr. Dolly", id = 370, description = {'Spawns 3 random types of hearts on the floor', '+1.5 Range Up', '+0.7 Tears Up'}}

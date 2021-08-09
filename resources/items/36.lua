@@ -1,0 +1,1 @@
+return {title = "The Poop", id = 36, description = {'Counts as 1 of 3 poop items needed towards the Oh Crap transformation', 'Can be placed next to a pit and exploded to make a bridge', 'Drops a poop on the floor', 'Can be placed over a broken red poop to overwrite it, causing it to no longer regenerate', 'Blue Baby starts with this item'}}

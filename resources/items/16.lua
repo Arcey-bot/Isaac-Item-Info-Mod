@@ -1,0 +1,1 @@
+return {title = "Raw Liver", id = 16, description = {'+2 Health Up', 'Full red heart heal'}}

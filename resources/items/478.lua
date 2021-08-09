@@ -1,0 +1,1 @@
+return {title = "Pause", id = 478, description = {'This item doesn not affect troll bombs - they will still explode', 'Touching a frozen enemy will still hurt you', 'Unlike other active items, bosses are not immune to this effect', 'Upon use, this item freezes all enemies in the room until you press the fire button again or 30 seconds passes (whichever happens first)'}}

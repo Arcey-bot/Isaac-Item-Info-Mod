@@ -1,0 +1,1 @@
+return {title = "Dinner", id = 23, description = {'Heals one red heart container when picked up', '+1 HP Up'}}

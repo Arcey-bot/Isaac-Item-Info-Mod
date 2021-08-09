@@ -1,0 +1,1 @@
+return {title = "Lucky Foot", id = 46, description = {'REPENTANCE - Lucky Foot now guarantees positive pill effects', 'Higher chance to get a random drop after clearing a room', '+1.0 Luck Up', 'Better chance to win while gambling at the Shell Game and Fortune Telling Machine'}}

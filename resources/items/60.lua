@@ -1,0 +1,1 @@
+return {title = "The Ladder", id = 60, description = {'Allows Isaac to walk over gaps with a width of one tile'}}

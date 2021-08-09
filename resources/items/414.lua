@@ -1,0 +1,1 @@
+return {title = "More Options", id = 414, description = {'Two items now spawn in each of your item rooms, however only one can be taken and the other will disappear', "Doesn't work for half-sized item rooms"}}

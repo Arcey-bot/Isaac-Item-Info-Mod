@@ -1,0 +1,1 @@
+return {title = "Bursting Sack", id = 377, description = {'Most spider enemies no longer target or deal contact damage to Isaac', 'This is very similar to a Skatole for spiders instead of flies', 'Counts as 1 of 3 spider items needed towards the Spider Baby transformation.'}}

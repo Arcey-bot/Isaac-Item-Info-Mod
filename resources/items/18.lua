@@ -1,0 +1,1 @@
+return {title = "A Dollar", id = 18, description = {'Can drop from an exploding slot machine while playing it', 'Gives Isaac 99 coins'}}

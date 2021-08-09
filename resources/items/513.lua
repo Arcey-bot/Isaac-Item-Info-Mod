@@ -1,0 +1,1 @@
+return {title = "Bozo", id = 513, description = {'Adds a random chance to spawn a rainbow poop upon taking damage', '+0.1 Damage Up', 'Added as part of the Afterbirth+ Booster Pack #1 and based on the Steam Workshop mod created by Electoon', '+1 Soul Heart', 'Adds a random chance for an enemy in the current room to become charmed or feared briefly'}}

@@ -1,0 +1,1 @@
+return {title = "Eve's Mascara", id = 310, description = {'Tears Down by exactly half (Tear delay * 2)', '-0.5 Shot Speed Down', "The tears down from this item is a x2.0 multiplier after the formula, meaning it will always halve your tear rate (Unless you have Monstro's Lung or Soy Milk)", 'x2 Damage Multiplier'}}

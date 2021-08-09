@@ -1,0 +1,1 @@
+return {title = "The Halo", id = 101, description = {'+0.3 Speed Up', 'Heals one red heart container when picked up', '+0.3 Damage Up', '+0.38 Range Up', '+1 HP Up', 'Counts as 1 of 3 angel items needed towards the Seraphim transformation', '+0.2 Tears Up'}}

@@ -1,0 +1,1 @@
+return {title = "Number One", id = 6, description = {'+1.5 Tears Up', 'Gives you a very high tear rate in exchange for a big range down', '-2.5 Range Down'}}

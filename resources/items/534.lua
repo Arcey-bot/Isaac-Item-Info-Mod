@@ -1,0 +1,1 @@
+return {title = "Schoolbag", id = 534, description = {'Functions exactly the same as the Antibirth item with the same name', 'Added as part of the Afterbirth+ Booster Pack #4', 'Pressing the CTRL key allows you to switch active items', 'Gives you an extra active item slot'}}

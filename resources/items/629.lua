@@ -1,0 +1,1 @@
+return {title = "Bot Fly", id = 629, description = {'Counts as 1 of 3 fly items needed towards the Beelzebub transformation', 'Gives you a robot fly familar that orbits around Isaac and fires shielded tears at incoming projectiles', 'Deals contact damage to enemies it touches'}}

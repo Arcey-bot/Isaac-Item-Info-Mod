@@ -1,0 +1,1 @@
+return {title = "Evil Eye", id = 410, description = {'The evil eye shots will be destroyed if they come into contact with enemies or obstacles', 'While firing tears this item gives you a chance to fire an eye across the screen with a very slow shot speed, which will fire tears of its own in the same direction as Isaac'}}

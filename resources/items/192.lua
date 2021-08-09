@@ -1,0 +1,1 @@
+return {title = "Telepathy for Dummies", id = 192, description = {'Counts as 1 of 3 book items needed towards the Bookworm transormation', 'When used, Isaac gains homing shots and +3.0 Range Up for the current room'}}

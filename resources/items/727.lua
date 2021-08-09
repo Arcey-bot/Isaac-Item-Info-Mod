@@ -1,0 +1,1 @@
+return {title = "Ghost Bombs", id = 727, description = {'Bombs become spectral and can now pass through objects', '+5 Bombs', "After 10 seconds the red soul explodes dealing 7 damage to nearby enemies. Isaac doesn't take damage from this effect", 'Bombs spawn a friendly white soul, which will hunt down other enemies, dealing contact damage which scales with your tear damage'}}

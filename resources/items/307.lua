@@ -1,0 +1,1 @@
+return {title = "Capricorn", id = 307, description = {'+0.75 Range Up', 'Heals one red heart container when picked up', '-1 Tear Delay (Tears Up)', '+1 HP Up', '+1 Key, +1 Bomb, +1 Coin', '+0.1 Speed Up', 'Counts as 1 of 3 astrology items needed in the same run to unlock Planetariums', '+0.5 Damage Up'}}

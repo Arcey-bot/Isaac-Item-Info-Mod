@@ -1,0 +1,1 @@
+return {title = "SMB Super Fan", id = 189, description = {'+1.5 Range Up', 'Full red heart heal', '+0.3 Damage Up', '+1 HP Up', '+0.2 Tears Up', '+0.2 Speed Up', 'Isaac turns red like Meatboy'}}

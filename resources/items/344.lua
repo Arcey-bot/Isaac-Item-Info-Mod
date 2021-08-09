@@ -1,0 +1,1 @@
+return {title = "Match Book", id = 344, description = {'When depleted, Black Hearts deal 40 damage to the entire room, in a Necronomicon style effect', '+1 Black Heart', 'REPENTANCE - Also drops the Match Stick trinket', '+3 Bombs'}}

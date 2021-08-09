@@ -1,0 +1,1 @@
+return {title = "Torn Photo", id = 341, description = {'+0.16 Shot Speed Up', '+0.7 Tears Up'}}

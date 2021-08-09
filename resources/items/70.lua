@@ -1,0 +1,1 @@
+return {title = "Growth Hormones", id = 70, description = {'Counts as 1 of 3 syringe items needed towards the Spun transformation', '+0.2 Speed Up', '+1.0 Damage Up'}}

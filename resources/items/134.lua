@@ -1,0 +1,1 @@
+return {title = "Guppy's Tail", id = 134, description = {'Gives a 1/3 chance for room clear rewards to become a normal or locked chest, and a 1/3 chance to reward nothing at all', "Doesn't affect coins dropped after waves in Greed Mode", 'Counts as 1 of 3 cat items needed towards the Guppy transformation'}}

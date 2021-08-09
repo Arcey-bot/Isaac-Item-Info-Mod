@@ -1,0 +1,1 @@
+return {title = "Guppy's Eye", id = 665, description = {"Doesn't work on tinted rocks and other obstacles (e.g. poop, pots)", 'Shows you to see the contents of chests, sacks and items that will drop from fires before you destroy them', 'Counts as 1 of 3 cat items needed towards the Guppy transformation'}}

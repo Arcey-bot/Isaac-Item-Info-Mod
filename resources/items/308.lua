@@ -1,0 +1,1 @@
+return {title = "Aquarius", id = 308, description = {'REPENTANCE - Aquarius now synergizes with tear effects', 'Counts as 1 of 3 astrology items needed in the same run to unlock Planetariums', 'Leaves a trail of tears on the floor behind Isaac which damages enemies that walk over it for 2 damage per tick'}}

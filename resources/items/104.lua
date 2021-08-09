@@ -1,0 +1,1 @@
+return {title = "The Parasite", id = 104, description = {"Isaac's tears now split into two upon contact with enemies or the environment", 'Tears that split off from the main tear do less damage (tear damage * 0.5)', 'Tears can keep splitting if they still have range and damage above 1'}}

@@ -1,0 +1,1 @@
+return {title = "Glitched Crown", id = 689, description = {'Item pedestals now cycle between 5 random items'}}

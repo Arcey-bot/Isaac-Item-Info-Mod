@@ -1,0 +1,1 @@
+return {title = "Deep Pockets", id = 416, description = {'REPENTANCE - Deep Pockets no longer adds a pill/card slot, instead increases money cap to 999', 'When a room clear would otherwise yield no rewards, it now spawns 1-3 pennies', 'Increases your money cap to 999'}}

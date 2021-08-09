@@ -1,0 +1,1 @@
+return {title = "Mystery Egg", id = 539, description = {'A familiar which follows Isaac and, upon taking damage, will spawn a charmed enemy that will fight for you', 'Added as part of the Afterbirth+ Booster Pack #5. Based on the Steam Workshop mod created by Strawrat and Aczom', 'When the charmed enemy is spawned the egg will crack, but regenerate in the next room'}}

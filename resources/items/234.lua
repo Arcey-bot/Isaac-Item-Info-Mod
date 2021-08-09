@@ -1,0 +1,1 @@
+return {title = "Infestation 2", id = 234, description = {'Counts as 1 of 3 spider items needed towards the Spider Baby transformation.', 'Spiders are spawned at the location where the enemy died', 'Creates a friendly blue spider when you kill an enemy'}}

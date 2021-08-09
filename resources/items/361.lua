@@ -1,0 +1,1 @@
+return {title = "Fate's Reward", id = 361, description = {'This familiar is very similar to Incubus, however it only copies damage and is not affected by tears or range upgrades', 'Counts as 1 of 3 familiar items needed towards the Conjoined transformation.', 'A familiar blue head that will follow Isaac and fire tears copying his tear damage'}}

@@ -1,0 +1,1 @@
+return {title = "Screw", id = 255, description = {'+0.5 Tears Up', '+0.2 Shot Speed Up'}}

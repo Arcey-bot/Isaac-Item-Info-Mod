@@ -1,0 +1,1 @@
+return {title = "Monster Manual", id = 123, description = {'REPENTANCE - Monster Manual familiars now persist for the entire floor. Charge time has been increased to 6 (from 3).', "It can spawn familiars you haven't unlocked yet!", 'When used, gives a random familiar for the rest of the room'}}

@@ -1,0 +1,1 @@
+return {title = "The Wiz", id = 358, description = {'Gives Isaac spectral tears which allows them to travel through objects in the environment (i.e. rocks)', 'Isaac wears a dunce hat and fires 2 tears at once diagonally, similar to the R U A WIZARD pill tear pattern'}}

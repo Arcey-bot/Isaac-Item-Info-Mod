@@ -1,0 +1,1 @@
+return {title = "Empty Heart", id = 676, description = {'Upon entering each new floor, if you have one red heart or less, another one is added', 'This item has no effect for characters with non-red health i.e. ???, Keeper and The Forgotten', 'This effect works while moving up floors in the backwards path'}}

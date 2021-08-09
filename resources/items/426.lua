@@ -1,0 +1,1 @@
+return {title = "Obsessed Fan", id = 426, description = {'A purple familiar fly that follows your exact movement on a 1 second delay and deals 2 contact damage to enemies', 'Counts as 1 of 3 fly items needed towards the Beelzebub transformation'}}

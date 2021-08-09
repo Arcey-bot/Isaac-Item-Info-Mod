@@ -1,0 +1,1 @@
+return {title = "Piggy Bank", id = 227, description = {'When you take damage, 1-2 coins will drop on the floor', 'When playing as the Keeper, this item drops 0-1 coins instead', '+3 Coins when picked up'}}

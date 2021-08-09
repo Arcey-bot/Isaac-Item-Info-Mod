@@ -1,0 +1,1 @@
+return {title = "Pyromaniac", id = 223, description = {'+5 Bombs', 'REPENTANCE - Pyromaniac now grants Isaac immunity to fire, but no longer protects against stomps or shockwaves. Explosions now only heal Isaac for half of a heart (previously healed a full heart)', 'All explosions now heal Isaac for 0.5 red hearts instead of hurting him'}}

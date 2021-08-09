@@ -1,0 +1,1 @@
+return {title = "Sagittarius", id = 306, description = {'+0.2 Speed Up', 'Tears do not travel through rocks with this item', 'Counts as 1 of 3 astrology items needed in the same run to unlock Planetariums', 'Grants piercing tears'}}
