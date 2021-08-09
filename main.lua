@@ -12,6 +12,9 @@ local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 -- Store collected items in table, if size changes between frames, recheck items?
 -- Ensure not to insert duplicate items when rechecking items
 
+-- Descriptions can use most of RenderTempest from loadout to render text
+--      Need to add functionality for multiline descriptions when width exceeds limit
+
 -- Pills/Cards/Trinkets not currently supported
 -- (LAST) Remove lost items from item pool
 -- Shader to darken screen slightly when opening menu?
@@ -30,20 +33,20 @@ itemMenu:Load("gfx/ui/itemmenu.anm2", true)
 
 local itemMenuAttrs = {
     -- Where to create the menu
-    pos = Vector(175, 240),
+    pos = Vector(60, 150),
     scale = Vector(0.7, 0.7),
 
     -- Where to begin drawing items ON the menu
-    origin = Vector(180, 245),
-    spacing = Vector(25, 25),
+    origin = Vector(30, 120),
+    spacing = Vector(50, 50),
 
     -- Number of columns and rows to display items in 
-    layout = Vector(5, 4)
+    layout = Vector(4, 4)
 }
 
 local itemMenuIconAttrs = {}
 
-local itemDescAttrs = {
+local itemTextAttrs = {
     pos = Vector(325, 60)
 }
 
@@ -60,6 +63,13 @@ local function contains(tbl, val)
         end
     end
     return false
+end
+
+local function getItemText(id)
+    local item = require('resources/items/'..tostring(i)..'.lua')
+    Isaac.DebugString(item.title)
+    Isaac.DebugString(item.id)
+    Isaac.DebugString(item.description[1])
 end
 
 -- TODO: This will likely become an onEvent function once finalized
@@ -95,10 +105,11 @@ local function renderMenuItems(offset)
         local itemPosInMenu
         local index
         local item
+
         for i=1, itemMenuAttrs.layout.Y do
             for j=1, itemMenuAttrs.layout.X do
                 index = (i - 1) * itemMenuAttrs.layout.X + j
-                -- Ensure we do not try to render more items than we have
+                -- Render a player's item if available
                 if collectedItemSprites[offset + index] then
                     item = collectedItemSprites[offset + index]
                     item:Load("gfx/ui/menuitem.anm2", true)
@@ -111,6 +122,7 @@ local function renderMenuItems(offset)
 
                     item:RenderLayer(0, Isaac.WorldToRenderPosition(itemPosInMenu))
                     -- item:SetOverlayRenderPriority(true)
+                -- If no items available, render nothing
                 else
                     item:Load("gfx/ui/menuitem.anm2", true)
                     item:SetFrame("Active", 0)
@@ -133,6 +145,10 @@ end
 function mod:onRender()
     local player = Isaac.GetPlayer(0)
 
+    if Input.IsButtonTriggered(Keyboard.KEY_N, 0) then
+        getItemText(1)
+    end
+
     if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() then
         menuOpen = not menuOpen
     end
@@ -145,15 +161,12 @@ function mod:onRender()
 
         heldCollectibles()
         
-        -- Create menu to load items on upon
+        -- Create menu that items will be drawn on upon
         -- itemMenu.Scale = itemMenuAttrs.scale
         itemMenu:SetFrame("Idle", 0)
         itemMenu:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.pos))
 
-        -- Does not yet support item rows. Will just render all items in a single row infinitely
-
         renderMenuItems()
-
 
         -- UI movment logic goes here
         if not Game():IsPaused() then
