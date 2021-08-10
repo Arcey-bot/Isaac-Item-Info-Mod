@@ -10,7 +10,6 @@ local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 --    Save items in a json to read from when continuing?
 -- Determine when to run check for new items again (Every new room perhaps?)
 -- Store collected items in table, if size changes between frames, recheck items?
--- Ensure not to insert duplicate items when rechecking items
 
 -- Descriptions can use most of RenderTempest from loadout to render text
 --      Need to add functionality for multiline descriptions when width exceeds limit
@@ -18,9 +17,6 @@ local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 -- Pills/Cards/Trinkets not currently supported
 -- (LAST) Remove lost items from item pool
 -- Shader to darken screen slightly when opening menu?
-
--- An offset may be necessary to render items if there are more items held
---      than available spaces to display them in one menu
 
 -- Table holding ID of every item owned
 local collectedItemIDs = {}
@@ -111,7 +107,6 @@ local function renderMenuItems(offset)
                 index = (i - 1) * itemMenuAttrs.layout.X + j + offset
                 -- Render a player's item if available
                 if collectedItemSprites[index] then
-                    Isaac.DebugString('OFFSET + INDEX - '..tostring(offset + index))
                     item = collectedItemSprites[index]
                     item:Load("gfx/ui/menuitem.anm2", true)
                     item:ReplaceSpritesheet(0, Isaac.GetItemConfig():GetCollectible(collectedItemIDs[index]).GfxFileName)
