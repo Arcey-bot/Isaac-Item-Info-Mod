@@ -25,6 +25,7 @@ local collectedItemSprites = {}
 
 local menuOpen = false
 local menuCursorPos = Vector(1, 1)
+-- Offset 0 shows items 1-16, 1 shows items 17-32, etc.
 local menuItemsOffset = 0
 local itemMenu = Sprite()
 itemMenu:Load("gfx/ui/itemmenu.anm2", true)
@@ -169,6 +170,8 @@ function mod:onRender()
 
         renderMenuItems(menuItemsOffset)
 
+        str3 = tostring(#collectedItemIDs)
+
         -- Render cursor
         -- The game is not actually "paused", the player's inputs are essentially hijacked though
         --      Basically, you can still be attacked by enemies while this menu is open
@@ -177,18 +180,19 @@ function mod:onRender()
             if Input.IsActionTriggered(ButtonAction.ACTION_MENUDOWN, 0) then
                 menuCursorPos.Y = menuCursorPos.Y + 1
 
-                -- Moving beyond current menu page
+                -- Moving beyond bounds current menu page
                 if menuCursorPos.Y > itemMenuAttrs.layout.Y then
-                    -- There are items to render on the next page
+                    -- There are enough items to render another page
                     if #collectedItemIDs > menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) then
                         menuItemsOffset = menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)  
-                        menuCursorPos.Y = 1 
-                    else     
-                        menuCursorPos.Y = itemMenuAttrs.layout.Y
+                    -- Not enough items to render another page, wrap around to initial page
+                    elseif #collectedItemIDs <= menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) and menuItemsOffset > 0 then
+                        menuItemsOffset = 0
                     end
+                    menuCursorPos.Y = 1 
                     -- We could call renderMenuItems(), but it shouldn't be necessary within onRender()
-                    Isaac.DebugString('Offset in menu - '..tostring(menuItemsOffset))
-                    renderMenuItems(menuItemsOffset)
+                    -- Isaac.DebugString('Offset in menu - '..tostring(menuItemsOffset))
+                    -- renderMenuItems(menuItemsOffset)
                 end
 
             end
@@ -200,8 +204,12 @@ function mod:onRender()
                     if menuItemsOffset > 0 then
                         menuCursorPos.Y = itemMenuAttrs.layout.Y
                         menuItemsOffset = menuItemsOffset - (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)
-                    else
-                        menuCursorPos.Y = 1
+                    -- If there are more items than can be shown on one page, move to last page
+                    elseif #collectedItemIDs > itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y and menuItemsOffset == 0 then 
+                        menuCursorPos.Y = itemMenuAttrs.layout.Y
+                        --  Offset + 16 gives the index of every item that will be rendered with that offset 
+                        -- Ex: ceil(49 items / (4 * 4)) = 4.     4 - 1 = 3.      3 * 4 * 4 = 48, exactly the offset the 49th item should have
+                        menuItemsOffset = math.ceil(#collectedItemIDs / (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) - 1) * itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y
                     end
                 end
             end
@@ -250,7 +258,7 @@ end
 function mod:debugText()
     Isaac.RenderText(str, 100, 100, 255, 0, 0, 255)
     Isaac.RenderText(str2, 100, 125, 0, 255, 0, 255)
-    Isaac.RenderText(str3, 100, 150, 0, 0, 255, 255)
+    Isaac.RenderText(str3, 300, 150, 0, 0, 255, 255)
 end
 
 
