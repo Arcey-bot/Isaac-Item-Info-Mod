@@ -1,5 +1,4 @@
 local mod = RegisterMod("Item Info", 1)
-local json = require("json")
 
 -- Highest valid Item ID in this game's version
 local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
@@ -64,6 +63,38 @@ local function contains(tbl, val)
     return false
 end
 
+
+-- TODO: This will likely become an onEvent function once finalized
+-- Update collectedItemIDs list with ID of every currently held collectible
+local function heldCollectibles()
+    local player = Isaac.GetPlayer(0)
+    local index = 1
+    
+    -- Remove items the player no longer has 
+    while index <= #collectedItemIDs do
+        if not player:HasCollectible(collectedItemIDs[index]) then
+            -- Do not increments on same index removed, otherwise we skip an item
+            table.remove(collectedItemIDs, index)
+            table.remove(collectedItemSprites, index)
+        else
+            index = index + 1
+        end
+    end
+    
+    -- Get player's active & passive items
+    for i=1, NUM_ITEMS do
+        if player:HasCollectible(i) then
+            local item = Isaac.GetItemConfig():GetCollectible(i)
+            
+            if not contains(collectedItemIDs, item.ID) then
+                table.insert(collectedItemIDs, item.ID)
+                table.insert(collectedItemSprites, Sprite())
+            end
+        end
+    end
+
+end
+
 local function getItemText(id)
     local item = require('resources/items/'..tostring(id)..'.lua')
     Isaac.DebugString(item.title)
@@ -71,26 +102,10 @@ local function getItemText(id)
     Isaac.DebugString(item.description[1])
 end
 
--- TODO: This will likely become an onEvent function once finalized
--- Update collectedItemIDs list with ID of every currently held collectible
-local function heldCollectibles()
-    local player = Isaac.GetPlayer(0)
+-- Display relevant text of item selected 
+local function renderItemText(id, pos, scale, halign, valign)
+    scale = scale or 1
 
-    for i=1, NUM_ITEMS do
-        if player:HasCollectible(i) then
-            local item = Isaac.GetItemConfig():GetCollectible(i)
-
-            if not contains(collectedItemIDs, item.ID) then
-                table.insert(collectedItemIDs, item.ID)
-                table.insert(collectedItemSprites, Sprite())
-            end
-        end
-    end
-end
-
--- TODO: Will be a more abstract version of renderMenuItems to work with multiple 
---      kinds of data
-local function renderMenuIcons(offset)
 end
 
 -- Render the collected item's icons to the menu screen
@@ -259,6 +274,9 @@ function mod:debugText()
     Isaac.RenderText(str3, 300, 150, 0, 0, 255, 255)
 end
 
+-- function mod:onNewRoom()
+--     heldCollectibles()
+-- end
 
 -- Callbacks
 
@@ -266,11 +284,13 @@ mod:AddCallback(ModCallbacks.MC_POST_RENDER, mod.onRender)
 mod:AddCallback(ModCallbacks.MC_POST_RENDER, mod.debugText)
 
 mod:AddCallback(ModCallbacks.MC_INPUT_ACTION, mod.onInput)
+-- mod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, mod.onNewRoom)
+-- Add a callback for on game init and newroom is more than sufficient
 
 -- When to refresh collectedItems?
 --   POST_UPDATE/POST_PLAYER_UPDATE/NEW_ROOM/EVAL_CACHE
 --      POST_UPDATE called 30x per second, not called when paused
---      POST_PLAYER_UPDATE called 60x per second, not called when paused
+--      POST_PICKUP_UPDATE called 60x per second, not called when paused
 --      NEW_ROOM should determine if it works for ALL rooms or only on first entry
 
 -- POST_PICKUP_INIT is useful if we can detect items on the floor somehow
