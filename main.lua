@@ -170,8 +170,6 @@ function mod:onRender()
 
         renderMenuItems(menuItemsOffset)
 
-        str3 = tostring(#collectedItemIDs)
-
         -- Render cursor
         -- The game is not actually "paused", the player's inputs are essentially hijacked though
         --      Basically, you can still be attacked by enemies while this menu is open
