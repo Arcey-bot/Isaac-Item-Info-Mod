@@ -152,8 +152,6 @@ function mod:onRender()
         menuItemsOffset = 0
     end
 
-    str3 = tostring(#collectedItemIDs) 
-
     if menuOpen then
         -- Close menu
         if Input.IsActionTriggered(ButtonAction.ACTION_MENUBACK, 0) then
@@ -205,6 +203,20 @@ function mod:onRender()
                     else
                         menuCursorPos.Y = 1
                     end
+                end
+            end
+            -- Move cursor right
+            if Input.IsActionTriggered(ButtonAction.ACTION_MENURIGHT, 0) then
+                menuCursorPos.X = menuCursorPos.X + 1
+                if menuCursorPos.X > itemMenuAttrs.layout.X then
+                    menuCursorPos.X = 1
+                end
+            end
+            -- Move cursor left
+            if Input.IsActionTriggered(ButtonAction.ACTION_MENULEFT, 0) then
+                menuCursorPos.X = menuCursorPos.X - 1
+                if menuCursorPos.X < 1 then
+                    menuCursorPos.X = itemMenuAttrs.layout.X
                 end
             end
         end
