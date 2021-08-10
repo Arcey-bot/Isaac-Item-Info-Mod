@@ -14,7 +14,6 @@ local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 --      Need to add functionality for multiline descriptions when width exceeds limit
 
 -- Pills/Cards/Trinkets not currently supported
--- (LAST) Remove lost items from item pool
 -- Shader to darken screen slightly when opening menu?
 
 -- Table holding ID of every item owned
@@ -45,6 +44,8 @@ local itemMenuAttrs = {
 local itemMenuIconAttrs = {}
 
 local itemTextAttrs = {
+    header = {},
+    body = {},
     pos = Vector(325, 60)
 }
 
@@ -66,10 +67,10 @@ end
 
 -- TODO: This will likely become an onEvent function once finalized
 -- Update collectedItemIDs list with ID of every currently held collectible
-local function heldCollectibles()
+local function updateHeldCollectibles()
     local player = Isaac.GetPlayer(0)
     local index = 1
-    
+
     -- Remove items the player no longer has 
     while index <= #collectedItemIDs do
         if not player:HasCollectible(collectedItemIDs[index]) then
@@ -176,7 +177,7 @@ function mod:onRender()
             menuItemsOffset = 0
         end
 
-        heldCollectibles()
+        updateHeldCollectibles()
         
         -- Create menu that items will be drawn on upon
         -- itemMenu.Scale = itemMenuAttrs.scale
