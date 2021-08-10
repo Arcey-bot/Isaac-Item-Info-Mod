@@ -44,9 +44,15 @@ local itemMenuAttrs = {
 local itemMenuIconAttrs = {}
 
 local itemTextAttrs = {
-    header = {},
+    header = {
+        pos = Vector(325, 45),
+        boxWidth = 100,
+        center = false
+    },
     body = {},
-    pos = Vector(325, 60)
+    pos = Vector(325, 50),
+
+    boxWidth = 100,
 }
 
 -- Debug strings
@@ -104,8 +110,17 @@ local function getItemText(id)
 end
 
 -- Display relevant text of item selected 
-local function renderItemText(id, pos, scale, halign, valign)
+local function renderItemText(id, pos, scale)
+    -- UPHEAVEL font for item name 
+    -- terminus font for desc   
     scale = scale or 1
+    Isaac.DebugString('RENDERING TEXT')
+    local textWidth = 0
+    local item = require('resources/items/'..tostring(id)..'.lua')
+    local f = Font()
+    f:Load("font/upheaval.fnt")
+    -- The boxWidth is important for the text to look as expected. Unclear on what precisely the boxWidth is though
+    f:DrawString(item.title, pos.X, pos.Y, KColor(1, 1, 1, 1), itemTextAttrs.header.boxWidth, itemTextAttrs.header.center)
 
 end
 
@@ -158,8 +173,8 @@ end
 function mod:onRender()
     local player = Isaac.GetPlayer(0)
 
-    if Input.IsButtonTriggered(Keyboard.KEY_N, 0) then
-        getItemText(1)
+    if Input.IsButtonPressed(Keyboard.KEY_N, 0) then
+        renderItemText(4, itemTextAttrs.header.pos)
     end
 
     if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() then
@@ -256,7 +271,7 @@ function mod:onRender()
         -- cursor:SetOverlayRenderPriority(true)
         cursor:RenderLayer(2, Isaac.WorldToRenderPosition(cursorDrawPos))
     end
-
+    renderItemText(4, itemTextAttrs.header.pos)
 end
 
 function mod:onInput(entity, hook, button)
