@@ -28,6 +28,8 @@ local collectedItemIDs = {}
 local collectedItemSprites = {}
 
 local menuOpen = false
+local menuCursorPos = Vector(1, 1)
+local menuItemsOffset = 0
 local itemMenu = Sprite()
 itemMenu:Load("gfx/ui/itemmenu.anm2", true)
 
@@ -66,7 +68,7 @@ local function contains(tbl, val)
 end
 
 local function getItemText(id)
-    local item = require('resources/items/'..tostring(i)..'.lua')
+    local item = require('resources/items/'..tostring(id)..'.lua')
     Isaac.DebugString(item.title)
     Isaac.DebugString(item.id)
     Isaac.DebugString(item.description[1])
@@ -95,11 +97,9 @@ local function renderMenuIcons(offset)
 end
 
 -- Render the collected item's icons to the menu screen
--- Offset is int denoting starting position in collectedItemSprites
+-- Offset is number denoting starting position in collectedItemSprites table
 --      Used to display items when there are more than can fit on one screen
 local function renderMenuItems(offset)
-    offset = offset or 0
-
     -- Ensure player has at least one item to render
     if collectedItemIDs[1] then
         local itemPosInMenu
@@ -108,10 +108,11 @@ local function renderMenuItems(offset)
 
         for i=1, itemMenuAttrs.layout.Y do
             for j=1, itemMenuAttrs.layout.X do
-                index = (i - 1) * itemMenuAttrs.layout.X + j
+                index = (i - 1) * itemMenuAttrs.layout.X + j + offset
                 -- Render a player's item if available
-                if collectedItemSprites[offset + index] then
-                    item = collectedItemSprites[offset + index]
+                if collectedItemSprites[index] then
+                    Isaac.DebugString('OFFSET + INDEX - '..tostring(offset + index))
+                    item = collectedItemSprites[index]
                     item:Load("gfx/ui/menuitem.anm2", true)
                     item:ReplaceSpritesheet(0, Isaac.GetItemConfig():GetCollectible(collectedItemIDs[index]).GfxFileName)
                     item:LoadGraphics()
@@ -121,7 +122,7 @@ local function renderMenuItems(offset)
                         itemMenuAttrs.spacing.Y * i + itemMenuAttrs.origin.Y)
 
                     item:RenderLayer(0, Isaac.WorldToRenderPosition(itemPosInMenu))
-                    -- item:SetOverlayRenderPriority(true)
+                    item:SetOverlayRenderPriority(true)
                 -- If no items available, render nothing
                 else
                     item:Load("gfx/ui/menuitem.anm2", true)
@@ -134,7 +135,7 @@ local function renderMenuItems(offset)
                     -- Layer 0 is transparency layer, 1 is gray bg, 2 is square brackets
                     -- item:RenderLayer(0, Isaac.WorldToRenderPosition(itemPosInMenu))
 
-                    item:RenderLayer(2, Isaac.WorldToRenderPosition(itemPosInMenu))
+                    item:RenderLayer(0, Isaac.WorldToRenderPosition(itemPosInMenu))
                     
                 end
             end
@@ -151,12 +152,19 @@ function mod:onRender()
 
     if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() then
         menuOpen = not menuOpen
+        -- Reset cursor to beginning when menu is closed
+        menuCursorPos = Vector(1, 1)
+        menuItemsOffset = 0
     end
+
+    str3 = tostring(#collectedItemIDs) 
 
     if menuOpen then
         -- Close menu
         if Input.IsActionTriggered(ButtonAction.ACTION_MENUBACK, 0) then
             menuOpen = false
+            menuCursorPos = Vector(1, 1)
+            menuItemsOffset = 0
         end
 
         heldCollectibles()
@@ -166,13 +174,58 @@ function mod:onRender()
         itemMenu:SetFrame("Idle", 0)
         itemMenu:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.pos))
 
-        renderMenuItems()
+        renderMenuItems(menuItemsOffset)
 
-        -- UI movment logic goes here
+        -- Render cursor
+        -- The game is not actually "paused", the player's inputs are essentially hijacked though
+        --      Basically, you can still be attacked by enemies while this menu is open
         if not Game():IsPaused() then
-            
-        end
+            -- Move cursor down
+            if Input.IsActionTriggered(ButtonAction.ACTION_MENUDOWN, 0) then
+                menuCursorPos.Y = menuCursorPos.Y + 1
 
+                -- Moving beyond current menu page
+                if menuCursorPos.Y > itemMenuAttrs.layout.Y then
+                    -- There are items to render on the next page
+                    if #collectedItemIDs > menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) then
+                        menuItemsOffset = menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)  
+                        menuCursorPos.Y = 1 
+                    else     
+                        menuCursorPos.Y = itemMenuAttrs.layout.Y
+                    end
+                    -- We could call renderMenuItems(), but it shouldn't be necessary within onRender()
+                    Isaac.DebugString('Offset in menu - '..tostring(menuItemsOffset))
+                    renderMenuItems(menuItemsOffset)
+                end
+
+            end
+            -- Move cursor up
+            if Input.IsActionTriggered(ButtonAction.ACTION_MENUUP, 0) then
+                menuCursorPos.Y = menuCursorPos.Y - 1
+                if menuCursorPos.Y < 1 then
+                    -- Move to previous "page"/layout
+                    if menuItemsOffset > 0 then
+                        menuCursorPos.Y = itemMenuAttrs.layout.Y
+                        menuItemsOffset = menuItemsOffset - (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)
+                    else
+                        menuCursorPos.Y = 1
+                    end
+                end
+            end
+        end
+        
+        local cursor = Sprite()
+        local selectedItemIndex = (menuCursorPos.Y - 1) * itemMenuAttrs.layout.X + menuCursorPos.X
+
+        cursor:Load("gfx/ui/menuitem.anm2", true)
+        cursor:SetFrame("Idle", 0)
+        cursor:LoadGraphics()
+
+        local cursorDrawPos = Vector(itemMenuAttrs.spacing.X * menuCursorPos.X + itemMenuAttrs.origin.X, 
+        itemMenuAttrs.spacing.Y * menuCursorPos.Y + itemMenuAttrs.origin.Y)
+
+        -- cursor:SetOverlayRenderPriority(true)
+        cursor:RenderLayer(2, Isaac.WorldToRenderPosition(cursorDrawPos))
     end
 
 end
