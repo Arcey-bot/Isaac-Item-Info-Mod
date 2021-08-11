@@ -4,10 +4,8 @@ local mod = RegisterMod("Item Info", 1)
 local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 
 -- TODO: Flickering on initial item selection. Fixable?
+-- TODO: Reformat .lua descriptions
 --      Maybe due to HOW MUCH is called onRender every frame? Fixed later?
--- On first frame/initial load, run check to determine collected items
---    Save items in a json to read from when continuing?
--- Determine when to run check for new items again (Every new room perhaps?)
 
 -- Pills/Cards/Trinkets not currently supported
 -- Shader to darken screen slightly when opening menu?
@@ -64,8 +62,6 @@ local textAttrs = {
         scale = Vector(1, 1),
         boxWidth = 0,
         center = false,
-        maxWidth = 200,
-        maxChars = 40
     },
 }
 
@@ -184,13 +180,8 @@ local function renderMenuItems(offset)
 end
 
 function mod:onRender()
-    local player = Isaac.GetPlayer(0)
-
-    if Input.IsButtonPressed(Keyboard.KEY_N, 0) then
-        renderSelectedItemText()
-    end
-
     if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() then
+        updateHeldCollectibles()
         menuOpen = not menuOpen
         -- Reset cursor to beginning when menu is closed
         menuCursorPos = Vector(1, 1)
@@ -205,7 +196,7 @@ function mod:onRender()
             menuItemsOffset = 0
         end
 
-        updateHeldCollectibles()
+        -- updateHeldCollectibles()
         
         -- Create menu that items will be drawn on upon
         -- itemMenu.Scale = itemMenuAttrs.scale
@@ -313,13 +304,5 @@ mod:AddCallback(ModCallbacks.MC_POST_RENDER, mod.onRender)
 mod:AddCallback(ModCallbacks.MC_POST_RENDER, mod.debugText)
 
 mod:AddCallback(ModCallbacks.MC_INPUT_ACTION, mod.onInput)
--- mod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, mod.onNewRoom)
--- Add a callback for on game init and newroom is more than sufficient
-
--- When to refresh collectedItems?
---   POST_UPDATE/POST_PLAYER_UPDATE/NEW_ROOM/EVAL_CACHE
---      POST_UPDATE called 30x per second, not called when paused
---      POST_PICKUP_UPDATE called 60x per second, not called when paused
---      NEW_ROOM should determine if it works for ALL rooms or only on first entry
 
 -- POST_PICKUP_INIT is useful if we can detect items on the floor somehow
