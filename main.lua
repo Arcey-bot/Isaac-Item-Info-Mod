@@ -4,6 +4,7 @@ local mod = RegisterMod("Item Info", 1)
 local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 
 -- TODO: Flickering on initial item selection. Fixable?
+--      Maybe due to HOW MUCH is called onRender every frame? Fixed later?
 -- On first frame/initial load, run check to determine collected items
 --    Save items in a json to read from when continuing?
 -- Determine when to run check for new items again (Every new room perhaps?)
@@ -59,7 +60,7 @@ local textAttrs = {
         font = "font/pftempestasevencondensed.fnt",
         color = KColor(1, 1, 1, 1),
         offset = Vector(0, 0),
-        pos = Vector(240, 100),
+        pos = Vector(240, 75),
         scale = Vector(1, 1),
         boxWidth = 0,
         center = false,
@@ -113,26 +114,6 @@ local function updateHeldCollectibles()
 
 end
 
--- Go through a list of strings and ensure they are sized properly to fit screen
--- Takes list - table of strings & limit - max number of characters allowed per line
-local function fitText(list, limit)
-    local fittedStrings = {}
-    for _, str in ipairs(list) do
-        -- String is too big, split up
-        if #str > limit then
-            local s = ''
-            local n = 1
-            -- Some strings may need to be split more than once
-            for _=1, #str, limit do
-                s = string.sub(str, 1 + (limit * (n - 1)), n * limit)
-                table.insert(fittedStrings, string.sub(str, 1 + (limit * (n - 1)), n * limit))
-                n = n + 1
-            end
-        end
-    end
-    return fittedStrings
-end
-
 -- settings is a table with the same properties as textAttrs.header/subheader/body
 local function renderText(str, settings)
     local f = Font()
@@ -147,10 +128,8 @@ local function renderSelectedItemText()
     local item = require('resources/items/'..tostring(collectedItemIDs[index])..'.lua')
 
     renderText(item.title, textAttrs.header)
-    renderText("Item ID: "..item.id, textAttrs.subheader)
 
     local yOffset = 16
-    -- for i, str in ipairs(fitText(item.description, textAttrs.body.maxChars)) do
     for _, str in ipairs(item.description) do
         renderText(str, textAttrs.body)
         textAttrs.body.offset.Y = yOffset + textAttrs.body.offset.Y 
