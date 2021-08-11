@@ -41,9 +41,11 @@ local itemMenuAttrs = {
     layout = Vector(4, 4)
 }
 
-local itemTextAttrs = {
+local textAttrs = {
     header = {
         font = "font/upheaval.fnt",
+        color = KColor(1, 1, 1, 1),
+        offset = Vector(0, 0),
         pos = Vector(250, 45),
         scale = Vector(1, 1),
         boxWidth = 200,
@@ -51,6 +53,8 @@ local itemTextAttrs = {
     },
     subheader = {
         font = "font/terminus.fnt",
+        color = KColor(1, 1, 1, 1),
+        offset = Vector(0, 0),
         pos = Vector(250, 75),
         scale = Vector(0.75, 0.75),
         boxWidth = 200,
@@ -58,13 +62,13 @@ local itemTextAttrs = {
     },
     body = {
         font = "font/terminus8.fnt",
+        color = KColor(1, 1, 1, 1),
+        offset = Vector(0, 0),
         pos = Vector(250, 100),
         scale = Vector(1, 1),
         boxWidth = 0,
         center = false,
     },
-
-    boxWidth = 100,
 }
 
 -- Debug strings
@@ -126,31 +130,12 @@ local function fitText(str)
 
 end
 
-local function renderHeaderText(str, pos, scale)
-    pos = pos or itemTextAttrs.header.pos
-    scale = scale or itemTextAttrs.header.scale
+-- settings is a table with the same properties as textAttrs.header/subheader/body
+local function renderText(str, settings)
     local f = Font()
-    f:Load(itemTextAttrs.header.font)
-    f:DrawStringScaled(str, pos.X, pos.Y, scale.X, scale.Y, KColor(1, 1, 1, 1), itemTextAttrs.header.boxWidth, itemTextAttrs.header.center)
+    f:Load(settings.font)
+    f:DrawStringScaled(str, settings.pos.X, settings.pos.Y, settings.scale.X, settings.scale.Y, settings.color, settings.boxWidth, settings.center)
 end
-
-local function renderSubheaderText(str, pos, scale)
-    pos = pos or itemTextAttrs.subheader.pos
-    scale = scale or itemTextAttrs.subheader.scale
-    local f = Font()
-    f:Load(itemTextAttrs.subheader.font)
-    f:DrawStringScaled(str, pos.X, pos.Y, scale.X, scale.Y, KColor(1, 1, 1, 1), itemTextAttrs.subheader.boxWidth, itemTextAttrs.subheader.center)
-end
-
-local function renderDescText(str, pos, scale)
-    pos = pos or itemTextAttrs.body.pos
-    scale = scale or itemTextAttrs.body.scale
-    local f = Font()
-    local yOffset = f:GetLineHeight()
-    f:Load(itemTextAttrs.body.font)
-    f:DrawStringScaled(str, pos.X, pos.y, scale.X, scale.Y, KColor(1, 1, 1, 1), itemTextAttrs.body.boxWidth, itemTextAttrs.body.center)
-end
-
 
 -- Handles displaying all relevant text of selected item
 local function renderSelectedItemText()
@@ -158,8 +143,11 @@ local function renderSelectedItemText()
     local index = (menuCursorPos.Y - 1) * itemMenuAttrs.layout.X + menuCursorPos.X + menuItemsOffset
     local item = require('resources/items/'..tostring(collectedItemIDs[index])..'.lua')
 
-    
+    renderText(item.title, textAttrs.header)
+    renderText("Item ID: "..item.id, textAttrs.subheader)
 
+
+    -- local yOffset = f:GetLineHeight()
     -- for i, str in ipairs(item.description) do
     --     f:DrawStringScaled(str, itemTextAttrs.body.pos.X, (i * yOffset + itemTextAttrs.body.pos.Y), scale.X, scale.Y, KColor(1, 1, 1, 1), itemTextAttrs.body.boxWidth, itemTextAttrs.body.center)
     -- end
