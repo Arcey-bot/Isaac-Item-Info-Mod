@@ -150,10 +150,10 @@ local function renderSelectedItemText()
     renderText("Item ID: "..item.id, textAttrs.subheader)
 
     local yOffset = 16
-    for i, str in ipairs(fitText(item.description, textAttrs.body.maxChars)) do
+    -- for i, str in ipairs(fitText(item.description, textAttrs.body.maxChars)) do
+    for _, str in ipairs(item.description) do
         renderText(str, textAttrs.body)
         textAttrs.body.offset.Y = yOffset + textAttrs.body.offset.Y 
-        -- TODO: Print this out and monitor values
     end
     textAttrs.body.offset.Y = 0
 end
