@@ -25,11 +25,11 @@ itemMenu:Load("gfx/ui/itemmenu.anm2", true)
 
 local itemMenuAttrs = {
     -- Where to create the menu
-    pos = Vector(50, 150),
+    pos = Vector(30, 150),
     scale = Vector(0.7, 0.7),
 
     -- Where to begin drawing items ON the menu
-    origin = Vector(8, 108),
+    origin = Vector(-12, 105),
     spacing = Vector(55, 55),
 
     -- Number of columns and rows to display items in 
@@ -41,7 +41,7 @@ local textAttrs = {
         font = "font/upheaval.fnt",
         color = KColor(1, 1, 1, 1),
         offset = Vector(0, 0),
-        pos = Vector(250, 45),
+        pos = Vector(240, 45),
         scale = Vector(1, 1),
         boxWidth = 200,
         center = true,
@@ -50,7 +50,7 @@ local textAttrs = {
         font = "font/terminus.fnt",
         color = KColor(1, 1, 1, 1),
         offset = Vector(0, 0),
-        pos = Vector(250, 75),
+        pos = Vector(240, 75),
         scale = Vector(1, 1),
         boxWidth = 200,
         center = true,
@@ -59,7 +59,7 @@ local textAttrs = {
         font = "font/pftempestasevencondensed.fnt",
         color = KColor(1, 1, 1, 1),
         offset = Vector(0, 0),
-        pos = Vector(250, 100),
+        pos = Vector(240, 100),
         scale = Vector(1, 1),
         boxWidth = 0,
         center = false,
