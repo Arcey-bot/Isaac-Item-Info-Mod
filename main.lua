@@ -3,15 +3,11 @@ local mod = RegisterMod("Item Info", 1)
 -- Highest valid Item ID in this game's version
 local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 
--- TODO:
+-- TODO: Flickering on initial item selection. Fixable?
 
 -- On first frame/initial load, run check to determine collected items
 --    Save items in a json to read from when continuing?
 -- Determine when to run check for new items again (Every new room perhaps?)
--- Store collected items in table, if size changes between frames, recheck items?
-
--- Descriptions can use most of RenderTempest from loadout to render text
---      Need to add functionality for multiline descriptions when width exceeds limit
 
 -- Pills/Cards/Trinkets not currently supported
 -- Shader to darken screen slightly when opening menu?
@@ -86,8 +82,6 @@ local function contains(tbl, val)
     return false
 end
 
-
--- TODO: This will likely become an onEvent function once finalized
 -- Update collectedItemIDs list with ID of every currently held collectible
 local function updateHeldCollectibles()
     local player = Isaac.GetPlayer(0)
@@ -134,7 +128,7 @@ end
 local function renderText(str, settings)
     local f = Font()
     f:Load(settings.font)
-    f:DrawStringScaled(str, settings.pos.X, settings.pos.Y, settings.scale.X, settings.scale.Y, settings.color, settings.boxWidth, settings.center)
+    f:DrawStringScaled(str, settings.pos.X + settings.offset.X, settings.pos.Y + settings.offset.Y, settings.scale.X, settings.scale.Y, settings.color, settings.boxWidth, settings.center)
 end
 
 -- Handles displaying all relevant text of selected item
@@ -146,12 +140,13 @@ local function renderSelectedItemText()
     renderText(item.title, textAttrs.header)
     renderText("Item ID: "..item.id, textAttrs.subheader)
 
-
-    -- local yOffset = f:GetLineHeight()
-    -- for i, str in ipairs(item.description) do
-    --     f:DrawStringScaled(str, itemTextAttrs.body.pos.X, (i * yOffset + itemTextAttrs.body.pos.Y), scale.X, scale.Y, KColor(1, 1, 1, 1), itemTextAttrs.body.boxWidth, itemTextAttrs.body.center)
-    -- end
-
+    local yOffset = 16
+    -- TODO: Go through description and fit strings to one line's width
+    for i, str in ipairs(item.description) do
+        renderText(str, textAttrs.body)
+        textAttrs.body.offset.Y = i * yOffset + textAttrs.body.offset.Y 
+    end
+    textAttrs.body.offset.Y = 0
 end
 
 -- Render the collected item's icons to the menu screen
