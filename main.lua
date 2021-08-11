@@ -120,9 +120,11 @@ local function fitText(list, limit)
     for _, str in ipairs(list) do
         -- String is too big, split up
         if #str > limit then
+            local s = ''
             local n = 1
             -- Some strings may need to be split more than once
             for _=1, #str, limit do
+                s = string.sub(str, 1 + (limit * (n - 1)), n * limit)
                 table.insert(fittedStrings, string.sub(str, 1 + (limit * (n - 1)), n * limit))
                 n = n + 1
             end
@@ -150,7 +152,7 @@ local function renderSelectedItemText()
     local yOffset = 16
     for i, str in ipairs(fitText(item.description, textAttrs.body.maxChars)) do
         renderText(str, textAttrs.body)
-        textAttrs.body.offset.Y = i * yOffset + textAttrs.body.offset.Y 
+        textAttrs.body.offset.Y = yOffset + textAttrs.body.offset.Y 
         -- TODO: Print this out and monitor values
     end
     textAttrs.body.offset.Y = 0
