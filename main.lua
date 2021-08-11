@@ -4,7 +4,6 @@ local mod = RegisterMod("Item Info", 1)
 local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 
 -- TODO: Flickering on initial item selection. Fixable?
-
 -- On first frame/initial load, run check to determine collected items
 --    Save items in a json to read from when continuing?
 -- Determine when to run check for new items again (Every new room perhaps?)
@@ -57,13 +56,15 @@ local textAttrs = {
         center = true,
     },
     body = {
-        font = "font/terminus8.fnt",
+        font = "font/pftempestasevencondensed.fnt",
         color = KColor(1, 1, 1, 1),
         offset = Vector(0, 0),
         pos = Vector(250, 100),
         scale = Vector(1, 1),
         boxWidth = 0,
         center = false,
+        maxWidth = 200,
+        maxChars = 40
     },
 }
 
@@ -112,9 +113,22 @@ local function updateHeldCollectibles()
 
 end
 
--- Resize text as needed to render within text's limits
-local function fitText(str)
-
+-- Go through a list of strings and ensure they are sized properly to fit screen
+-- Takes list - table of strings & limit - max number of characters allowed per line
+local function fitText(list, limit)
+    local fittedStrings = {}
+    for _, str in ipairs(list) do
+        -- String is too big, split up
+        if #str > limit then
+            local n = 1
+            -- Some strings may need to be split more than once
+            for _=1, #str, limit do
+                table.insert(fittedStrings, string.sub(str, 1 + (limit * (n - 1)), n * limit))
+                n = n + 1
+            end
+        end
+    end
+    return fittedStrings
 end
 
 -- settings is a table with the same properties as textAttrs.header/subheader/body
@@ -134,10 +148,10 @@ local function renderSelectedItemText()
     renderText("Item ID: "..item.id, textAttrs.subheader)
 
     local yOffset = 16
-    -- TODO: Go through description and fit strings to one line's width
-    for i, str in ipairs(item.description) do
+    for i, str in ipairs(fitText(item.description, textAttrs.body.maxChars)) do
         renderText(str, textAttrs.body)
         textAttrs.body.offset.Y = i * yOffset + textAttrs.body.offset.Y 
+        -- TODO: Print this out and monitor values
     end
     textAttrs.body.offset.Y = 0
 end
