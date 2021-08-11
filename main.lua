@@ -30,33 +30,45 @@ itemMenu:Load("gfx/ui/itemmenu.anm2", true)
 
 local itemMenuAttrs = {
     -- Where to create the menu
-    pos = Vector(60, 150),
+    pos = Vector(50, 150),
     scale = Vector(0.7, 0.7),
 
     -- Where to begin drawing items ON the menu
-    origin = Vector(30, 120),
-    spacing = Vector(50, 50),
+    origin = Vector(8, 108),
+    spacing = Vector(55, 55),
 
     -- Number of columns and rows to display items in 
     layout = Vector(4, 4)
 }
 
-local itemMenuIconAttrs = {}
-
 local itemTextAttrs = {
     header = {
-        pos = Vector(325, 45),
-        boxWidth = 100,
-        center = false
+        font = "font/upheaval.fnt",
+        pos = Vector(250, 45),
+        scale = Vector(1, 1),
+        boxWidth = 200,
+        center = true,
     },
-    body = {},
-    pos = Vector(325, 50),
+    subheader = {
+        font = "font/terminus.fnt",
+        pos = Vector(250, 75),
+        scale = Vector(0.75, 0.75),
+        boxWidth = 200,
+        center = true,
+    },
+    body = {
+        font = "font/terminus8.fnt",
+        pos = Vector(250, 100),
+        scale = Vector(1, 1),
+        boxWidth = 0,
+        center = false,
+    },
 
     boxWidth = 100,
 }
 
 -- Debug strings
-local str = ''
+local str1 = ''
 local str2 = ''
 local str3 = ''
 
@@ -109,18 +121,48 @@ local function getItemText(id)
     Isaac.DebugString(item.description[1])
 end
 
--- Display relevant text of item selected 
-local function renderItemText(id, pos, scale)
-    -- UPHEAVEL font for item name 
-    -- terminus font for desc   
-    scale = scale or 1
-    Isaac.DebugString('RENDERING TEXT')
-    local textWidth = 0
-    local item = require('resources/items/'..tostring(id)..'.lua')
+-- Resize text as needed to render within text's limits
+local function fitText(str)
+
+end
+
+local function renderHeaderText(str, pos, scale)
+    pos = pos or itemTextAttrs.header.pos
+    scale = scale or itemTextAttrs.header.scale
     local f = Font()
-    f:Load("font/upheaval.fnt")
-    -- The boxWidth is important for the text to look as expected. Unclear on what precisely the boxWidth is though
-    f:DrawString(item.title, pos.X, pos.Y, KColor(1, 1, 1, 1), itemTextAttrs.header.boxWidth, itemTextAttrs.header.center)
+    f:Load(itemTextAttrs.header.font)
+    f:DrawStringScaled(str, pos.X, pos.Y, scale.X, scale.Y, KColor(1, 1, 1, 1), itemTextAttrs.header.boxWidth, itemTextAttrs.header.center)
+end
+
+local function renderSubheaderText(str, pos, scale)
+    pos = pos or itemTextAttrs.subheader.pos
+    scale = scale or itemTextAttrs.subheader.scale
+    local f = Font()
+    f:Load(itemTextAttrs.subheader.font)
+    f:DrawStringScaled(str, pos.X, pos.Y, scale.X, scale.Y, KColor(1, 1, 1, 1), itemTextAttrs.subheader.boxWidth, itemTextAttrs.subheader.center)
+end
+
+local function renderDescText(str, pos, scale)
+    pos = pos or itemTextAttrs.body.pos
+    scale = scale or itemTextAttrs.body.scale
+    local f = Font()
+    local yOffset = f:GetLineHeight()
+    f:Load(itemTextAttrs.body.font)
+    f:DrawStringScaled(str, pos.X, pos.y, scale.X, scale.Y, KColor(1, 1, 1, 1), itemTextAttrs.body.boxWidth, itemTextAttrs.body.center)
+end
+
+
+-- Handles displaying all relevant text of selected item
+local function renderSelectedItemText()
+    -- Index of selected item in collectedItemIDs
+    local index = (menuCursorPos.Y - 1) * itemMenuAttrs.layout.X + menuCursorPos.X + menuItemsOffset
+    local item = require('resources/items/'..tostring(collectedItemIDs[index])..'.lua')
+
+    
+
+    -- for i, str in ipairs(item.description) do
+    --     f:DrawStringScaled(str, itemTextAttrs.body.pos.X, (i * yOffset + itemTextAttrs.body.pos.Y), scale.X, scale.Y, KColor(1, 1, 1, 1), itemTextAttrs.body.boxWidth, itemTextAttrs.body.center)
+    -- end
 
 end
 
@@ -174,7 +216,7 @@ function mod:onRender()
     local player = Isaac.GetPlayer(0)
 
     if Input.IsButtonPressed(Keyboard.KEY_N, 0) then
-        renderItemText(4, itemTextAttrs.header.pos)
+        renderSelectedItemText()
     end
 
     if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() then
@@ -201,7 +243,8 @@ function mod:onRender()
 
         renderMenuItems(menuItemsOffset)
 
-        -- Render cursor
+        renderSelectedItemText()
+
         -- The game is not actually "paused", the player's inputs are essentially hijacked though
         --      Basically, you can still be attacked by enemies while this menu is open
         if not Game():IsPaused() then
@@ -258,8 +301,8 @@ function mod:onRender()
             end
         end
         
+        -- Render cursor
         local cursor = Sprite()
-        local selectedItemIndex = (menuCursorPos.Y - 1) * itemMenuAttrs.layout.X + menuCursorPos.X
 
         cursor:Load("gfx/ui/menuitem.anm2", true)
         cursor:SetFrame("Idle", 0)
@@ -271,7 +314,6 @@ function mod:onRender()
         -- cursor:SetOverlayRenderPriority(true)
         cursor:RenderLayer(2, Isaac.WorldToRenderPosition(cursorDrawPos))
     end
-    renderItemText(4, itemTextAttrs.header.pos)
 end
 
 function mod:onInput(entity, hook, button)
@@ -285,7 +327,7 @@ function mod:onInput(entity, hook, button)
 end
 
 function mod:debugText()
-    Isaac.RenderText(str, 100, 100, 255, 0, 0, 255)
+    Isaac.RenderText(str1, 100, 100, 255, 0, 0, 255)
     Isaac.RenderText(str2, 100, 125, 0, 255, 0, 255)
     Isaac.RenderText(str3, 300, 150, 0, 0, 255, 255)
 end
