@@ -1,1 +1,1 @@
-return {title = "My Reflection", id = 5, description = {'Gives tears a boomerang effect', '+0.6 Shot Speed Up', '+5.4 Range Up'}}
+return {title = "My Reflection", id = "5", description = {'Gives tears a boomerang effect', '+5.4 Range Up', '+0.6 Shot Speed Up'}}

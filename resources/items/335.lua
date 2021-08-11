@@ -1,1 +1,1 @@
-return {title = "The Soul", id = 335, description = {'+2 Soul Hearts', 'Enemy projectiles will now slowly curve away from Isaac and avoid hitting him'}}
+return {title = "The Soul", id = "335", description = {'+2 Soul Hearts', 'Enemy projectiles will now slowly curve away from Isaac and avoid hitting him'}}

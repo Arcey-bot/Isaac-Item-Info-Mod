@@ -1,1 +1,1 @@
-return {title = "Free Lemonade", id = 578, description = {'A similar effect to the Lemon Party pill', 'Upon use, spawns a giant puddle of lemonade that deals 6 damage per tick to any enemies which come in contact with it'}}
+return {title = "Free Lemonade", id = "578", description = {'Upon use, spawns a giant puddle of lemonade that deals 6 damage per tick to any enemies which come in contact with it', 'A similar effect to the Lemon Party pill'}}

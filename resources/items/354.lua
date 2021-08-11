@@ -1,1 +1,1 @@
-return {title = "Crack Jacks", id = 354, description = {'REPENTANCE - Added to the Gold Chest pool', 'Spawns a random trinket on the floor', '+1 HP Up'}}
+return {title = "Crack Jacks", id = "354", description = {'Spawns a random trinket on the floor', 'REPENTANCE - Added to the Gold Chest pool', '+1 HP Up'}}

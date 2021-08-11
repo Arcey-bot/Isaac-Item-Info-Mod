@@ -1,1 +1,1 @@
-return {title = "Speed Ball", id = 143, description = {'+0.3 Speed Up', '+0.2 Shot Speed Up', 'Counts as 1 of 3 syringe items needed towards the Spun transformation'}}
+return {title = "Speed Ball", id = "143", description = {'+0.2 Shot Speed Up', 'Counts as 1 of 3 syringe items needed towards the Spun transformation', '+0.3 Speed Up'}}

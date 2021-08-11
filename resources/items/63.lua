@@ -1,1 +1,1 @@
-return {title = "The Battery", id = 63, description = {'The extra charges appear in yellow on top of the normal green bars', 'This item works with self-recharging items', "All spacebar items can now be 'overcharged', allowing them to be charged up twice instead of once"}}
+return {title = "The Battery", id = "63", description = {'This item works with self-recharging items', "All spacebar items can now be 'overcharged', allowing them to be charged up twice instead of once", 'The extra charges appear in yellow on top of the normal green bars'}}

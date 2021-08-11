@@ -1,1 +1,1 @@
-return {title = "3 Dollar Bill", id = 191, description = {'The tear type changes every few seconds', 'REPENTANCE - The list of possible tear effects was updated in Repentance, to include all missing and new ones', 'Grants Isaac random tear effects'}}
+return {title = "3 Dollar Bill", id = "191", description = {'Grants Isaac random tear effects', 'REPENTANCE - The list of possible tear effects was updated in Repentance, to include all missing and new ones', 'The tear type changes every few seconds'}}

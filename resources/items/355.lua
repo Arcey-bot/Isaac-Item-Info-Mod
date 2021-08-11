@@ -1,1 +1,1 @@
-return {title = "Mom's Pearls", id = 355, description = {'+1 Luck Up', '+1 Soul Heart', '+0.38 Range Up', 'Counts as 1 of 3 mom items needed towards the Mom transformation'}}
+return {title = "Mom's Pearls", id = "355", description = {'Counts as 1 of 3 mom items needed towards the Mom transformation', '+1 Soul Heart', '+1 Luck Up', '+0.38 Range Up'}}

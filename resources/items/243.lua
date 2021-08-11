@@ -1,1 +1,1 @@
-return {title = "Trinity Shield", id = 243, description = {'Puts a shield in front of Isaac which blocks projectiles', 'The shield will rotate based on the direction in which Isaac is firing tears'}}
+return {title = "Trinity Shield", id = "243", description = {'Puts a shield in front of Isaac which blocks projectiles', 'The shield will rotate based on the direction in which Isaac is firing tears'}}

@@ -1,1 +1,1 @@
-return {title = "Mom's Heels", id = 30, description = {'+1.5 Range Up', 'Counts as 1 of 3 mom items needed towards the Mom transformation', 'REPENTANCE - Touching enemies deals 12 damage to them'}}
+return {title = "Mom's Heels", id = "30", description = {'+1.5 Range Up', 'REPENTANCE - Touching enemies deals 12 damage to them', 'Counts as 1 of 3 mom items needed towards the Mom transformation'}}

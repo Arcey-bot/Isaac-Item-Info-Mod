@@ -1,1 +1,1 @@
-return {title = "Skeleton Key", id = 17, description = {'Gives Isaac 99 Keys'}}
+return {title = "Skeleton Key", id = "17", description = {'Gives Isaac 99 Keys'}}

@@ -1,1 +1,1 @@
-return {title = "The Necronomicon", id = 35, description = {'Deals 40 damage to everything in the room when used', 'REPENTANCE - Reduced to 3 room recharge time', 'Counts as 1 of 3 book items needed towards the Bookworm transformation'}}
+return {title = "The Necronomicon", id = "35", description = {'REPENTANCE - Reduced to 3 room recharge time', 'Deals 40 damage to everything in the room when used', 'Counts as 1 of 3 book items needed towards the Bookworm transformation'}}

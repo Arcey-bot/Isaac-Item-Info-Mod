@@ -1,1 +1,1 @@
-return {title = "Sack of Sacks", id = 500, description = {'A sack familiar that drops a sack every 5 or 6 rooms cleared (alternates between 5 and 6)'}}
+return {title = "Sack of Sacks", id = "500", description = {'A sack familiar that drops a sack every 5 or 6 rooms cleared (alternates between 5 and 6)'}}

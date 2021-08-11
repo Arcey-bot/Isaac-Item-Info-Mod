@@ -1,1 +1,1 @@
-return {title = "Guppy's Head", id = 145, description = {'When used, spawns between 2-4 blue flies', 'Blue Flies do double your tear damage', 'Counts as 1 of 3 cat items needed towards the Guppy transformation'}}
+return {title = "Guppy's Head", id = "145", description = {'Blue Flies do double your tear damage', 'When used, spawns between 2-4 blue flies', 'Counts as 1 of 3 cat items needed towards the Guppy transformation'}}

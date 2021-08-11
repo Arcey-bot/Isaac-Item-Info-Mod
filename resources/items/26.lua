@@ -1,1 +1,1 @@
-return {title = "Rotten Meat", id = 26, description = {'Heals one red heart container when picked up', '+1 HP Up'}}
+return {title = "Rotten Meat", id = "26", description = {'Heals one red heart container when picked up', '+1 HP Up'}}

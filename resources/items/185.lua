@@ -1,1 +1,1 @@
-return {title = "Dead Dove", id = 185, description = {'An item only found in the Angel room', 'Gives Isaac the ability to fly and spectral tears', 'Counts as 1 of 3 angel items needed towards the Seraphim transformation'}}
+return {title = "Dead Dove", id = "185", description = {'Gives Isaac the ability to fly and spectral tears', 'Counts as 1 of 3 angel items needed towards the Seraphim transformation', 'An item only found in the Angel room'}}

@@ -1,1 +1,1 @@
-return {title = "Lil Loki", id = 435, description = {'A Loki familiar that follows Isaac and shoots tears 4 tears in a cross pattern, dealing a flat 3.5 damage each'}}
+return {title = "Lil Loki", id = "435", description = {'A Loki familiar that follows Isaac and shoots tears 4 tears in a cross pattern, dealing a flat 3.5 damage each'}}

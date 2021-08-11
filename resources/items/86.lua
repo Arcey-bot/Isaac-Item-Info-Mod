@@ -1,1 +1,1 @@
-return {title = "Monstro's Tooth", id = 86, description = {'When used, spawns a Monstro which will jump on a random enemy in the room, dealing 120 damage and destroying nearby obstacles'}}
+return {title = "Monstro's Tooth", id = "86", description = {'When used, spawns a Monstro which will jump on a random enemy in the room, dealing 120 damage and destroying nearby obstacles'}}

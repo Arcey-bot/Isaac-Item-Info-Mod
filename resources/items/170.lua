@@ -1,1 +1,1 @@
-return {title = "Daddy Longlegs", id = 170, description = {'A shadow follows Isaac and stomps on enemies randomly, dealing 40 damage per stomp (2 damage ticks at 20 damage each)', 'Counts as 1 of 3 spider items needed towards the Spider Baby transformation.'}}
+return {title = "Daddy Longlegs", id = "170", description = {'A shadow follows Isaac and stomps on enemies randomly, dealing 40 damage per stomp (2 damage ticks at 20 damage each)', 'Counts as 1 of 3 spider items needed towards the Spider Baby transformation.'}}

@@ -1,1 +1,1 @@
-return {title = "Portable Slot", id = 177, description = {'REPENTANCE - The delay between uses was removed, allowing you to spam-use it', 'Using the portable slot takes a coin and has a chance to give a pickup - similar to how the normal slot machines work'}}
+return {title = "Portable Slot", id = "177", description = {'REPENTANCE - The delay between uses was removed, allowing you to spam-use it', 'Using the portable slot takes a coin and has a chance to give a pickup - similar to how the normal slot machines work'}}

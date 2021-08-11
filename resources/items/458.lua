@@ -1,1 +1,1 @@
-return {title = "Belly Button", id = 458, description = {'Gives you an extra trinket slot', 'Drops one random trinket on pickup'}}
+return {title = "Belly Button", id = "458", description = {'Drops one random trinket on pickup', 'Gives you an extra trinket slot'}}

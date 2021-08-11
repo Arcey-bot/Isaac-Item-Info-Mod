@@ -1,1 +1,1 @@
-return {title = "Nancy Bombs", id = 563, description = {'Bombs now explode with a random effect (e.g. Poison, Homing, Prize Bombs)', '+5 Bombs', 'In Antibirth this was called Enigma Bombs'}}
+return {title = "Nancy Bombs", id = "563", description = {'+5 Bombs', 'Bombs now explode with a random effect (e.g. Poison, Homing, Prize Bombs)', 'In Antibirth this was called Enigma Bombs'}}

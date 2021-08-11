@@ -1,1 +1,1 @@
-return {title = "The Body", id = 334, description = {'+3 Health Up', 'The three heart containers are pre-filled with red hearts'}}
+return {title = "The Body", id = "334", description = {'The three heart containers are pre-filled with red hearts', '+3 Health Up'}}

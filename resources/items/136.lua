@@ -1,1 +1,1 @@
-return {title = "Best Friend", id = 136, description = {'When it explodes, it deals 185 damage to everything in radius (Same damage as Mr Mega bombs)', 'Places a decoy on the floor which attracts enemies and explodes after a period of time', 'REPENTANCE - Damage buffed from 110 to 185'}}
+return {title = "Best Friend", id = "136", description = {'REPENTANCE - Damage buffed from 110 to 185', 'When it explodes, it deals 185 damage to everything in radius (Same damage as Mr Mega bombs)', 'Places a decoy on the floor which attracts enemies and explodes after a period of time'}}

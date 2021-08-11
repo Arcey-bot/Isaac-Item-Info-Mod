@@ -1,1 +1,1 @@
-return {title = "8 Inch Nails", id = 359, description = {'The increased knockback will also affect Brimstone, which usually has no knockback at all', '+1.5 Damage Up', "Replaces Isaac's tears with nails, which have increased knockback"}}
+return {title = "8 Inch Nails", id = "359", description = {'+1.5 Damage Up', 'The increased knockback will also affect Brimstone, which usually has no knockback at all', "Replaces Isaac's tears with nails, which have increased knockback"}}

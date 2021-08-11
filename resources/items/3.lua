@@ -1,1 +1,1 @@
-return {title = "Spoon Bender", id = 3, description = {"Gives Isaac's tears a homing effect", 'REPENTANCE - Homing tears now target enemies much more reliably'}}
+return {title = "Spoon Bender", id = "3", description = {'REPENTANCE - Homing tears now target enemies much more reliably', "Gives Isaac's tears a homing effect"}}

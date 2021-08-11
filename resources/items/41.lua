@@ -1,1 +1,1 @@
-return {title = "Mom's Pad", id = 41, description = {'Counts as 1 of 3 mom items needed towards the Mom transformation', 'When used, causes all enemies in the current room to run away from Isaac in fear for 5 seconds'}}
+return {title = "Mom's Pad", id = "41", description = {'When used, causes all enemies in the current room to run away from Isaac in fear for 5 seconds', 'Counts as 1 of 3 mom items needed towards the Mom transformation'}}

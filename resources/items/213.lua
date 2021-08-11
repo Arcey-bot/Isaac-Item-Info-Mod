@@ -1,1 +1,1 @@
-return {title = "Lost Contact", id = 213, description = {"All of Isaac's tears now have a shield, allowing them to block an enemy projectile", '-0.16 Shot Speed Down', "If a tear blocks something, both Isaac's and the enemies tears are destroyed"}}
+return {title = "Lost Contact", id = "213", description = {"If a tear blocks something, both Isaac's and the enemies tears are destroyed", "All of Isaac's tears now have a shield, allowing them to block an enemy projectile", '-0.16 Shot Speed Down'}}

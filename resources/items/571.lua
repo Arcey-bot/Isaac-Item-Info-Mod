@@ -1,1 +1,1 @@
-return {title = "Orphan Socks", id = 571, description = {"Allows you to walk on harmful floor effects without taking damage (e.g. spikes, creep). Doesn't include Curse Room doors or spiked rocks", '+0.3 Speed Up', '+2 Soul Hearts'}}
+return {title = "Orphan Socks", id = "571", description = {"Allows you to walk on harmful floor effects without taking damage (e.g. spikes, creep). Doesn't include Curse Room doors or spiked rocks", '+0.3 Speed Up', '+2 Soul Hearts'}}

@@ -1,1 +1,1 @@
-return {title = "Death's Touch", id = 237, description = {"Isaac's tears turn into large scythes that pierce through enemies (Similar to how Death's scythes look)", '-0.3 Tears Down', 'x2 Tear Size', '+1.5 Damage Up'}}
+return {title = "Death's Touch", id = "237", description = {'-0.3 Tears Down', 'x2 Tear Size', "Isaac's tears turn into large scythes that pierce through enemies (Similar to how Death's scythes look)", '+1.5 Damage Up'}}
