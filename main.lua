@@ -52,7 +52,7 @@ local textAttrs = {
         color = KColor(1, 1, 1, 1),
         offset = Vector(0, 0),
         pos = Vector(250, 75),
-        scale = Vector(0.75, 0.75),
+        scale = Vector(1, 1),
         boxWidth = 200,
         center = true,
     },
@@ -110,13 +110,6 @@ local function updateHeldCollectibles()
         end
     end
 
-end
-
-local function getItemText(id)
-    local item = require('resources/items/'..tostring(id)..'.lua')
-    Isaac.DebugString(item.title)
-    Isaac.DebugString(item.id)
-    Isaac.DebugString(item.description[1])
 end
 
 -- Resize text as needed to render within text's limits
