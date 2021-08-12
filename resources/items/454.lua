@@ -1,1 +1,1 @@
-return {title = "Polydactyly", id = "454", description = {'Drops a random card, pill or rune on pickup', 'Allows Isaac to carry two cards, runes or pills (or any combination of these) at the same time'}}
+return {title = "Polydactyly", id = "454", description = {"Allows Isaac to carry two cards, runes or pills ", "(or any combination of these) at the same time ", "Drops a random card, pill or rune on pickup ", }}

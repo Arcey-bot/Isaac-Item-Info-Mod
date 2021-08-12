@@ -1,1 +1,1 @@
-return {title = "Lord of the Pit", id = "82", description = {'Gives Isaac demon wings and the ability to fly', 'Counts as 1 of 3 evil items needed towards the Leviathan transformation.', '+0.3 Speed Up'}}
+return {title = "Lord of the Pit", id = "82", description = {"Gives Isaac demon wings and the ability to fly ", "+0.3 Speed Up", }}

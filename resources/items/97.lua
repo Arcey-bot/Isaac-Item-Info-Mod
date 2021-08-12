@@ -1,1 +1,1 @@
-return {title = "The Book of Sin", id = "97", description = {'Any pickups are possible from this item, including Bombs, hearts, keys, coins, pills, batteries, tarot cards, runes etc', 'Spawns a random pickup on the floor', 'Counts as 1 of 3 book items needed towards the Bookworm transformation'}}
+return {title = "The Book of Sin", id = "97", description = {"Spawns a random pickup on the floor", "Any pickups are possible from this item, ", "including Bombs, hearts, keys, coins, pills, ", "batteries, tarot cards, runes etc ", }}

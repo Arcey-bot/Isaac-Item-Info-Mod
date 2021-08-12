@@ -1,1 +1,1 @@
-return {title = "Tropicamide", id = "659", description = {'+1.5 Range Up', 'Tear Size Up'}}
+return {title = "Tropicamide", id = "659", description = {"+1.5 Range Up", "Tear Size Up", }}

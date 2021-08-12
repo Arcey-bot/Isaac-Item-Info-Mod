@@ -1,1 +1,1 @@
-return {title = "Wooden Nickel", id = "349", description = {'When used, has a 50% chance to drop one random type of coin (penny, nickel or dime)'}}
+return {title = "Wooden Nickel", id = "349", description = {"When used, has a 50% chance to drop one random ", "type of coin (penny, nickel or dime) ", }}

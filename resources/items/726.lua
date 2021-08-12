@@ -1,1 +1,1 @@
-return {title = "Hemoptysis", id = "726", description = {'If an enemy is pushed into a wall or object it takes 10 damage', 'Allows you to quickly double tap a shoot button to sneeze on nearby enemies, dealing x1.5 your tear damage and pushing them back slightly'}}
+return {title = "Hemoptysis", id = "726", description = {"Allows you to quickly double tap a shoot button ", "to sneeze on nearby enemies, dealing x1.5 your ", "tear damage and pushing them back slightly ", "If an enemy is pushed into a wall or object it ", "takes 10 damage ", }}

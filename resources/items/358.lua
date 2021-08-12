@@ -1,1 +1,1 @@
-return {title = "The Wiz", id = "358", description = {'Isaac wears a dunce hat and fires 2 tears at once diagonally, similar to the R U A WIZARD pill tear pattern', 'Gives Isaac spectral tears which allows them to travel through objects in the environment (i.e. rocks)'}}
+return {title = "The Wiz", id = "358", description = {"Isaac wears a dunce hat and fires 2 tears at once ", "diagonally, similar to the R U A WIZARD pill tear pattern ", "Gives Isaac spectral tears which allows them ", "to travel through objects in the environment ", "(i.e. rocks) ", }}

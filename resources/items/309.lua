@@ -1,1 +1,1 @@
-return {title = "Pisces", id = "309", description = {'x1.25 Tear Size Up', 'Tears now have a bigger knockback effect, which pushes enemies backwards', '-1 Tear Delay (Tears Up)', 'Counts as 1 of 3 astrology items needed in the same run to unlock Planetariums'}}
+return {title = "Pisces", id = "309", description = {"-1 Tear Delay (Tears Up)", "x1.25 Tear Size Up", "Tears now have a bigger knockback effect, ", "which pushes enemies backwards ", }}

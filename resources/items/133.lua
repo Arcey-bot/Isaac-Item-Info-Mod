@@ -1,1 +1,1 @@
-return {title = "Guppy's Paw", id = "133", description = {'When used, removes one heart container and gives you 3 soul hearts', 'Bone hearts cannot be converted', 'Counts as 1 of 3 cat items needed towards the Guppy transformation'}}
+return {title = "Guppy's Paw", id = "133", description = {"When used, removes one heart container and ", "gives you 3 soul hearts ", "Bone hearts cannot be converted", }}

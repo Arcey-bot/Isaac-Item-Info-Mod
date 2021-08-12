@@ -1,1 +1,1 @@
-return {title = "Soy Milk", id = "330", description = {'-80% Damage Down', 'REPENTANCE - Soy Milk tears now cause drastically less knockback', 'Very high Tears Up: Tears * 5.5', 'x0.5 Tear Size'}}
+return {title = "Soy Milk", id = "330", description = {"Very high Tears Up: Tears * 5.5", "-80% Damage Down", "x0.5 Tear Size", "REPENTANCE - Soy Milk tears now cause ", "drastically less knockback ", }}

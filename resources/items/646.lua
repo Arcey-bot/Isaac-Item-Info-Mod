@@ -1,1 +1,1 @@
-return {title = "Brimstone Bombs", id = "646", description = {'+5 Bombs', 'Your bombs now explode and fire 4 Brimstone lasers in all cardinal directions', 'Each brimstone laser deals 8 damage per tick for 13 total hits'}}
+return {title = "Brimstone Bombs", id = "646", description = {"+5 Bombs", "Your bombs now explode and fire 4 Brimstone ", "lasers in all cardinal directions ", "Each brimstone laser deals 8 damage per tick ", "for 13 total hits ", }}

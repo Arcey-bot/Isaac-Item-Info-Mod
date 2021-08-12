@@ -1,1 +1,1 @@
-return {title = "The Halo", id = "101", description = {'Counts as 1 of 3 angel items needed towards the Seraphim transformation', '+1 HP Up', '+0.3 Damage Up', 'Heals one red heart container when picked up', '+0.38 Range Up', '+0.3 Speed Up', '+0.2 Tears Up'}}
+return {title = "The Halo", id = "101", description = {"+1 HP Up", "+0.3 Damage Up", "+0.2 Tears Up", "+0.38 Range Up", "+0.3 Speed Up", "Heals one red heart container when picked up ", }}

@@ -1,1 +1,1 @@
-return {title = "Censer", id = "387", description = {'Gives Isaac a familiar golden Censer which creates a huge aura of light that slows down any enemies inside it'}}
+return {title = "Censer", id = "387", description = {"Gives Isaac a familiar golden Censer which ", "creates a huge aura of light that slows down any enemies ", "inside it ", }}

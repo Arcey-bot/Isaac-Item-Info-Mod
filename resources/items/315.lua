@@ -1,1 +1,1 @@
-return {title = "Strange Attractor", id = "315", description = {"Enemies and pickups (keys, bombs etc.) are now magnetically attracted to Isaac's tears", 'Can cause some enemies to have unpredictable movement'}}
+return {title = "Strange Attractor", id = "315", description = {"Enemies and pickups (keys, bombs etc.) are now ", "magnetically attracted to Isaac's tears ", "Can cause some enemies to have unpredictable ", "movement ", }}

@@ -1,1 +1,1 @@
-return {title = "???'s Only Friend", id = "320", description = {'Counts as 1 of 3 fly items needed towards the Beelzebub transformation', "A familiar fly that can be moved around via use of the arrow keys dealing 2.5 contact damage per tick, similar to the Ludovico Technique's mechanic"}}
+return {title = "???'s Only Friend", id = "320", description = {"A familiar fly that can be moved around via use ", "of the arrow keys dealing 2.5 contact damage per ", "tick, similar to the Ludovico Technique's mechanic ", }}

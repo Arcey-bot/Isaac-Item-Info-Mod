@@ -1,1 +1,1 @@
-return {title = "The Sad Onion", id = "1", description = {'+0.7 Tears Up'}}
+return {title = "The Sad Onion", id = "1", description = {"+0.7 Tears Up", }}

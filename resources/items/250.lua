@@ -1,1 +1,1 @@
-return {title = "Bogo Bombs", id = "250", description = {'An item only found in the Shop item pool', 'All bomb pickups are now 1+1 bombs'}}
+return {title = "Bogo Bombs", id = "250", description = {"All bomb pickups are now 1+1 bombs", "An item only found in the Shop item pool", }}

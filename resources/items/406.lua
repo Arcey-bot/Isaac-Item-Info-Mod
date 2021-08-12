@@ -1,1 +1,1 @@
-return {title = "D8", id = "406", description = {'Will only effect your damage, tears, range and speed stats', 'Each stat is given a multiplier that applies after all other adjustments', 'When used, the D8 rerolls all of your stats'}}
+return {title = "D8", id = "406", description = {"When used, the D8 rerolls all of your stats ", "Will only effect your damage, tears, range and ", "speed stats ", "Each stat is given a multiplier that applies ", "after all other adjustments ", }}

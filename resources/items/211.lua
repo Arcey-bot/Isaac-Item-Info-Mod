@@ -1,1 +1,1 @@
-return {title = "Spiderbaby", id = "211", description = {'REPENTANCE - Buffed, used to spawn 1-2 spiders', 'Spawns 2-5 friendly attack spiders every time you take damage', 'Counts as 1 of 3 spider items needed towards the Spider Baby transformation'}}
+return {title = "Spiderbaby", id = "211", description = {"Spawns 2-5 friendly attack spiders every time ", "you take damage ", "REPENTANCE - Buffed, used to spawn 1-2 spiders ", }}

@@ -1,1 +1,1 @@
-return {title = "Binky", id = "438", description = {'+0.75 Tears Up', 'Makes Isaac very small like a baby, reducing his hitbox size', '+1 Soul heart', 'Isaac size down'}}
+return {title = "Binky", id = "438", description = {"+1 Soul heart", "+0.75 Tears Up", "Isaac size down", "Makes Isaac very small like a baby, reducing ", "his hitbox size ", }}

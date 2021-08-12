@@ -1,1 +1,1 @@
-return {title = "Demon Baby", id = "113", description = {'A familiar which follows Isaac and automatically fires tears that deal 3 damage each at any enemies in close range', 'Counts as 1 of 3 familiar items needed towards the Conjoined transformation.'}}
+return {title = "Demon Baby", id = "113", description = {"A familiar which follows Isaac and ", "automatically fires tears that deal 3 damage each at any ", "enemies in close range ", }}

@@ -1,1 +1,1 @@
-return {title = "Guppy's Collar", id = "212", description = {'When Isaac dies, he has a 50% chance to resurrect with 1/2 a heart', 'Counts as 1 of 3 cat items needed towards the Guppy transformation'}}
+return {title = "Guppy's Collar", id = "212", description = {"When Isaac dies, he has a 50% chance to ", "resurrect with 1/2 a heart ", }}

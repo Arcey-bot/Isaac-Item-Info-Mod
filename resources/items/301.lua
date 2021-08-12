@@ -1,1 +1,1 @@
-return {title = "Cancer", id = "301", description = {'After getting hit once, you gain a damage reduction for the rest of the room similar to The Wafer item (-50% damage taken)', '+3 Soul Hearts', 'Counts as 1 of 3 astrology items needed in the same run to unlock Planetariums'}}
+return {title = "Cancer", id = "301", description = {"+3 Soul Hearts", "After getting hit once, you gain a damage ", "reduction for the rest of the room similar to The Wafer ", "item (-50% damage taken) ", }}

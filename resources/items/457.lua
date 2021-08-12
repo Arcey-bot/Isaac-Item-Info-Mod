@@ -1,1 +1,1 @@
-return {title = "Cone Head", id = "457", description = {'+1 Soul Heart', 'Isaac flashes blue very briefly when damage is negated by this item', 'Each time you take damage from any source, Cone Head has a 20% chance to prevent it from reducing your health'}}
+return {title = "Cone Head", id = "457", description = {"+1 Soul Heart", "Each time you take damage from any source, Cone ", "Head has a 20% chance to prevent it from reducing ", "your health ", "Isaac flashes blue very briefly when damage is ", "negated by this item ", }}

@@ -6,6 +6,7 @@ local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 -- TODO: Flickering on initial item selection. Fixable?
 -- TODO: Reformat .lua descriptions
 --      Maybe due to HOW MUCH is called onRender every frame? Fixed later?
+--      Does it flicker when descriptions are not rendered?
 
 -- Pills/Cards/Trinkets not currently supported
 -- Shader to darken screen slightly when opening menu?

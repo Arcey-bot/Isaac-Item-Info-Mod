@@ -1,1 +1,1 @@
-return {title = "Blue Map", id = "246", description = {'Reveals the locations of the secret and super secret room for the current floor and all future floors'}}
+return {title = "Blue Map", id = "246", description = {"Reveals the locations of the secret and super ", "secret room for the current floor and all future ", "floors ", }}

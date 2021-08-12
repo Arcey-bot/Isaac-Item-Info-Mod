@@ -1,1 +1,1 @@
-return {title = "The Mark", id = "79", description = {'+0.2 Speed Up', '+1 Soul Heart', '+1.0 Damage Up', 'Counts as 1 of 3 evil items needed towards the Leviathan transformation'}}
+return {title = "The Mark", id = "79", description = {"+1.0 Damage Up", "+0.2 Speed Up", "+1 Soul Heart", }}

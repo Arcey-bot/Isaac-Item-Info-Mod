@@ -1,1 +1,1 @@
-return {title = "Fanny pack", id = "204", description = {'When you take damage, there is a 50% chance to drop a random heart, key, bomb or coin'}}
+return {title = "Fanny pack", id = "204", description = {"When you take damage, there is a 50% chance to ", "drop a random heart, key, bomb or coin ", }}

@@ -1,1 +1,1 @@
-return {title = "Pupula Duplex", id = "379", description = {"Transforms Isaac's tears into a wide arc shape which doubles their size and hitbox", 'Gives Isaac spectral tears which allows them to travel through objects in the environment (i.e. rocks)'}}
+return {title = "Pupula Duplex", id = "379", description = {"Transforms Isaac's tears into a wide arc shape ", "which doubles their size and hitbox ", "Gives Isaac spectral tears which allows them ", "to travel through objects in the environment ", "(i.e. rocks) ", }}

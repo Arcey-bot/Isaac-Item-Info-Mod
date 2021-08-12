@@ -1,1 +1,1 @@
-return {title = "Marrow", id = "541", description = {'Added as part of the Afterbirth+ Booster Pack #5', '+1 Bone Heart', 'Spawns 3 red hearts on the ground when picked up'}}
+return {title = "Marrow", id = "541", description = {"+1 Bone Heart", "Spawns 3 red hearts on the ground when picked up ", "Added as part of the Afterbirth+ Booster Pack ", "#5 ", }}

@@ -1,1 +1,1 @@
-return {title = "Odd Mushroom (Thin)", id = "120", description = {'+1.7 Tears Up', 'Damage Down (damage * 0.9 - 0.4)', 'Gives you a high rate of fire in exchange for a damage down', 'Counts as 1 of 3 mushroom items needed towards the Fun Guy transformation', '+0.3 Speed Up'}}
+return {title = "Odd Mushroom (Thin)", id = "120", description = {"Gives you a high rate of fire in exchange for a ", "damage down ", "+1.7 Tears Up", "+0.3 Speed Up", "Damage Down (damage * 0.9 - 0.4)", }}

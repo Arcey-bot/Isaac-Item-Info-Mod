@@ -1,1 +1,1 @@
-return {title = "Black Candle", id = "260", description = {'+1 Black Heart', 'Black Candle removes the teleportation effect of Cursed Eye', '+15% chance of a devil or angel room opening after the boss fight', 'Immunity to all floor curses (e.g. Curse of the Lost)'}}
+return {title = "Black Candle", id = "260", description = {"+1 Black Heart", "Immunity to all floor curses (e.g. Curse of the ", "Lost) ", "Black Candle removes the teleportation ", "effect of Cursed Eye ", "+15% chance of a devil or angel room opening ", "after the boss fight ", }}

@@ -1,1 +1,1 @@
-return {title = "Mr. Mega", id = "106", description = {'Can be found in the secret room', 'Bombs now do 185 damage (up from 100) and have a larger blast radius', '+5 Bombs', 'REPENTANCE - Mr. Mega bombs buffed from 110 to 185 each', 'Has a chance to drop from the Super Wrath miniboss fight'}}
+return {title = "Mr. Mega", id = "106", description = {"+5 Bombs", "Bombs now do 185 damage (up from 100) and have a ", "larger blast radius ", "Can be found in the secret room", "REPENTANCE - Mr. Mega bombs buffed from 110 to ", "185 each ", }}

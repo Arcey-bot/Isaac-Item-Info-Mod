@@ -1,1 +1,1 @@
-return {title = "Multidimensional Baby", id = "431", description = {'A familiar baby that will follow your movement pattern on a 2 second delay', 'Counts as 1 of 3 familiar items needed towards the Conjoined transformation.', 'Tears that pass through the baby will double up and gain x1.33 speed boost'}}
+return {title = "Multidimensional Baby", id = "431", description = {"A familiar baby that will follow your movement ", "pattern on a 2 second delay ", "Tears that pass through the baby will double up ", "and gain x1.33 speed boost ", }}

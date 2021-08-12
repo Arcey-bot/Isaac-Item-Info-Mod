@@ -1,1 +1,1 @@
-return {title = "Growth Hormones", id = "70", description = {'+0.2 Speed Up', 'Counts as 1 of 3 syringe items needed towards the Spun transformation', '+1.0 Damage Up'}}
+return {title = "Growth Hormones", id = "70", description = {"+1.0 Damage Up", "+0.2 Speed Up", }}

@@ -1,1 +1,1 @@
-return {title = "<3", id = "15", description = {'Has a chance to drop from the Gluttony miniboss fight', 'Fully restores all red heart containers', '+1 HP Up'}}
+return {title = "<3", id = "15", description = {"+1 HP Up", "Fully restores all red heart containers", }}

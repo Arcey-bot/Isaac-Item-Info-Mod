@@ -1,1 +1,1 @@
-return {title = "SMB Super Fan", id = "189", description = {'+1.5 Range Up', '+1 HP Up', '+0.2 Speed Up', '+0.3 Damage Up', 'Isaac turns red like Meatboy', '+0.2 Tears Up', 'Full red heart heal'}}
+return {title = "SMB Super Fan", id = "189", description = {"Isaac turns red like Meatboy", "+1 HP Up", "+0.3 Damage Up", "+0.2 Tears Up", "+1.5 Range Up", "+0.2 Speed Up", "Full red heart heal", }}

@@ -1,1 +1,1 @@
-return {title = "Safety Pin", id = "339", description = {'+1 Black Heart', '+1.5 Range Up', '+0.16 Shot Speed Up', 'When depleted, Black Hearts deal 40 damage to the entire room, in a Necronomicon style effect'}}
+return {title = "Safety Pin", id = "339", description = {"+1.5 Range Up", "+0.16 Shot Speed Up", "+1 Black Heart", "When depleted, Black Hearts deal 40 damage to ", "the entire room, in a Necronomicon style effect ", }}

@@ -1,1 +1,1 @@
-return {title = "Distant Admiration", id = "57", description = {'Counts as 1 of 3 fly items needed towards the Beelzebub transformation', 'Gives Isaac an orbiting fly which deals 5 contact damage to enemies per tick'}}
+return {title = "Distant Admiration", id = "57", description = {"Gives Isaac an orbiting fly which deals 5 ", "contact damage to enemies per tick ", }}

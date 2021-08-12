@@ -1,1 +1,1 @@
-return {title = "Brother Bobby", id = "8", description = {'A familiar which follows Isaac and shoots normal tears which do 3.5 damage', 'Counts as 1 of 3 familiar items needed towards the Conjoined transformation', 'REPENTANCE - Brother Bobby now has an increased rate of fire'}}
+return {title = "Brother Bobby", id = "8", description = {"A familiar which follows Isaac and shoots ", "normal tears which do 3.5 damage ", "REPENTANCE - Brother Bobby now has an ", "increased rate of fire ", }}

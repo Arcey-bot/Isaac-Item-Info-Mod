@@ -1,1 +1,1 @@
-return {title = "Roid Rage", id = "14", description = {'+1.5 Range Up', 'Counts as 1 of 3 syringe items needed towards the Spun transformation', '+0.3 Speed Up', '+0.5 Shot Height'}}
+return {title = "Roid Rage", id = "14", description = {"+0.3 Speed Up", "+1.5 Range Up", "+0.5 Shot Height", }}

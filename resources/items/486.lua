@@ -1,1 +1,1 @@
-return {title = "Dull Razor", id = "486", description = {'Upon use this item hurts Isaac without actually taking health away, allowing you to activate any items which trigger when taking damage without losing health'}}
+return {title = "Dull Razor", id = "486", description = {"Upon use this item hurts Isaac without ", "actually taking health away, allowing you to activate ", "any items which trigger when taking damage ", "without losing health ", }}
