@@ -179,6 +179,17 @@ local function renderMenuItems(offset)
     end
 end
 
+local function renderMenuCursor()
+    local cursor = Sprite()
+    cursor:Load("gfx/ui/menuitem.anm2", true)
+    cursor:SetFrame("Idle", 0)
+    cursor:LoadGraphics()
+    local cursorDrawPos = Vector(itemMenuAttrs.spacing.X * menuCursorPos.X + itemMenuAttrs.origin.X, 
+    itemMenuAttrs.spacing.Y * menuCursorPos.Y + itemMenuAttrs.origin.Y)
+    -- cursor:SetOverlayRenderPriority(true)
+    cursor:RenderLayer(2, Isaac.WorldToRenderPosition(cursorDrawPos))
+end
+
 function mod:onRender()
     if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() then
         updateHeldCollectibles()
@@ -195,9 +206,7 @@ function mod:onRender()
             menuCursorPos = Vector(1, 1)
             menuItemsOffset = 0
         end
-
-        -- updateHeldCollectibles()
-        
+       
         -- Create menu that items will be drawn on upon
         -- itemMenu.Scale = itemMenuAttrs.scale
         itemMenu:SetFrame("Idle", 0)
@@ -209,6 +218,7 @@ function mod:onRender()
 
         -- The game is not actually "paused", the player's inputs are essentially hijacked though
         --      Basically, you can still be attacked by enemies while this menu is open
+        -- TODO: When only one page of items, going up goes out of bounds
         if not Game():IsPaused() then
             -- Move cursor down
             if Input.IsActionTriggered(ButtonAction.ACTION_MENUDOWN, 0) then
@@ -262,19 +272,8 @@ function mod:onRender()
                 end
             end
         end
-        
-        -- Render cursor
-        local cursor = Sprite()
 
-        cursor:Load("gfx/ui/menuitem.anm2", true)
-        cursor:SetFrame("Idle", 0)
-        cursor:LoadGraphics()
-
-        local cursorDrawPos = Vector(itemMenuAttrs.spacing.X * menuCursorPos.X + itemMenuAttrs.origin.X, 
-        itemMenuAttrs.spacing.Y * menuCursorPos.Y + itemMenuAttrs.origin.Y)
-
-        -- cursor:SetOverlayRenderPriority(true)
-        cursor:RenderLayer(2, Isaac.WorldToRenderPosition(cursorDrawPos))
+        renderMenuCursor()
     end
 end
 
