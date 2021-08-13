@@ -1,1 +1,1 @@
-return {title = "Car Battery", id = "356", description = {"The Car Battery causes your spacebar item to ", "activate twice on each use ", "For example, with Yum Heart you would heal 2 ", "full red hearts instead of 1 ", }}
+return {title = "Car Battery", id = "356", description = {"The Car Battery causes your spacebar ", "item to activate twice on each use ", "For example, with Yum Heart you would ", "heal 2 full red hearts instead of 1 ", }}

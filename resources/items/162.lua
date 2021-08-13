@@ -1,1 +1,1 @@
-return {title = "Celtic Cross", id = "162", description = {"Upon taking damage, you have a 20% chance to ", "gain an invulnerability shield for 7 seconds ", "The chance to gain a shield is affected by your ", "luck stat and at +27 Luck it will activate every time ", }}
+return {title = "Celtic Cross", id = "162", description = {"Upon taking damage, you have a 20% ", "chance to gain an invulnerability ", "shield for 7 seconds ", "The chance to gain a shield is affected ", "by your luck stat and at +27 Luck it ", "will activate every time ", }}

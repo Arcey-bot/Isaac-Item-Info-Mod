@@ -1,1 +1,1 @@
-return {title = "Milk!", id = "436", description = {"Gives Isaac a familiar glass of milk that ", "follows him and spills on the floor upon taking damage ", "After being spilt, the milk gives you a -2 Tear ", "Delay (Tears up) for the rest of the room ", }}
+return {title = "Milk!", id = "436", description = {"Gives Isaac a familiar glass of milk ", "that follows him and spills on the ", "floor upon taking damage ", "After being spilt, the milk gives you a ", "-2 Tear Delay (Tears up) for the rest ", "of the room ", }}

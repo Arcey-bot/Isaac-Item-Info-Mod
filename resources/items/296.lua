@@ -1,1 +1,1 @@
-return {title = "Converter", id = "296", description = {"When used, converts 1 soul/black heart into 1 ", "red heart container ", "This item will take from your soul hearts first ", "REPENTANCE - Converter now only costs one soul ", "heart to use (previously costed two) ", }}
+return {title = "Converter", id = "296", description = {"When used, converts 1 soul/black heart ", "into 1 red heart container ", "This item will take from your soul ", "hearts first ", "REPENTANCE - Converter now only costs ", "one soul heart to use (previously ", "costed two) ", }}

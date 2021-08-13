@@ -1,1 +1,1 @@
-return {title = "Book of Revelations", id = "78", description = {"Upon use, gives Isaac an extra Soul heart ", "Using this item gives you a higher chance of ", "finding a horsemen boss at the end of the floor ", "+17.5% chance of a Devil Deal opening after the ", "boss fight ", }}
+return {title = "Book of Revelations", id = "78", description = {"Upon use, gives Isaac an extra Soul ", "heart ", "Using this item gives you a higher ", "chance of finding a horsemen boss at ", "the end of the floor ", "+17.5% chance of a Devil Deal opening ", "after the boss fight ", }}

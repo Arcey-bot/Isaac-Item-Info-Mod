@@ -1,1 +1,1 @@
-return {title = "The Halo", id = "101", description = {"+1 HP Up", "+0.3 Damage Up", "+0.2 Tears Up", "+0.38 Range Up", "+0.3 Speed Up", "Heals one red heart container when picked up ", }}
+return {title = "The Halo", id = "101", description = {"+1 HP Up", "+0.3 Damage Up", "+0.2 Tears Up", "+0.38 Range Up", "+0.3 Speed Up", "Heals one red heart container when ", "picked up ", }}

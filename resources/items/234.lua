@@ -1,1 +1,1 @@
-return {title = "Infestation 2", id = "234", description = {"Creates a friendly blue spider when you kill an ", "enemy ", "Spiders are spawned at the location where the ", "enemy died ", }}
+return {title = "Infestation 2", id = "234", description = {"Creates a friendly blue spider when you ", "kill an enemy ", "Spiders are spawned at the location ", "where the enemy died ", }}

@@ -1,1 +1,1 @@
-return {title = "Habit", id = "156", description = {"When you take damage, this item recharges one ", "room's worth of charge to your spacebar item ", "For example, with the D6 you would need to take ", "damage 6 times to fully recharge it ", }}
+return {title = "Habit", id = "156", description = {"When you take damage, this item ", "recharges one room's worth of charge to ", "your spacebar item ", "For example, with the D6 you would need ", "to take damage 6 times to fully ", "recharge it ", }}

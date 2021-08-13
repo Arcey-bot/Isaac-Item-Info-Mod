@@ -1,1 +1,1 @@
-return {title = "Champion Belt", id = "208", description = {"+1.0 Damage Up", "Increases the chance of champion enemies ", "appearing by 15% ", "Doesn't affect the chance for champion bosses ", "to spawn ", "An item only found in the Shop room pool", }}
+return {title = "Champion Belt", id = "208", description = {"+1.0 Damage Up", "Increases the chance of champion ", "enemies appearing by 15% ", "Doesn't affect the chance for champion ", "bosses to spawn ", "An item only found in the Shop room pool", }}

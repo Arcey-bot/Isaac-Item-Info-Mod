@@ -1,1 +1,1 @@
-return {title = "Leech", id = "270", description = {"Spawns a familiar leech on the ground that ", "hunts down enemies and heals you for half a heart each ", "time it eats one ", "The Leech deals 1.5 contact damage per tick ", }}
+return {title = "Leech", id = "270", description = {"Spawns a familiar leech on the ground ", "that hunts down enemies and heals you ", "for half a heart each time it eats one ", "The Leech deals 1.5 contact damage per ", "tick ", }}

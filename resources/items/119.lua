@@ -1,1 +1,1 @@
-return {title = "Blood Bag", id = "119", description = {"+1 HP Up", "+0.3 Speed Up", "Heals for 5 full red hearts", "Has a chance to drop while playing any Blood ", "Donation machine ", }}
+return {title = "Blood Bag", id = "119", description = {"+1 HP Up", "+0.3 Speed Up", "Heals for 5 full red hearts", "Has a chance to drop while playing any ", "Blood Donation machine ", }}

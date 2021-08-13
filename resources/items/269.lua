@@ -1,1 +1,1 @@
-return {title = "Headless Baby", id = "269", description = {"A familiar that follows Isaac and leaves blood ", "creep on the floor as it floats, hurting enemies that ", "walk over it for 2 damage per tick ", }}
+return {title = "Headless Baby", id = "269", description = {"A familiar that follows Isaac and ", "leaves blood creep on the floor as it ", "floats, hurting enemies that walk over ", "it for 2 damage per tick ", }}

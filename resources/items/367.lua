@@ -1,1 +1,1 @@
-return {title = "Sticky Bombs", id = "367", description = {"+5 Bombs", "This item causes your bombs to stick to enemies ", "When one of your bombs kills an enemy, a bunch of ", "blue spiders are spawned to fight by your side, ", "which deal x2 your current damage ", }}
+return {title = "Sticky Bombs", id = "367", description = {"+5 Bombs", "This item causes your bombs to stick to ", "enemies ", "When one of your bombs kills an enemy, ", "a bunch of blue spiders are spawned to ", "fight by your side, which deal x2 your ", "current damage ", }}

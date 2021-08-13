@@ -1,1 +1,1 @@
-return {title = "Brother Bobby", id = "8", description = {"A familiar which follows Isaac and shoots ", "normal tears which do 3.5 damage ", "REPENTANCE - Brother Bobby now has an ", "increased rate of fire ", }}
+return {title = "Brother Bobby", id = "8", description = {"A familiar which follows Isaac and ", "shoots normal tears which do 3.5 damage ", "REPENTANCE - Brother Bobby now has an ", "increased rate of fire ", }}

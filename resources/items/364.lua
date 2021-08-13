@@ -1,1 +1,1 @@
-return {title = "Friend Zone", id = "364", description = {"A white orbiting fly which deals 3 contact ", "damage per tick to enemies ", "This familiar orbits Isaac at a middle length ", "distance somewhere between Distant Admiration and ", "Forever Alone ", }}
+return {title = "Friend Zone", id = "364", description = {"A white orbiting fly which deals 3 ", "contact damage per tick to enemies ", "This familiar orbits Isaac at a middle ", "length distance somewhere between ", "Distant Admiration and Forever Alone ", }}

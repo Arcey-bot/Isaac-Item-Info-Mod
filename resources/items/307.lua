@@ -1,1 +1,1 @@
-return {title = "Capricorn", id = "307", description = {"+1 HP Up", "+0.5 Damage Up", "-1 Tear Delay (Tears Up)", "+0.1 Speed Up", "+0.75 Range Up", "+1 Key, +1 Bomb, +1 Coin", "Heals one red heart container when picked up ", }}
+return {title = "Capricorn", id = "307", description = {"+1 HP Up", "+0.5 Damage Up", "-1 Tear Delay (Tears Up)", "+0.1 Speed Up", "+0.75 Range Up", "+1 Key, +1 Bomb, +1 Coin", "Heals one red heart container when ", "picked up ", }}

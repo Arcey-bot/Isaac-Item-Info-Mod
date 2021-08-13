@@ -1,1 +1,1 @@
-return {title = "Sulfuric Acid", id = "463", description = {"+0.3 Damage Up", "Each tear has a chance to become acidic, ", "allowing it to break rocks, pots and other breakable ", "objects ", "Acidic tears can also be used to open secret ", "rooms ", }}
+return {title = "Sulfuric Acid", id = "463", description = {"+0.3 Damage Up", "Each tear has a chance to become ", "acidic, allowing it to break rocks, ", "pots and other breakable objects ", "Acidic tears can also be used to open ", "secret rooms ", }}

@@ -1,1 +1,1 @@
-return {title = "Forever Alone", id = "128", description = {"An orbiting fly which deals 2 contact damage ", "per tick to enemies ", }}
+return {title = "Forever Alone", id = "128", description = {"An orbiting fly which deals 2 contact ", "damage per tick to enemies ", }}

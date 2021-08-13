@@ -1,1 +1,1 @@
-return {title = "Head of the Keeper", id = "429", description = {"Isaac's tears become coins and now have a 5% ", "chance to drop pennies on the floor upon successfully ", "hitting an enemy ", "Has a chance to drop when exploding a dead ", "shopkeeper ", }}
+return {title = "Head of the Keeper", id = "429", description = {"Isaac's tears become coins and now have ", "a 5% chance to drop pennies on the ", "floor upon successfully hitting an ", "enemy ", "Has a chance to drop when exploding a ", "dead shopkeeper ", }}

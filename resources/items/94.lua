@@ -1,1 +1,1 @@
-return {title = "Sack of Pennies", id = "94", description = {"A bag that floats around following Isaac and ", "drops a random coin every 2 rooms ", }}
+return {title = "Sack of Pennies", id = "94", description = {"A bag that floats around following ", "Isaac and drops a random coin every 2 ", "rooms ", }}

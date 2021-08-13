@@ -1,1 +1,1 @@
-return {title = "FLUSH!", id = "291", description = {"When used, turns every normal enemy in the room ", "into poop! ", "Does not work on mini-bosses and bosses", "Kills poop bosses when used - Dingle, Dangle ", "and Brownie ", }}
+return {title = "FLUSH!", id = "291", description = {"When used, turns every normal enemy in ", "the room into poop! ", "Does not work on mini-bosses and bosses", "Kills poop bosses when used - Dingle, ", "Dangle and Brownie ", }}

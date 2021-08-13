@@ -1,1 +1,1 @@
-return {title = "Book of Shadows", id = "58", description = {"Gives the player an invulnerability effect ", "which lasts for a 10 seconds ", "Can be used to get free hits on the Blood ", "Donation machines and Devil Beggars ", }}
+return {title = "Book of Shadows", id = "58", description = {"Gives the player an invulnerability ", "effect which lasts for a 10 seconds ", "Can be used to get free hits on the ", "Blood Donation machines and Devil ", "Beggars ", }}

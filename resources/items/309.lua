@@ -1,1 +1,1 @@
-return {title = "Pisces", id = "309", description = {"-1 Tear Delay (Tears Up)", "x1.25 Tear Size Up", "Tears now have a bigger knockback effect, ", "which pushes enemies backwards ", }}
+return {title = "Pisces", id = "309", description = {"-1 Tear Delay (Tears Up)", "x1.25 Tear Size Up", "Tears now have a bigger knockback ", "effect, which pushes enemies backwards ", }}

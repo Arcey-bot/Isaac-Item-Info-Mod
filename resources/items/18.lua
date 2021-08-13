@@ -1,1 +1,1 @@
-return {title = "A Dollar", id = "18", description = {"Gives Isaac 99 coins", "Can drop from an exploding slot machine while ", "playing it ", }}
+return {title = "A Dollar", id = "18", description = {"Gives Isaac 99 coins", "Can drop from an exploding slot machine ", "while playing it ", }}

@@ -1,1 +1,1 @@
-return {title = "Rainbow Baby", id = "174", description = {"A familiar the follows Isaac and fires random ", "tears ", "Rainbow Baby's tears can choose from any of the ", "other familiars, such as homing, spectral, tar ", "shots etc ", }}
+return {title = "Rainbow Baby", id = "174", description = {"A familiar the follows Isaac and fires ", "random tears ", "Rainbow Baby's tears can choose from ", "any of the other familiars, such as ", "homing, spectral, tar shots etc ", }}

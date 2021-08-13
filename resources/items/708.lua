@@ -1,1 +1,1 @@
-return {title = "Stapler", id = "708", description = {"+1.0 Damage Up", "Staples one of Isaac's eyes shut, meaning he ", "only shoots tears from one eye. This means some ", "effects such as R U A WIZARD pills only fire tears in one ", "direction ", }}
+return {title = "Stapler", id = "708", description = {"+1.0 Damage Up", "Staples one of Isaac's eyes shut, ", "meaning he only shoots tears from one ", "eye. This means some effects such as R ", "U A WIZARD pills only fire tears in one ", "direction ", }}

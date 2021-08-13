@@ -1,1 +1,1 @@
-return {title = "Lord of the Pit", id = "82", description = {"Gives Isaac demon wings and the ability to fly ", "+0.3 Speed Up", }}
+return {title = "Lord of the Pit", id = "82", description = {"Gives Isaac demon wings and the ability ", "to fly ", "+0.3 Speed Up", }}

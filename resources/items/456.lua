@@ -1,1 +1,1 @@
-return {title = "Midnight Snack", id = "456", description = {"+1 HP Up", "REPENTANCE - This was renamed from Moldy Bread ", }}
+return {title = "Midnight Snack", id = "456", description = {"+1 HP Up", "REPENTANCE - This was renamed from ", "Moldy Bread ", }}

@@ -1,1 +1,1 @@
-return {title = "Keeper's Kin", id = "717", description = {"While in a room with enemies, blue spiders will ", "randomly spawn from objects in the room (e.g. rocks, ", "pots, stone blocks) ", "All rocks spawn 0-2 blue spiders when ", "destroyed ", }}
+return {title = "Keeper's Kin", id = "717", description = {"While in a room with enemies, blue ", "spiders will randomly spawn from ", "objects in the room (e.g. rocks, pots, ", "stone blocks) ", "All rocks spawn 0-2 blue spiders when ", "destroyed ", }}

@@ -1,1 +1,1 @@
-return {title = "Battery Pack", id = "603", description = {"When picked up, this item fully recharges your ", "currently held active item and drops between 2-4 battery ", "pickups. These can be smaller or big batteries ", }}
+return {title = "Battery Pack", id = "603", description = {"When picked up, this item fully ", "recharges your currently held active ", "item and drops between 2-4 battery ", "pickups. These can be smaller or big ", "batteries ", }}

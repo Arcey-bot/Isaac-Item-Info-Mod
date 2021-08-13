@@ -1,1 +1,1 @@
-return {title = "Pentagram", id = "51", description = {"+1.0 Damage Up", "+10% chance of a devil/angel room opening ", "while held ", "A second Pentagram will give an extra +5% ", "chance ", }}
+return {title = "Pentagram", id = "51", description = {"+1.0 Damage Up", "+10% chance of a devil/angel room ", "opening while held ", "A second Pentagram will give an extra ", "+5% chance ", }}

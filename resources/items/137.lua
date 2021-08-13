@@ -1,1 +1,1 @@
-return {title = "Remote Detonator", id = "137", description = {"+5 Bombs", "Bombs no longer automatically explode and ", "will only do so when you activate the remote ", "detonator ", "Can be used to detonate Dr. Fetus bombs early ", }}
+return {title = "Remote Detonator", id = "137", description = {"+5 Bombs", "Bombs no longer automatically explode ", "and will only do so when you activate ", "the remote detonator ", "Can be used to detonate Dr. Fetus bombs ", "early ", }}

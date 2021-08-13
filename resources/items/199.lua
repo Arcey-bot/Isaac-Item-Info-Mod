@@ -1,1 +1,1 @@
-return {title = "Mom's Key", id = "199", description = {"+2 Keys", "Doubles the yield of hearts, coins, bombs and ", "keys that spawn from non-red chests ", }}
+return {title = "Mom's Key", id = "199", description = {"+2 Keys", "Doubles the yield of hearts, coins, ", "bombs and keys that spawn from non-red ", "chests ", }}

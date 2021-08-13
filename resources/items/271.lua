@@ -1,1 +1,1 @@
-return {title = "Mystery Sack", id = "271", description = {"A bag that follows Isaac and drops a random ", "heart, coin, bomb or key every 5-6 rooms ", "(alternating, 5 rooms then 6, then repeats) ", "Can drop any kind of heart, coin, bomb or key ", }}
+return {title = "Mystery Sack", id = "271", description = {"A bag that follows Isaac and drops a ", "random heart, coin, bomb or key every ", "5-6 rooms (alternating, 5 rooms then 6, ", "then repeats) ", "Can drop any kind of heart, coin, bomb ", "or key ", }}

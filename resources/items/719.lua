@@ -1,1 +1,1 @@
-return {title = "Keeper's Box", id = "719", description = {"When used, spawns a random shop item or ", "consumable, however you have to pay the relevant cost to ", "pick it up ", "Can include anything that would appear in the ", "shop ", }}
+return {title = "Keeper's Box", id = "719", description = {"When used, spawns a random shop item or ", "consumable, however you have to pay the ", "relevant cost to pick it up ", "Can include anything that would appear ", "in the shop ", }}

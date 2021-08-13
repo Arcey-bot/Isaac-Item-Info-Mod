@@ -1,1 +1,1 @@
-return {title = "Ceremonial Robes", id = "216", description = {"+3 Black Hearts", "+1 Damage Up", "When depleted, Black Hearts deal 40 damage to ", "the entire room, in a Necronomicon style effect ", }}
+return {title = "Ceremonial Robes", id = "216", description = {"+3 Black Hearts", "+1 Damage Up", "When depleted, Black Hearts deal 40 ", "damage to the entire room, in a ", "Necronomicon style effect ", }}

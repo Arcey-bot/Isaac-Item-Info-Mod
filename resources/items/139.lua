@@ -1,1 +1,1 @@
-return {title = "Mom's Purse", id = "139", description = {"Isaac can now hold two trinkets at the same time ", "Drops a random trinket on the floor when picked ", "up ", "Allows you to pick up more trinkets while also ", "holding The Tick ", }}
+return {title = "Mom's Purse", id = "139", description = {"Isaac can now hold two trinkets at the ", "same time ", "Drops a random trinket on the floor ", "when picked up ", "Allows you to pick up more trinkets ", "while also holding The Tick ", }}

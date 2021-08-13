@@ -1,1 +1,1 @@
-return {title = "Magic 8 Ball", id = "194", description = {"+0.16 Shot Speed Up", "Gives Isaac a random tarot card when picked up ", "+15% chance for Planetariums to spawn", }}
+return {title = "Magic 8 Ball", id = "194", description = {"+0.16 Shot Speed Up", "Gives Isaac a random tarot card when ", "picked up ", "+15% chance for Planetariums to spawn", }}

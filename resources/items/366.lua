@@ -1,1 +1,1 @@
-return {title = "Scatter Bombs", id = "366", description = {"+5 bombs", "Causes your bombs to explode into 2-4 tiny ", "bombs ", "The smaller bombs deal half damage and have a ", "smaller explosion area. They also retain most of your ", "bomb synergizing items ", }}
+return {title = "Scatter Bombs", id = "366", description = {"+5 bombs", "Causes your bombs to explode into 2-4 ", "tiny bombs ", "The smaller bombs deal half damage and ", "have a smaller explosion area. They ", "also retain most of your bomb ", "synergizing items ", }}

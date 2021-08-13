@@ -1,1 +1,1 @@
-return {title = "The Belt", id = "28", description = {"+0.3 Speed Up", "REPENTANCE - Added back to the Gold Chest pool ", }}
+return {title = "The Belt", id = "28", description = {"+0.3 Speed Up", "REPENTANCE - Added back to the Gold ", "Chest pool ", }}

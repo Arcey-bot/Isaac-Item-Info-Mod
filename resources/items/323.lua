@@ -1,1 +1,1 @@
-return {title = "Isaac's Tears", id = "323", description = {"A spacebar item that fires 8 of Isaac's tears in ", "a circle around him ", "Tears spawned from this item keep most effect ", "that Isaac currently has applied to his tears ", }}
+return {title = "Isaac's Tears", id = "323", description = {"A spacebar item that fires 8 of Isaac's ", "tears in a circle around him ", "Tears spawned from this item keep most ", "effect that Isaac currently has applied ", "to his tears ", }}

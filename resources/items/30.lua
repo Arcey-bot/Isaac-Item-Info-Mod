@@ -1,1 +1,1 @@
-return {title = "Mom's Heels", id = "30", description = {"+1.5 Range Up", "REPENTANCE - Touching enemies deals 12 damage ", "to them ", }}
+return {title = "Mom's Heels", id = "30", description = {"+1.5 Range Up", "REPENTANCE - Touching enemies deals 12 ", "damage to them ", }}

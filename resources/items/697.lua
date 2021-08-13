@@ -1,1 +1,1 @@
-return {title = "Vanishing Twin", id = "697", description = {"A fetus familiar follows Isaac, and upon ", "entering the Boss room on each floor, it will transform ", "into a copy of the boss ", "This makes bosses a lot harder, however you now ", "get 2 boss item drops ", }}
+return {title = "Vanishing Twin", id = "697", description = {"A fetus familiar follows Isaac, and ", "upon entering the Boss room on each ", "floor, it will transform into a copy of ", "the boss ", "This makes bosses a lot harder, however ", "you now get 2 boss item drops ", }}

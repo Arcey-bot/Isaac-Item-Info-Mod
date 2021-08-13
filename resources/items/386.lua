@@ -1,1 +1,1 @@
-return {title = "D12", id = "386", description = {"When used, the D12 re-rolls any rocks into ", "another random type of object (e.g. poop, pots, TNT, ", "red poop, stone blocks etc.) ", }}
+return {title = "D12", id = "386", description = {"When used, the D12 re-rolls any rocks ", "into another random type of object ", "(e.g. poop, pots, TNT, red poop, stone ", "blocks etc.) ", }}

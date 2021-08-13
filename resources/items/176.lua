@@ -1,1 +1,1 @@
-return {title = "Stem Cells", id = "176", description = {"+1 HP Up", "+0.16 Shot Speed Up", "Heals one red heart container when picked up ", }}
+return {title = "Stem Cells", id = "176", description = {"+1 HP Up", "+0.16 Shot Speed Up", "Heals one red heart container when ", "picked up ", }}

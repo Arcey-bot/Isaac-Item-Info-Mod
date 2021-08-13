@@ -1,1 +1,1 @@
-return {title = "Yum Heart", id = "45", description = {"Heals Isaac for one whole red heart", "Maggy starts with this item", "When used as the Keeper, one coin HP is restored ", }}
+return {title = "Yum Heart", id = "45", description = {"Heals Isaac for one whole red heart", "Maggy starts with this item", "When used as the Keeper, one coin HP is ", "restored ", }}

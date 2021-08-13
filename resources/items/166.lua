@@ -1,1 +1,1 @@
-return {title = "D20", id = "166", description = {"Upon use, re-rolls all pickup consumables in ", "the current room into another random kind of ", "pickup ", "This includes all types of pickup such as ", "hearts, bombs, keys, coins, pills, tarot cards, ", "chests, trinkets etc ", }}
+return {title = "D20", id = "166", description = {"Upon use, re-rolls all pickup ", "consumables in the current room into ", "another random kind of pickup ", "This includes all types of pickup such ", "as hearts, bombs, keys, coins, pills, ", "tarot cards, chests, trinkets etc ", }}

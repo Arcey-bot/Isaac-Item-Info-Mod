@@ -1,1 +1,1 @@
-return {title = "Box", id = "198", description = {"When picked up, spawns 1 red heart, 1 key, 1 ", "bomb, 1 coin, 1 card/rune, 1 pill and 1 trinket ", }}
+return {title = "Box", id = "198", description = {"When picked up, spawns 1 red heart, 1 ", "key, 1 bomb, 1 coin, 1 card/rune, 1 ", "pill and 1 trinket ", }}

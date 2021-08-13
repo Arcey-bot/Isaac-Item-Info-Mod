@@ -1,1 +1,1 @@
-return {title = "Mom's Underwear", id = "29", description = {"+1.5 Range Up", "Gives 3-6 blue attack flies when picked up ", }}
+return {title = "Mom's Underwear", id = "29", description = {"+1.5 Range Up", "Gives 3-6 blue attack flies when picked ", "up ", }}
