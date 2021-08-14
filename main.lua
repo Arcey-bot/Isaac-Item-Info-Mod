@@ -221,7 +221,7 @@ function mod:onRender()
                     if #collectedItemIDs > menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) then
                         menuItemsOffset = menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)  
                     -- Not enough items to render another page, wrap around to initial page
-                    elseif #collectedItemIDs <= menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) and menuItemsOffset > 0 then
+                    else
                         menuItemsOffset = 0
                     end
                     menuCursorPos.Y = 1 
@@ -239,7 +239,7 @@ function mod:onRender()
                     if menuItemsOffset > 0 then
                         menuItemsOffset = menuItemsOffset - (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)
                     -- If there are more items than can be shown on first page, move to last page
-                    elseif #collectedItemIDs > itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y and menuItemsOffset == 0 then 
+                    else
                         --  Offset + 16 gives the index of every item that will be rendered with that offset 
                         -- Ex: ceil(49 items / (4 * 4)) = 4.     4 - 1 = 3.      3 * 4 * 4 = 48, exactly the offset the 49th item should have
                         menuItemsOffset = math.ceil(#collectedItemIDs / (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) - 1) * itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y
