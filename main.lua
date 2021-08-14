@@ -4,8 +4,7 @@ local mod = RegisterMod("Item Info", 1)
 local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 
 -- TODO: Flickering on initial item selection. Fixable?
---      Maybe due to HOW MUCH is called onRender every frame? Fixed later?
---      Does it flicker when descriptions are not rendered? Only rendered?
+--      Caused by switching the same variable's font. Each font needs its own variable to avoid flickering
 
 -- Pills/Cards/Trinkets not currently supported
 -- Shader to darken screen slightly when opening menu?
@@ -16,6 +15,7 @@ local collectedItemIDs = {}
 local collectedItemSprites = {}
 
 local menuOpen = false
+
 local menuCursorPos = Vector(1, 1)
 -- Offset 0 shows items 1-16, 1 shows items 17-32, etc.
 local menuItemsOffset = 0
@@ -44,6 +44,7 @@ local textAttrs = {
         scale = Vector(1, 1),
         boxWidth = 200,
         center = true,
+        writer = Font(),
     },
     subheader = {
         font = "font/terminus.fnt",
@@ -53,6 +54,7 @@ local textAttrs = {
         scale = Vector(1, 1),
         boxWidth = 200,
         center = true,
+        writer = Font(),
     },
     body = {
         font = "font/pftempestasevencondensed.fnt",
@@ -62,8 +64,12 @@ local textAttrs = {
         scale = Vector(1, 1),
         boxWidth = 0,
         center = false,
+        writer = Font(),
     },
 }
+
+textAttrs.header.writer:Load(textAttrs.header.font)
+textAttrs.body.writer:Load(textAttrs.body.font)
 
 -- Debug strings
 local str1 = ''
@@ -112,9 +118,7 @@ end
 
 -- settings is a table with the same properties as textAttrs.header/subheader/body
 local function renderText(str, settings)
-    local f = Font()
-    f:Load(settings.font)
-    f:DrawStringScaled(str, settings.pos.X + settings.offset.X, settings.pos.Y + settings.offset.Y, settings.scale.X, settings.scale.Y, settings.color, settings.boxWidth, settings.center)
+    settings.writer:DrawStringScaled(str, settings.pos.X + settings.offset.X, settings.pos.Y + settings.offset.Y, settings.scale.X, settings.scale.Y, settings.color, settings.boxWidth, settings.center)
 end
 
 -- Handles displaying all relevant text of selected item
@@ -274,6 +278,7 @@ function mod:onRender()
         end
 
         renderMenuCursor()
+
     end
 end
 
