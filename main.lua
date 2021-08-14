@@ -3,9 +3,6 @@ local mod = RegisterMod("Item Info", 1)
 -- Highest valid Item ID in this game's version
 local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 
--- TODO: Flickering on initial item selection. Fixable?
---      Caused by switching the same variable's font. Each font needs its own variable to avoid flickering
-
 -- Pills/Cards/Trinkets not currently supported
 -- Shader to darken screen slightly when opening menu?
 
