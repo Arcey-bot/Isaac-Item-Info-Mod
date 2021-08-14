@@ -43,16 +43,6 @@ local textAttrs = {
         center = true,
         writer = Font(),
     },
-    subheader = {
-        font = "font/terminus.fnt",
-        color = KColor(1, 1, 1, 1),
-        offset = Vector(0, 0),
-        pos = Vector(240, 75),
-        scale = Vector(1, 1),
-        boxWidth = 200,
-        center = true,
-        writer = Font(),
-    },
     body = {
         font = "font/pftempestasevencondensed.fnt",
         color = KColor(1, 1, 1, 1),
