@@ -3,8 +3,8 @@ local mod = RegisterMod("Item Info", 1)
 -- Highest valid Item ID in this game's version
 local NUM_ITEMS = Isaac.GetItemConfig():GetCollectibles().Size - 1
 
--- Pills/Cards/Trinkets not currently supported
--- Shader to darken screen slightly when opening menu?
+-- TODO: Description text scrolling
+-- TODO: Trinkets support
 
 -- Table holding ID of every item owned
 local collectedItemIDs = {}
@@ -78,29 +78,31 @@ local function updateHeldCollectibles()
     local player = Isaac.GetPlayer(0)
     local index = 1
 
-    -- Remove items the player no longer has 
-    while index <= #collectedItemIDs do
-        if not player:HasCollectible(collectedItemIDs[index]) then
-            -- Do not increments on same index removed, otherwise we skip an item
-            table.remove(collectedItemIDs, index)
-            table.remove(collectedItemSprites, index)
-        else
-            index = index + 1
+    if #collectedItemIDs ~= player:GetCollectibleCount() then
+
+        -- Remove items the player no longer has 
+        while index <= #collectedItemIDs do
+            if not player:HasCollectible(collectedItemIDs[index]) then
+                -- Do not increments on same index removed, otherwise we skip an item
+                table.remove(collectedItemIDs, index)
+                table.remove(collectedItemSprites, index)
+            else
+                index = index + 1
+            end
         end
-    end
-    
-    -- Get player's active & passive items
-    for i=1, NUM_ITEMS do
-        if player:HasCollectible(i) then
-            local item = Isaac.GetItemConfig():GetCollectible(i)
-            
-            if not contains(collectedItemIDs, item.ID) then
-                table.insert(collectedItemIDs, item.ID)
-                table.insert(collectedItemSprites, Sprite())
+        
+        -- Get player's active & passive items
+        for i=1, NUM_ITEMS do
+            if player:HasCollectible(i) then
+                local item = Isaac.GetItemConfig():GetCollectible(i)
+                
+                if not contains(collectedItemIDs, item.ID) then
+                    table.insert(collectedItemIDs, item.ID)
+                    table.insert(collectedItemSprites, Sprite())
+                end
             end
         end
     end
-
 end
 
 -- settings is a table with the same properties as textAttrs.header/subheader/body
@@ -209,7 +211,6 @@ function mod:onRender()
 
         -- The game is not actually "paused", the player's inputs are essentially hijacked though
         --      Basically, you can still be attacked by enemies while this menu is open
-        -- TODO: When only one page of items, going up goes out of bounds
         if not Game():IsPaused() then
             -- Move cursor down
             if Input.IsActionTriggered(ButtonAction.ACTION_MENUDOWN, 0) then
@@ -283,10 +284,6 @@ function mod:debugText()
     Isaac.RenderText(str2, 100, 125, 0, 255, 0, 255)
     Isaac.RenderText(str3, 300, 150, 0, 0, 255, 255)
 end
-
--- function mod:onNewRoom()
---     heldCollectibles()
--- end
 
 -- Callbacks
 
