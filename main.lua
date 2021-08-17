@@ -89,7 +89,6 @@ local function updateHeldTrinkets()
         if collectedItems[index]:IsTrinket() then
             -- Isaac no longer has this trinket
             if not player:HasTrinket(collectedItemIDs[index]) then
-                Isaac.DebugString('REMOVING TRINKET - '..collectedItems[index].Name)
                 collectedItemIDs.trinkets[collectedItemIDs[index]] = nil
                 table.remove(collectedItems, index)
                 table.remove(collectedItemIDs, index)
@@ -110,7 +109,6 @@ local function updateHeldTrinkets()
                 table.insert(collectedItemIDs, trinket.ID)
                 table.insert(collectedItemSprites, Sprite())
                 collectedItemIDs.trinkets[trinket.ID] = trinket.ID
-                Isaac.DebugString('ADDING TRINKET - '..trinket.Name)
                 numHeldTrinkets = numHeldTrinkets + 1
             end
         end
@@ -122,36 +120,33 @@ local function updateHeldCollectibles()
     local player = Isaac.GetPlayer(0)
     local index = 1
 
-    if #collectedItemIDs ~= player:GetCollectibleCount() then
-
-        -- Remove items the player no longer has 
-        while index <= #collectedItemIDs do
-            -- This can be the ID of a collectible
-            if collectedItems[index]:IsCollectible() then
-                -- Isaac no longer has this collectible
-                if not player:HasCollectible(collectedItemIDs[index]) then
-                    -- Do not increment on same index removed, otherwise we skip an item
-                    collectedItemIDs.collectibles[collectedItemIDs[index]] = nil
-                    table.remove(collectedItemIDs, index)
-                    table.remove(collectedItemSprites, index)
-                    table.remove(collectedItems, index)
-                    index = index - 1
-                end 
-            end
-            index = index + 1
+    -- Remove items the player no longer has 
+    while index <= #collectedItemIDs do
+        -- This can be the ID of a collectible
+        if collectedItems[index]:IsCollectible() then
+            -- Isaac no longer has this collectible
+            if not player:HasCollectible(collectedItemIDs[index]) then
+                -- Do not increment on same index removed, otherwise we skip an item
+                collectedItemIDs.collectibles[collectedItemIDs[index]] = nil
+                table.remove(collectedItemIDs, index)
+                table.remove(collectedItemSprites, index)
+                table.remove(collectedItems, index)
+                index = index - 1
+            end 
         end
-        
-        -- Get player's active & passive items
-        for i=1, NUM_COLLECTIBLES do
-            if player:HasCollectible(i) then
-                local item = Isaac.GetItemConfig():GetCollectible(i)
-                
-                if not collectedItemIDs.collectibles[item.ID] then
-                    table.insert(collectedItemIDs, item.ID)
-                    table.insert(collectedItemSprites, Sprite())
-                    table.insert(collectedItems, item)
-                    collectedItemIDs.collectibles[item.ID] = item.ID
-                end
+        index = index + 1
+    end
+    
+    -- Get player's active & passive items
+    for i=1, NUM_COLLECTIBLES do
+        if player:HasCollectible(i) then
+            local item = Isaac.GetItemConfig():GetCollectible(i)
+            
+            if not collectedItemIDs.collectibles[item.ID] then
+                table.insert(collectedItemIDs, item.ID)
+                table.insert(collectedItemSprites, Sprite())
+                table.insert(collectedItems, item)
+                collectedItemIDs.collectibles[item.ID] = item.ID
             end
         end
     end
@@ -247,8 +242,9 @@ end
 
 function mod:onRender()
     if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() then
-        updateHeldCollectibles()
-        updateHeldTrinkets()
+        -- updateHeldCollectibles()
+        -- updateHeldTrinkets()
+        updateItems()
         menuOpen = not menuOpen
         -- Reset cursor to beginning when menu is closed
         menuCursorPos = Vector(1, 1)
@@ -256,7 +252,8 @@ function mod:onRender()
     end
 
     if Input.IsButtonPressed(Keyboard.KEY_N, 0) and not Game():IsPaused() then
-        local ents = Isaac.GetRoomEntities(EntityType.ENTITY_PICKUP)
+        -- Only care about Type 5, Variants 100 & 350
+        local ents = Isaac.GetRoomEntities()
         str1 = tostring(ents)
         str2 = tostring(#ents)
         for _, v in ipairs(ents) do
@@ -361,7 +358,7 @@ end
 function mod:debugText()
     Isaac.RenderText(str1, 75, 50, 255, 0, 0, 255)
     Isaac.RenderText(str2, 75, 75, 0, 255, 0, 255)
-    Isaac.RenderText(str3, 100, 50, 0, 0, 255, 255)
+    Isaac.RenderText(str3, 200, 50, 0, 0, 255, 255)
 end
 
 -- Callbacks
