@@ -4,7 +4,9 @@ local mod = RegisterMod("Item Info", 1)
 local NUM_COLLECTIBLES = CollectibleType.NUM_COLLECTIBLES - 1
 local NUM_TRINKETS = TrinketType.NUM_TRINKETS - 1
 
+-- TODO: Text on menus to denote what menu is currently being viewed
 -- TODO: Description text scrolling
+-- TODO: Change buttons to prompt menus?
 
 -- Table holding Active/Passive/Trinkets in Isaac's inventory
 local collectedItems = {}
@@ -298,7 +300,7 @@ local function renderMenuCursor()
 end
 
 function mod:onRender()
-    if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() then
+    if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() and not floorMenuOpen then
         updateHeldCollectibles()
         updateHeldTrinkets()
         heldMenuOpen = not heldMenuOpen
@@ -307,7 +309,7 @@ function mod:onRender()
         menuItemsOffset = 0
     end
 
-    if Input.IsButtonTriggered(Keyboard.KEY_N, 0) and not Game():IsPaused() then
+    if Input.IsButtonTriggered(Keyboard.KEY_N, 0) and not Game():IsPaused() and not heldMenuOpen then
         -- TODO: This is pretty damn ugly too
         for _, v in ipairs(Isaac.GetRoomEntities()) do
             -- It is something we can pickup
