@@ -17,8 +17,9 @@ local collectedItemIDs = {
 -- Table holding sprite of every item owned
 local collectedItemSprites = {}
 
+local floorItems = {}
+
 local menuOpen = false
-local numHeldTrinkets = 0
 
 local menuCursorPos = Vector(1, 1)
 -- Offset 0 shows items 1-16, 1 shows items 17-32, etc.
@@ -93,7 +94,6 @@ local function updateHeldTrinkets()
                 table.remove(collectedItems, index)
                 table.remove(collectedItemIDs, index)
                 table.remove(collectedItemSprites, index)
-                numHeldTrinkets = numHeldTrinkets - 1
                 index = index - 1
             end
         end
@@ -109,7 +109,6 @@ local function updateHeldTrinkets()
                 table.insert(collectedItemIDs, trinket.ID)
                 table.insert(collectedItemSprites, Sprite())
                 collectedItemIDs.trinkets[trinket.ID] = trinket.ID
-                numHeldTrinkets = numHeldTrinkets + 1
             end
         end
     end
@@ -149,6 +148,7 @@ local function updateHeldCollectibles()
                 collectedItemIDs.collectibles[item.ID] = item.ID
             end
         end
+
     end
 end
 
@@ -229,63 +229,8 @@ local function renderMenuItems(offset)
     end
 end
 
-local function renderMenuCursor()
-    local cursor = Sprite()
-    cursor:Load("gfx/ui/menuitem.anm2", true)
-    cursor:SetFrame("Idle", 0)
-    cursor:LoadGraphics()
-    local cursorDrawPos = Vector(itemMenuAttrs.spacing.X * menuCursorPos.X + itemMenuAttrs.origin.X, 
-    itemMenuAttrs.spacing.Y * menuCursorPos.Y + itemMenuAttrs.origin.Y)
-    -- cursor:SetOverlayRenderPriority(true)
-    cursor:RenderLayer(2, Isaac.WorldToRenderPosition(cursorDrawPos))
-end
-
-function mod:onRender()
-    if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() then
-        -- updateHeldCollectibles()
-        -- updateHeldTrinkets()
-        updateItems()
-        menuOpen = not menuOpen
-        -- Reset cursor to beginning when menu is closed
-        menuCursorPos = Vector(1, 1)
-        menuItemsOffset = 0
-    end
-
-    if Input.IsButtonPressed(Keyboard.KEY_N, 0) and not Game():IsPaused() then
-        -- Only care about Type 5, Variants 100 & 350
-        local ents = Isaac.GetRoomEntities()
-        str1 = tostring(ents)
-        str2 = tostring(#ents)
-        for _, v in ipairs(ents) do
-            -- Type tells us it is pickupable
-            -- Variant tells us it is collectible/trinket/etc
-            -- Subtype tells us exactly what item it is. I.e. 34 is Book of Belial
-            Isaac.DebugString('Type - '..tostring(v.Type))
-            Isaac.DebugString('Subtype - '..tostring(v.SubType))
-            Isaac.DebugString('Variant - '..tostring(v.Variant))
-        end
-        local num = Isaac.GetPlayer(0):GetCollectibleCount()
-        str3 = tostring(num)
-    end
-
-    if menuOpen then
-        -- Close menu
-        if Input.IsActionTriggered(ButtonAction.ACTION_MENUBACK, 0) then
-            menuOpen = false
-            menuCursorPos = Vector(1, 1)
-            menuItemsOffset = 0
-        end
-       
-        -- Create menu that items will be drawn on upon
-        -- itemMenu.Scale = itemMenuAttrs.scale
-        itemMenu:SetFrame("Idle", 0)
-        itemMenu:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.pos))
-
-        renderMenuItems(menuItemsOffset)
-
-        renderSelectedItemText()
-
-        -- The game is not actually "paused", the player's inputs are essentially hijacked though
+local function handleCursorMovement()
+    -- The game is not actually "paused", the player's inputs are essentially hijacked though
         --      Basically, you can still be attacked by enemies while this menu is open
         if not Game():IsPaused() then
             -- Move cursor down
@@ -302,9 +247,6 @@ function mod:onRender()
                         menuItemsOffset = 0
                     end
                     menuCursorPos.Y = 1 
-                    -- We could call renderMenuItems(), but it shouldn't be necessary within onRender()
-                    -- Isaac.DebugString('Offset in menu - '..tostring(menuItemsOffset))
-                    -- renderMenuItems(menuItemsOffset)
                 end
 
             end
@@ -339,6 +281,60 @@ function mod:onRender()
                 end
             end
         end
+end
+
+local function renderMenuCursor()
+    local cursor = Sprite()
+    cursor:Load("gfx/ui/menuitem.anm2", true)
+    cursor:SetFrame("Idle", 0)
+    cursor:LoadGraphics()
+    local cursorDrawPos = Vector(itemMenuAttrs.spacing.X * menuCursorPos.X + itemMenuAttrs.origin.X, 
+    itemMenuAttrs.spacing.Y * menuCursorPos.Y + itemMenuAttrs.origin.Y)
+    -- cursor:SetOverlayRenderPriority(true)
+    cursor:RenderLayer(2, Isaac.WorldToRenderPosition(cursorDrawPos))
+end
+
+function mod:onRender()
+    if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() then
+        updateHeldCollectibles()
+        updateHeldTrinkets()
+        menuOpen = not menuOpen
+        -- Reset cursor to beginning when menu is closed
+        menuCursorPos = Vector(1, 1)
+        menuItemsOffset = 0
+    end
+
+    if Input.IsButtonPressed(Keyboard.KEY_N, 0) and not Game():IsPaused() then
+        -- Only care about Type 5, Variants 100 & 350
+        local ents = Isaac.GetRoomEntities()
+
+        for _, v in ipairs(ents) do
+            -- Type tells us it is pickupable
+            -- Variant tells us it is collectible/trinket/etc
+            -- Subtype tells us exactly what item it is. I.e. 34 is Book of Belial
+            Isaac.DebugString('Type - '..tostring(v.Type))
+            Isaac.DebugString('Subtype - '..tostring(v.SubType))
+            Isaac.DebugString('Variant - '..tostring(v.Variant))
+        end
+    end
+
+    if menuOpen then
+        -- Close menu
+        if Input.IsActionTriggered(ButtonAction.ACTION_MENUBACK, 0) then
+            menuOpen = false
+            menuCursorPos = Vector(1, 1)
+            menuItemsOffset = 0
+        end
+       
+        -- Create menu that items will be drawn on upon
+        itemMenu:SetFrame("Idle", 0)
+        itemMenu:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.pos))
+
+        renderMenuItems(menuItemsOffset)
+
+        renderSelectedItemText()
+
+        handleCursorMovement()
 
         renderMenuCursor()
 
