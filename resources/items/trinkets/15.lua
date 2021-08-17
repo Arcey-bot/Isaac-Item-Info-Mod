@@ -1,0 +1,1 @@
+return {title = "Lucky Rock", id = "15", description = {"33% chance to drop a coin for every ", "rock that you destroy ", "REPENTANCE - Previously was 100%, now ", "33% ", }}

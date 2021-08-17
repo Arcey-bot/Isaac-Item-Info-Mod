@@ -1,0 +1,1 @@
+return {title = "Beth's Faith", id = "142", description = {"While held at the start of each floor, ", "this trinket spawns four wisp familiar ", "orbitals around Isaac ", "These wisps are the same as the ones ", "created by the Book of Virtues item ", }}

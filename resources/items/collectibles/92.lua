@@ -1,0 +1,1 @@
+return {title = "Super Bandage", id = "92", description = {"+1 HP Up", "+2 Soul Hearts", "Heals one red heart container when ", "picked up ", }}

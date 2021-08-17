@@ -1,0 +1,1 @@
+return {title = "Stud Finder", id = "74", description = {"Higher chance to find crawl spaces when ", "exploding rocks ", }}

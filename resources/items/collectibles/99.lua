@@ -1,0 +1,1 @@
+return {title = "Little Gish", id = "99", description = {"A familiar that follows Isaac and fires ", "black tar tears, which slow enemy ", "movement and projectile speed for a few ", "seconds ", "Little Gish's tears do 3.5 damage", "Little Gish fires tears at a rate of 1 ", "tear per second ", }}

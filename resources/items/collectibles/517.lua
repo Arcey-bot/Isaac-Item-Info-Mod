@@ -1,0 +1,1 @@
+return {title = "Fast Bombs", id = "517", description = {"+7 Bombs", "Allows you to rapidly place bombs on ", "the ground ", "Added as part of the Afterbirth+ ", "Booster Pack #1 ", "REPENTANCE - Bombs no longer knock each ", "other around when the player has Fast ", "Bombs, allowing for a more controlled ", "line of explosions. ", }}

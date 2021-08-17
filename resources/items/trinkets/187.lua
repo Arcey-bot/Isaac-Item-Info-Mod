@@ -1,0 +1,1 @@
+return {title = "Broken Glasses", id = "187", description = {"Gives a 33% chance to spawn an extra ", "blind pedestal item in all future item ", "rooms. This one will be a hidden ", "question mark ", "Allows you to see what both items are ", "on alternative path floors ", "(Downpour/Dross, Mines/Ashpit, ", "Gehenna/Mausoleum) ", }}

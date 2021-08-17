@@ -1,0 +1,1 @@
+return {title = "Robo-Baby 2.0", id = "267", description = {"A familiar that is controlled via the ", "arrow keys and will automatically fire ", "a laser if anything is in its line of ", "sight ", "Robo-Baby 2.0's lasers deal 3.5 damage ", "per hit ", }}

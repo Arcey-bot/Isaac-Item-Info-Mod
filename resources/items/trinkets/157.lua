@@ -1,0 +1,1 @@
+return {title = "Torn Card", id = "157", description = {"Every 15 shots you will shoot an Ipecac ", "+ My Reflection shot ", "The tear will fly in the air for about ", "3 seconds and follows Isaac until it ", "falls and explodes. You need to move ", "out of the way or it will hurt Isaac, ", "but can be used to open anything ", "requiring a bomb e.g. Secret Rooms ", }}

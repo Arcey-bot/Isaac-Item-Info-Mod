@@ -1,0 +1,1 @@
+return {title = "Pinky Eye", id = "30", description = {"Isaac's tears have a chance to poison ", "enemies ", "The poison effect leaves a damage over ", "time, which deals 4 or 6 damage per ", "tick ", "The chance to poison enemies is ", "affected by your luck stat and at +18 ", "Luck it will activate every time ", }}

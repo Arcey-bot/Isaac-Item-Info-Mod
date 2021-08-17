@@ -1,0 +1,1 @@
+return {title = "Demon Baby", id = "113", description = {"A familiar which follows Isaac and ", "automatically fires tears that deal 3 ", "damage each at any enemies in close ", "range ", }}

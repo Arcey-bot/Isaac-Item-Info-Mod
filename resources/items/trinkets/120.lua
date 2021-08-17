@@ -1,0 +1,1 @@
+return {title = "Hairpin", id = "120", description = {"Fully recharges your active item at the ", "start of each boss fight ", "Added as part of the Afterbirth+ ", "Booster Pack #1 and based on the Steam ", "Workshop mod created by Zaratus ", }}

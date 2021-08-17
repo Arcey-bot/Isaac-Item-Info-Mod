@@ -1,0 +1,1 @@
+return {title = "Proptosis", id = "261", description = {"Gives Isaac high damage tears with a ", "short range ", "Tear size and damage falls off very ", "fast with this item, the further the ", "tear travels the less damage it does ", "Tear damage starts at triple (300%) and ", "decreases over range to eventually be ", "0% ", }}

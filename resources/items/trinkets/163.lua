@@ -1,0 +1,1 @@
+return {title = "Dingle Berry", id = "163", description = {"Spawns 2 friendly Dips upon clearing a ", "room ", "Dips that spawn after killing a Squirt ", "turn friendly ", }}

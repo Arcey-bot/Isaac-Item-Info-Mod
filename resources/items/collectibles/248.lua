@@ -1,0 +1,1 @@
+return {title = "Hive Mind", id = "248", description = {"Causes your friendly blue spiders and ", "flies to become bigger and do x2 more ", "damage ", "Allows Mom's Wig to spawn a maximum of ", "10 spiders at once instead of 5 ", "Fly and spider familiars become ", "stronger similar to BFFS ", }}

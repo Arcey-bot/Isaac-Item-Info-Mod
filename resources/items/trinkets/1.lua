@@ -1,0 +1,1 @@
+return {title = "Swallowed Penny", id = "1", description = {"Each time you get hit, you drop a coin ", "or two ", "REPENTANCE - No longer guaranteed to ", "drop coins as The Keeper ", }}

@@ -1,0 +1,1 @@
+return {title = "Liberty Cap", id = "32", description = {"While held, this trinket gives a random ", "mushroom effect each room ", "Possible mushrooms include: Mini Mush, ", "Odd Mushroom (Thin), Odd Mushroom ", "(Thick), The Compass ", }}

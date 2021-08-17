@@ -1,0 +1,1 @@
+return {title = "Expansion Pack", id = "181", description = {"Everytime you use your active item, you ", "have a chance to activate another ", "random active item ", }}

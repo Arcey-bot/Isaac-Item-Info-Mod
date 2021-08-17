@@ -1,0 +1,1 @@
+return {title = "Dead Dove", id = "185", description = {"Gives Isaac the ability to fly and ", "spectral tears ", "An item only found in the Angel room", }}

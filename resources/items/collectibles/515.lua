@@ -1,0 +1,1 @@
+return {title = "Mystery Gift", id = "515", description = {"A one-time use item that spawns a ", "random item from the current room's ", "item pool, with a chance for it to ", "spawn Lump of Coal or The Poop instead ", "Added as part of the Afterbirth+ ", "Booster Pack #1 and based on the Steam ", "Workshop mod created by Mills ", }}

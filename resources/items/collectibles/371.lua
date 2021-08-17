@@ -1,0 +1,1 @@
+return {title = "Curse of The Tower", id = "371", description = {"Causes Isaac to spawn 6 troll bombs on ", "the floor every time he gets hit, ", "similar to the Anarchist Cookbook ", "mechanic ", }}

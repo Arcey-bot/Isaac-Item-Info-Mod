@@ -1,0 +1,1 @@
+return {title = "Mother's Kiss", id = "156", description = {"While held you get +1 HP Up", "The first time you pick this trinket ", "up, the heart container will be filled. ", "This effect can't be abused - next time ", "it will be empty if dropped ", }}

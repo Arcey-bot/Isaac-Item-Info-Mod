@@ -1,0 +1,1 @@
+return {title = "Blessed Penny", id = "131", description = {"Chance to spawn half a soul heart when ", "picking up a coin ", "The chance scales up based on the ", "coin's worth: Penny = 16.66%, Double ", "Penny = 30.5%, Nickel = 59.7%, Dime = ", "83.3% ", }}

@@ -1,0 +1,1 @@
+return {title = "Black Lipstick", id = "17", description = {"Increases the chance for Black hearts ", "to spawn ", }}

@@ -1,0 +1,1 @@
+return {title = "Mom's Bottle of Pills", id = "102", description = {"When used, gives Isaac a random pill", }}

@@ -1,0 +1,1 @@
+return {title = "Bible Tract", id = "18", description = {"Gives you a higher chance of eternal ", "hearts ", "Contrary to popular belief, the Bible ", "Tract doesn't allow Angel Rooms to ", "appear after paying for a Devil Deal ", }}

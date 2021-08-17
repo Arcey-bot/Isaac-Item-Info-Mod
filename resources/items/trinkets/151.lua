@@ -1,0 +1,1 @@
+return {title = "Flat File", id = "151", description = {"While held this trinket causes spikes ", "to retract into the floor ", "Works for curse rooms - you no longer ", "take damage entering or leaving ", "Allows you to open spiked chests ", "without taking damage ", }}

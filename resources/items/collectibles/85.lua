@@ -1,0 +1,1 @@
+return {title = "Deck of Cards", id = "85", description = {"Gives Isaac a random tarot card on use", }}

@@ -1,0 +1,1 @@
+return {title = "Adoption Papers", id = "184", description = {"All shops only sell familiars while ", "holding this trinket ", "If you enter a shop while holding this ", "trinket, the effect won't undo by ", "dropping it until you move to a new ", "floor ", }}

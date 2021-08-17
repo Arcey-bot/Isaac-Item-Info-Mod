@@ -1,0 +1,1 @@
+return {title = "A Lighter", id = "135", description = {"Chance for enemies to burn when ", "entering a room ", "The chance for this effect to activate ", "is effected by your Luck stat ", }}

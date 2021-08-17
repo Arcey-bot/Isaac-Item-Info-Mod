@@ -1,0 +1,1 @@
+return {title = "Lucky Toe", id = "42", description = {"+1 Luck Up while held", }}

@@ -1,0 +1,1 @@
+return {title = "Box of Spiders", id = "288", description = {"When used, spawns 4-8 friendly blue ", "spiders on the floor ", "Blue Spiders do x2 of Isaac's damage", "REPENTANCE - Used to give 1-4 spiders ", "per use ", }}

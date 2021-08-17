@@ -1,0 +1,1 @@
+return {title = "Maggy's Bow", id = "312", description = {"+1 HP Up", "Heals one red heart container when ", "picked up ", "All future red hearts now heal for ", "double. Half hearts heal a whole heart ", "and full hearts heal 2 red hearts ", }}

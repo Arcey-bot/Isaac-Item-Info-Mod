@@ -1,0 +1,1 @@
+return {title = "Broken Syringe", id = "132", description = {"Gives you a random syringe effect every ", "room ", "The effect can be The Virus, Roid Rage, ", "Speed Ball, Experimental Treatment, ", "Synthoil, Euthanasia or Growth Hormones ", }}

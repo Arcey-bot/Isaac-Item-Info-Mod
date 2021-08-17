@@ -1,0 +1,1 @@
+return {title = "Eve's Bird Foot", id = "60", description = {"When you kill an enemy, you have a ", "chance to spawn a transparent Dead Bird ", "familiar ", "The Dead Bird familiar deals 2 damage ", "per tick to enemies while in contact ", "with them ", }}

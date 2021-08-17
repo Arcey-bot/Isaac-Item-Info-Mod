@@ -1,0 +1,1 @@
+return {title = "Ball of Tar", id = "231", description = {"Isaac leaves a trail of tar behind him ", "which will slow down enemies that walk ", "over it ", "Tears have a chance to slow enemies and ", "their projectiles for a short period of ", "time ", "The chance to slow enemies can improve ", "based on your luck stat and will always ", "slow enemies at +18 Luck ", }}

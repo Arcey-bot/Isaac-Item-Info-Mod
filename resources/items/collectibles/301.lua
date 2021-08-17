@@ -1,0 +1,1 @@
+return {title = "Cancer", id = "301", description = {"+3 Soul Hearts", "After getting hit once, you gain a ", "damage reduction for the rest of the ", "room similar to The Wafer item (-50% ", "damage taken) ", }}

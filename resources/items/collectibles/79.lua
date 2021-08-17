@@ -1,0 +1,1 @@
+return {title = "The Mark", id = "79", description = {"+1.0 Damage Up", "+0.2 Speed Up", "+1 Soul Heart", }}

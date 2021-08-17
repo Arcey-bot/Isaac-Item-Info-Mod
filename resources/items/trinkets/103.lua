@@ -1,0 +1,1 @@
+return {title = "Equality!", id = "103", description = {"When you have the same amount of coins, ", "bombs and keys, half consumables turn ", "into their doubled version ", "This effect works for any number of ", "consumables, including 0 and 99, as ", "long as the count for coins/keys/bombs ", "is equal ", }}

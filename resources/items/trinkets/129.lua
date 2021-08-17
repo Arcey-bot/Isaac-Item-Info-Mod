@@ -1,0 +1,1 @@
+return {title = "Jawbreaker", id = "129", description = {"Tears have a chance to become a tooth, ", "dealing x3.2 damage, similar to Tough ", "Love ", "The chance to fire a tooth with this ", "trinket is affected by your Luck stat ", "At +0 luck you have ~12% chance for ", "this effect to activate ", "At +9 luck every tear you fire will be ", "a tooth ", }}

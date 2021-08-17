@@ -1,0 +1,1 @@
+return {title = "Blasting Cap", id = "73", description = {"Exploding bombs now have a chance to ", "drop another bomb that you can pick up ", }}

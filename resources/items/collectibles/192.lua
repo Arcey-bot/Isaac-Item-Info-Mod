@@ -1,0 +1,1 @@
+return {title = "Telepathy for Dummies", id = "192", description = {"When used, Isaac gains homing shots and ", "+3.0 Range Up for the current room ", }}

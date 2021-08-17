@@ -1,0 +1,1 @@
+return {title = "Purple Heart", id = "5", description = {"Higher chance for champion enemies ", "while held ", }}

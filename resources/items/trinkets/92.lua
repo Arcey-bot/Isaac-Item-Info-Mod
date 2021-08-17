@@ -1,0 +1,1 @@
+return {title = "Cracked Crown", id = "92", description = {"Gives you extra stat upgrades based on ", "the items you've already collected that ", "have stat increases, at +20% of the ", "item's original increase ", "REPENTANCE - Reduced Cracked Crown's ", "stat bonuses to +20% (from +33%) and ", "removed the flat independent tears ", "upgrade from it ", }}

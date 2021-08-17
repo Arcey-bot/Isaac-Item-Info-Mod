@@ -1,0 +1,1 @@
+return {title = "Blind Rage", id = "81", description = {"Invincibility lasts longer after ", "getting hit (Increased i-frames) ", "This makes it possible to use the Blood ", "Donation machine twice from one hit of ", "damage ", }}

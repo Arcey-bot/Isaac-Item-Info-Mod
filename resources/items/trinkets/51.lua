@@ -1,0 +1,1 @@
+return {title = "Flat Penny", id = "51", description = {"Everytime you pick up a coin, you have ", "a 25% chance to spawn a key ", }}

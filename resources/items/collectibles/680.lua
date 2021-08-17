@@ -1,0 +1,1 @@
+return {title = "Montezuma's Revenge", id = "680", description = {"While firing tears, you now charges up ", "a poop attack for 3 seconds that when ", "released, fires from Isaac's behind ", "The poop attack deals your current tear ", "damage to any enemies caught in the ", "blast ", }}

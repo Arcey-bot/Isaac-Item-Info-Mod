@@ -1,0 +1,1 @@
+return {title = "Synthoil", id = "345", description = {"+1.0 Damage Up", "+1.5 Range Up", }}

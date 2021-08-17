@@ -1,0 +1,1 @@
+return {title = "Rotten Baby", id = "268", description = {"A familiar which follows Isaac and ", "spawns a blue flies as you're firing ", "tears ", "Rotten Baby can only create one fly at ", "a time, meaning if he has created a fly ", "he cannot make another until it is used ", "Blue Flies do double your tear damage", }}

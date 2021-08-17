@@ -1,0 +1,1 @@
+return {title = "Locust of Famine", id = "115", description = {"At the start of each new hostile room ", "you spawn a yellow attack fly, which ", "will target a nearby enemy, deal double ", "your tear damage and apply a slowing ", "effect to it ", }}

@@ -1,0 +1,1 @@
+return {title = "Bloody Crown", id = "111", description = {"While held, item rooms now appear on ", "the womb floors (The Womb, Utero and ", "Scarred Womb) ", "REPENTANCE - Causes item rooms to ", "appear on Corpse floors ", }}

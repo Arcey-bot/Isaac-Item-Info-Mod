@@ -1,0 +1,1 @@
+return {title = "Farting Baby", id = "404", description = {"A familiar that follows Isaac and ", "blocks tears ", "If a tear hits Farting Baby, there is a ", "10% chance for it to fart, with 3 ", "possible effects: Charm, Poison or ", "Knock back ", "Charm deals 5 damage. Poison deals 5 ", "damage initially and then 3.5 ", }}

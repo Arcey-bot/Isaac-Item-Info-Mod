@@ -1,0 +1,1 @@
+return {title = "Keeper's Bargain", id = "171", description = {"Has a decent chance for Devil Deals to ", "cost money instead of Health ", "The conversion rate is 1 heart ", "container to 15 coins ", "Items can be on discount similar to the ", "shop, making it 1 heart container = 7 ", "coins instead ", "Can be dropped to disable this effect ", "while in the room ", }}

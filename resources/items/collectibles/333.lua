@@ -1,0 +1,1 @@
+return {title = "The Mind", id = "333", description = {"Gives Isaac a full mapping effect, ", "revealing the entire floor and ", "locations of all secret rooms ", }}

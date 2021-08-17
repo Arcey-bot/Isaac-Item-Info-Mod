@@ -1,0 +1,1 @@
+return {title = "Fish Head", id = "29", description = {"Everytime Isaac takes damage, one blue ", "fly will spawn ", }}

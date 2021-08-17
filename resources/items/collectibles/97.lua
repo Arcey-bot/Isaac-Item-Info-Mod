@@ -1,0 +1,1 @@
+return {title = "The Book of Sin", id = "97", description = {"Spawns a random pickup on the floor", "Any pickups are possible from this ", "item, including Bombs, hearts, keys, ", "coins, pills, batteries, tarot cards, ", "runes etc ", }}

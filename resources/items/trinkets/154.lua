@@ -1,0 +1,1 @@
+return {title = "Dice Bag", id = "154", description = {"Every time you enter a brand new room, ", "you have a chance to get a random ", "one-time use Dice (e.g. D6, D20 etc.) ", }}

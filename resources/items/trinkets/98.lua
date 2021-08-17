@@ -1,0 +1,1 @@
+return {title = "Nose Goblin", id = "98", description = {"Your tears have a random chance to ", "become booger tears ", "Booger tears stick on to enemies and ", "deal periodic poison damage until they ", "die or 60 seconds passes. Each tick of ", "poison damage is equal to your normal ", "tear damage ", "The boogers will have a homing effect", }}

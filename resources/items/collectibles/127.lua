@@ -1,0 +1,1 @@
+return {title = "Forget Me Now", id = "127", description = {"Upon use, this item refreshes the ", "current floor with brand new rooms, ", "monsters and items, as if you had ", "entered a new floor ", }}

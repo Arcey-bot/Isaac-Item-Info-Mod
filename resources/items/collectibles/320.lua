@@ -1,0 +1,1 @@
+return {title = "???'s Only Friend", id = "320", description = {"A familiar fly that can be moved around ", "via use of the arrow keys dealing 2.5 ", "contact damage per tick, similar to the ", "Ludovico Technique's mechanic ", }}

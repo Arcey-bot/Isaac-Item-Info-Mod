@@ -1,0 +1,1 @@
+return {title = "Holy Grail", id = "184", description = {"+1 HP Up", "Gives Isaac the ability to fly", "Heals one red heart container when ", "picked up ", }}

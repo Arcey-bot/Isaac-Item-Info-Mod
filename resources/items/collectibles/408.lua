@@ -1,0 +1,1 @@
+return {title = "Athame", id = "408", description = {"Now when you take damage, a black ring ", "will appear around Isaac that damages ", "any enemies in contact with it ", "The ring damage scales with your tear ", "damage ", "REPENTANCE - No longer has a chance to ", "drop black hearts ", }}

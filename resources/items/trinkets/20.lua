@@ -1,0 +1,1 @@
+return {title = "Monkey's Paw", id = "20", description = {"When you reach half a heart of life ", "remaining, a black heart will spawn ", "After three black hearts have spawned, ", "the trinket dissapears ", }}

@@ -1,0 +1,1 @@
+return {title = "Dim Bulb", id = "101", description = {"Grants +0.5 Speed, +1.5 Range, +0.3 ", "Shot Speed, +0.4 Tears, +1.5 Damage ", "when Isaac's active item is completely ", "uncharged ", "One-time use items such as Mama Mega ", "count as uncharged and provide the ", "bonus from this trinket ", }}

@@ -1,0 +1,1 @@
+return {title = "Roid Rage", id = "14", description = {"+0.3 Speed Up", "+1.5 Range Up", "+0.5 Shot Height", }}

@@ -1,0 +1,1 @@
+return {title = "Sagittarius", id = "306", description = {"+0.2 Speed Up", "Grants piercing tears", "Tears do not travel through rocks with ", "this item ", }}

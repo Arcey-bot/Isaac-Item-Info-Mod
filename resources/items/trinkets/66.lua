@@ -1,0 +1,1 @@
+return {title = "Lazy Worm", id = "66", description = {"-0.4 Shot Speed Down", }}

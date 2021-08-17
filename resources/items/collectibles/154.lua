@@ -1,0 +1,1 @@
+return {title = "Chemical Peel", id = "154", description = {"+2 Damage Up for tears fired from ", "Isaac's left eye ", "If playing as Cain or you have an item ", "which modifies which eye you fire tears ", "from, each shot has a 50% chance to do ", "+2 Damage ", }}

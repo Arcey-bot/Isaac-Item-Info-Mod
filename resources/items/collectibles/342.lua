@@ -1,0 +1,1 @@
+return {title = "Blue Cap", id = "342", description = {"+1 HP Up", "+0.7 Tears Up", "-0.16 Shot Speed Down", "Heals one red heart container when ", "picked up ", "An item only found in the Boss Room pool", }}

@@ -1,0 +1,1 @@
+return {title = "Brain Worm", id = "144", description = {"Tears that miss enemies will redirect ", "themselves and travel 90 degrees ", "towards enemies ", "Tears must be roughly 2 tiles or closer ", "to activate this effect ", }}

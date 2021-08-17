@@ -1,0 +1,1 @@
+return {title = "The Pact", id = "80", description = {"+0.5 Damage Up", "+0.7 Tears Up", "+2 Black Hearts", }}

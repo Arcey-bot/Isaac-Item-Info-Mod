@@ -1,0 +1,1 @@
+return {title = "Vibrant Bulb", id = "100", description = {"Grants +0.25 Speed, +0.75 Range, +0.1 ", "Shot Speed, +0.2 Tears, +0.5 Damage and ", "+1 Luck when Isaac's active item is ", "fully charged ", "Infinite use items such as Potato ", "Peeler count as charged and provide the ", "bonus from this trinket ", }}

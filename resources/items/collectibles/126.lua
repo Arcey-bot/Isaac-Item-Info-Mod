@@ -1,0 +1,1 @@
+return {title = "Razor Blade", id = "126", description = {"When used, deals damage to Isaac in ", "exchange for +1.2 damage up which lasts ", "for the current room ", "Eve starts with this item after ", "donating 439 coins to the Greed ", "Donation Machine. ", }}

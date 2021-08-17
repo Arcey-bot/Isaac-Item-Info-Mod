@@ -1,0 +1,1 @@
+return {title = "Duct Tape", id = "109", description = {"Causes any orbitals you have to stop ", "moving while held ", "Stops shooting familiars from moving ", "(including Lilith's Incubus) ", "Some familiars with irregular movement ", "are not affected by Duct Tape, such as ", "Abel, BBF, Bumbo, Guppy's Hair Ball, ", "Lil Gurdy, Punching Bag, Robo-Baby 2.0, ", "Succubus ", }}

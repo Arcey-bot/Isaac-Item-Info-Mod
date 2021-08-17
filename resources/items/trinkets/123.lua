@@ -1,0 +1,1 @@
+return {title = "Filigree Feather", id = "123", description = {"Holding this trinket will cause the ", "Angel mini bosses to drop normal items ", "instead of Key Pieces ", "Added as part of the Afterbirth+ ", "Booster Pack #2, designed by Edmund ", "McMillen ", }}

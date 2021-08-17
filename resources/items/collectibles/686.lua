@@ -1,0 +1,1 @@
+return {title = "Soul Locket", id = "686", description = {"Spawns 1 soul heart on the floor", "Soul hearts give you small permanent ", "stat increases when picked up ", "Possible stats include +0.3 Range Up, ", "+0.2 Luck Up, +0.2 Damage Up, +0.1 ", "Tears Up, +0.04 Speed Up ", }}

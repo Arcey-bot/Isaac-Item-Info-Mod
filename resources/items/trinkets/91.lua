@@ -1,0 +1,1 @@
+return {title = "Meconium", id = "91", description = {"While held you have an increased chance ", "for Black Poops to spawn, which deal ", "damage to all enemies in the room when ", "destroyed ", "Gives The Poop active item a chance to ", "spawn a Black Poop too ", }}

@@ -1,0 +1,1 @@
+return {title = "Endless Nameless", id = "79", description = {"While held there is a small chance when ", "using a tarot card or pill that a copy ", "of it will be dropped on the floor next ", "to you ", }}

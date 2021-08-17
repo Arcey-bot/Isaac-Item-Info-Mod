@@ -1,0 +1,1 @@
+return {title = "Whip Worm", id = "27", description = {"+0.5 Shot Speed Up", "Your tears now whip across the room at ", "a very high shot speed ", "Shot speed gives your tears more ", "effective range, but doesn't increase ", "your range stat directly ", }}

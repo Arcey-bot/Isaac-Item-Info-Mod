@@ -1,0 +1,1 @@
+return {title = "Swallowed M80", id = "178", description = {"When taking damage you have a chance to ", "explode and deal 185 damage to all ", "enemies around you (Same damage as a ", "Mr. Mega bomb) ", }}

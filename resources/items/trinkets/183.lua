@@ -1,0 +1,1 @@
+return {title = "The Twins", id = "183", description = {"Upon entering each new room, this ", "trinket has a chance to copy one of ", "your current familiars ", "If you have no familiars instead it ", "will spawn either Brother Bobby or ", "Sister Maggy ", "Only lasts for the current room", }}

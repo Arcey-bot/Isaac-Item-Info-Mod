@@ -1,0 +1,1 @@
+return {title = "Finger Bone", id = "128", description = {"While held, gives you a small chance to ", "gain a bone heart everytime you take ", "damage ", "Added as part of the Afterbirth+ ", "Booster Pack #5 ", "REPENTANCE - Finger Bone's chance to ", "grant a bone heart has been increased ", "to 5% per hit taken (from 2%) ", }}

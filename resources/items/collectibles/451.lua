@@ -1,0 +1,1 @@
+return {title = "Tarot Cloth", id = "451", description = {"Drops a random card on pickup", "Doubles the effect of most tarot cards. ", "A slow pulsing outline HUD effect ", "appears for cards that would be buffed ", "by Tarot Cloth ", "To see the full list of Tarot Card ", "effects, check out the Mechanics > ", "Tarot Cloth page ", }}

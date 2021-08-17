@@ -1,0 +1,1 @@
+return {title = "Flat Stone", id = "540", description = {"Flat Stone causes your tears to bounce ", "across the room ", "Whenever a tear bounces, it deals ", "splash damage to nearby enemies for 25% ", "of your tear damage ", "Added as part of the Afterbirth+ ", "Booster Pack #5. Based on the Steam ", "Workshop mod created by Maddogs ", }}

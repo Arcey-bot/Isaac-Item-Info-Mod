@@ -1,0 +1,1 @@
+return {title = "Pyro", id = "190", description = {"Gives Isaac 99 bombs", }}

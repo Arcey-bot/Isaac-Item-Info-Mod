@@ -1,0 +1,1 @@
+return {title = "Friendship Necklace", id = "148", description = {"While held, your familiars will now ", "orbit around Isaac instead of following ", "behind him ", }}

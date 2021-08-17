@@ -1,0 +1,1 @@
+return {title = "Jesus Juice", id = "197", description = {"+0.5 Damage Up", "+0.38 Range Up", }}

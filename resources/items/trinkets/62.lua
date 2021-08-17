@@ -1,0 +1,1 @@
+return {title = "Shiny Rock", id = "62", description = {"While held, tinted rocks and rocks with ", "a crawlspace below them will flash ", "white every 10 seconds ", }}

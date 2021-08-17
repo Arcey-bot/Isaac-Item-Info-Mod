@@ -1,0 +1,1 @@
+return {title = "Dog Tooth", id = "445", description = {"+0.3 Damage Up", "+0.1 Speed Up", "When entering a room connected to a ", "Secret Room or Super Secret Room, a ", "howling sound will play ", "When entering a room with a crawl space ", "trapdoor in it, a barking sound will ", "play ", }}

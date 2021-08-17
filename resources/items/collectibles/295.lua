@@ -1,0 +1,1 @@
+return {title = "Magic Fingers", id = "295", description = {"Upon use, consumes a coin and deals ", "damage to everything in the room ", "Damage dealt is equal to your tear ", "damage * 2 + 10 ", "REPENTANCE - Damage buffed, previously ", "it was damage * 2. Magic Fingers ", "ignores the +40 flat damage with ", "Ipecac, removing the synergy between ", "these two ", }}

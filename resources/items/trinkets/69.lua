@@ -1,0 +1,1 @@
+return {title = "Faded Polaroid", id = "69", description = {"Randomly Isaac will gain a camouflage ", "for a few seconds and all enemies in ", "the current room will have a confused ", "status effect applied to them ", "This trinket can be used to open the ", "door to Mausoleum in Depths II ", }}

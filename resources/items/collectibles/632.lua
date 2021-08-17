@@ -1,0 +1,1 @@
+return {title = "Evil Charm", id = "632", description = {"+2 Luck Up", "You no longer take damage from ", "poison/toxic gas/burn effects, and ", "become immune to fear/confusion ", }}

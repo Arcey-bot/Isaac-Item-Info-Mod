@@ -1,0 +1,1 @@
+return {title = "Locust of Pestilence", id = "114", description = {"At the start of each new hostile room ", "you spawn a green attack fly, which ", "will target a nearby enemy, deal double ", "your tear damage and then poison them ", }}

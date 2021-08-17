@@ -1,0 +1,1 @@
+return {title = "Metal Plate", id = "449", description = {"+1 Soul Heart", "Enemy bullets have a 25% chance to be ", "deflected back at the enemy, which will ", "hurt them and apply the concussive ", "status effect, causing it to be stunned ", "for a few seconds ", }}

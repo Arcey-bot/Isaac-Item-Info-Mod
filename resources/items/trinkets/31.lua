@@ -1,0 +1,1 @@
+return {title = "Push Pin", id = "31", description = {"Isaac now has a chance to make a ", "spectral and piercing tear ", "The chance to fire a piercing tear is ", "affected by your luck stat and at +18 ", "Luck it will activate every time ", }}

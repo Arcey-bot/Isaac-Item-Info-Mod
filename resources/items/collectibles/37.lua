@@ -1,0 +1,1 @@
+return {title = "Mr. Boom", id = "37", description = {"Drops a large bomb below the player ", "which does 185 damage ", "Compatible with bomb modifiers, such as ", "Glitter Bombs, Sticky Bombs etc ", "REPENTANCE - Damage buffed from 110 to ", "185 ", }}

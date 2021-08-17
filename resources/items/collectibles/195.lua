@@ -1,0 +1,1 @@
+return {title = "Mom's Coin Purse", id = "195", description = {"Drops 4 random pills on the floor ", "around Isaac ", }}

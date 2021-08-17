@@ -1,0 +1,1 @@
+return {title = "Jumper Cables", id = "520", description = {"This item gives you 1 bar of charge on ", "your active item for every 15 enemies ", "you kill ", "Added as part of the Afterbirth+ ", "Booster Pack #2 and based on the Steam ", "Workshop mod created by Ashkait and ", "Scayze ", }}

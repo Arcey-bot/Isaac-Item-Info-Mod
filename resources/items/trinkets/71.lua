@@ -1,0 +1,1 @@
+return {title = "Bob's Bladder", id = "71", description = {"Leaves a pool of green creep under all ", "bombs you place, which damages enemies ", "that walk over it ", }}

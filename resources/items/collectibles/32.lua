@@ -1,0 +1,1 @@
+return {title = "Wire Coat Hanger", id = "32", description = {"+0.7 Tears Up", }}

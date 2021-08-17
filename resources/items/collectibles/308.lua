@@ -1,0 +1,1 @@
+return {title = "Aquarius", id = "308", description = {"Leaves a trail of tears on the floor ", "behind Isaac which damages enemies that ", "walk over it for 2 damage per tick ", "REPENTANCE - Aquarius now synergizes ", "with tear effects ", }}

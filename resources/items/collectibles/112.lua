@@ -1,0 +1,1 @@
+return {title = "Guardian Angel", id = "112", description = {"An orbital which does 7 contact damage ", "per tick, blocks shots and increases ", "the speed of all other orbitals ", }}

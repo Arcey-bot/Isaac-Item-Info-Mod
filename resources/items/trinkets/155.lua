@@ -1,0 +1,1 @@
+return {title = "Holy Crown", id = "155", description = {"Causes Item rooms and Shops to appear ", "in the Cathedral ", }}

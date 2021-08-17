@@ -1,0 +1,1 @@
+return {title = "Odd Mushroom (Large)", id = "121", description = {"+1 HP Up", "+1.0 Damage Up", "+0.38 Range Up", "-0.2 Speed Down", "Heals one red heart container when ", "picked up ", "REPENTANCE - Odd Mushroom (thick) is ", "now a larger damage increase (equal to ", "that of Steven/Pentagram), but now also ", "a larger speed downgrade (from -0.1 to ", "-0.2) ", }}

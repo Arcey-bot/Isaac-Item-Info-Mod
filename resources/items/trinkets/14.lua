@@ -1,0 +1,1 @@
+return {title = "Callus", id = "14", description = {"Isaac no longer takes damage from ", "walking over spikes and blood creep ", "while this trinket is held ", }}

@@ -1,0 +1,1 @@
+return {title = "Brown Cap", id = "90", description = {"Poop in the environment will now ", "explode when destroyed ", }}

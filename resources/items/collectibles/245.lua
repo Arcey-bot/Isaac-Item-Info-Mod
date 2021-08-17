@@ -1,0 +1,1 @@
+return {title = "20/20", id = "245", description = {"Isaac now shoots two tears at once", "Unlike the Inner Eye and Mutant Spider ", "items, this double shot item does not ", "give a tears down ", "REPENTANCE - Reduces damage done by ", "25%; hitting both tears is still ", "effectively a 1.5x damage boost ", }}

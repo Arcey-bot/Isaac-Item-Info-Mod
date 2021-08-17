@@ -1,0 +1,1 @@
+return {title = "Flat Worm", id = "12", description = {"Tears become flat and disc shaped ", "giving them a larger hitbox ", "Higher knockback effect with your tears", }}

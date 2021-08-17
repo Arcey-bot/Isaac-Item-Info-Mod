@@ -1,0 +1,1 @@
+return {title = "Super Magnet", id = "68", description = {"While held this trinket causes all ", "pickups and enemies to move slowly ", "towards you ", "Will also attract the Mom's Foot and ", "Ultra Greed door entities ", }}

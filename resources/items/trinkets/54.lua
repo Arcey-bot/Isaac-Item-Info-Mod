@@ -1,0 +1,1 @@
+return {title = "Isaac's Head", id = "54", description = {"While held, this trinket gives Isaac a ", "familiar that shoots piercing tears ", "that deal 3.5 damage ", }}

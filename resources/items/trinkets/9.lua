@@ -1,0 +1,1 @@
+return {title = "Pulse Worm", id = "9", description = {"Tears shrink and grow in size as they ", "go across the room ", "Does not appear to affect your damage ", "and only the hitbox size of tears ", }}

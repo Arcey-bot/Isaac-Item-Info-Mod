@@ -1,0 +1,1 @@
+return {title = "Broken Remote", id = "4", description = {"Does the teleport effect every time you ", "use your current spacebar item ", "Can be used infinitely every room if ", "you have Guppy's Paw and no red heart ", "containers (Can be exploited to get to ", "the boss room without clearing any ", "other rooms) ", }}

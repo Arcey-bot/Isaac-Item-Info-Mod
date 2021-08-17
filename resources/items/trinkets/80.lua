@@ -1,0 +1,1 @@
+return {title = "Black Feather", id = "80", description = {"+0.2 Damage Up for each 'evil' item you ", "have ", "Items classed as evil in this case are ", "Black Candle, Ceremonial Robes, ", "Abaddon, Goat Head, Match Book, Missing ", "Page 2, Safety Pin ", }}

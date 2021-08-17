@@ -1,0 +1,1 @@
+return {title = "Belly Button", id = "458", description = {"Drops one random trinket on pickup", "Gives you an extra trinket slot", }}

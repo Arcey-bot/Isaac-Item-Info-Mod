@@ -1,0 +1,1 @@
+return {title = "GB Bug", id = "405", description = {"REPENTANCE - GB Bug is now a thrown ", "projectile, activated by double tapping ", "an attack button. It rerolls enemies ", "and pickups it comes into contact with, ", "then despawns. It returns after a room ", "has been cleared ", }}

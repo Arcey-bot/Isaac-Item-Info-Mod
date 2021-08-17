@@ -1,0 +1,1 @@
+return {title = "Fish Tail", id = "94", description = {"Items and trinkets which generate blue ", "flies and spiders will have double the ", "effect, causing twice as many to spawn ", }}

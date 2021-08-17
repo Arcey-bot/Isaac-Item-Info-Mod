@@ -1,0 +1,1 @@
+return {title = "Ring Worm", id = "11", description = {"While held, tears move in a spiral ", "pattern across the screen at high speed ", "Grants spectral tears", "Effectively increases your range due to ", "the tear pattern ", }}

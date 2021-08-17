@@ -1,0 +1,1 @@
+return {title = "Sigil of Baphomet", id = "189", description = {"Every time you kill an enemy you get an ", "invincibility shield for 1 second ", "While shielded, each enemy killed adds ", "+1 seconds to the duration ", }}

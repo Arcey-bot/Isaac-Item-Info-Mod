@@ -1,0 +1,1 @@
+return {title = "Options?", id = "670", description = {"Clearing a room will spawn an extra ", "reward, however only one can be picked ", "up - the other one will disappear ", }}

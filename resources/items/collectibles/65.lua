@@ -1,0 +1,1 @@
+return {title = "Anarchist Cookbook", id = "65", description = {"Spawns 6 troll bombs at random ", "locations around the room ", "Bombs are effected by other passive ", "bomb items ", }}

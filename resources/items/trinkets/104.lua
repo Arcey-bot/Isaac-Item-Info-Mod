@@ -1,0 +1,1 @@
+return {title = "Wish Bone", id = "104", description = {"Every time you take damage you have a ", "very small chance to spawn a random ", "pedestal item ", "When the effect triggers, the trinket ", "is destroyed ", }}

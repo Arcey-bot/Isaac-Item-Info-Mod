@@ -1,0 +1,1 @@
+return {title = "Immaculate Heart", id = "573", description = {"In addition to regular tears, Isaac ", "will sometimes fire extra spectral ", "tears that orbit around him ", "+1 HP Up", "+20% damage multiplier (x1.2)", "Fully heals all your red heart ", "containers ", }}

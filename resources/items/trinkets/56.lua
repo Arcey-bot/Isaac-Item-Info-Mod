@@ -1,0 +1,1 @@
+return {title = "Judas' Tongue", id = "56", description = {"Items which cost 2 heart containers in ", "a deal with the devil are reduced to ", "only cost 1 heart ", }}

@@ -1,0 +1,1 @@
+return {title = "My Little Unicorn", id = "77", description = {"Gives Isaac invincibility and +0.28 ", "Speed for 6 seconds ", "While active you cannot fire tears, but ", "running into enemies will deal 40 ", "contact damage per second ", "Allows free hits on the Blood Donation ", "machines and devil beggars ", }}

@@ -1,0 +1,1 @@
+return {title = "Mom's Toenail", id = "16", description = {"Mom's Leg will now appear every 60 ", "seconds and stomp down randomly in the ", "room dealing 300 damage to enemies, ", "similar to how Daddy Longlegs works but ", "less frequent ", "Be warned though, Mom's leg can also ", "stomp and hurt Isaac too! ", }}

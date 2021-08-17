@@ -1,0 +1,1 @@
+return {title = "Spider Butt", id = "171", description = {"Upon use, does 10 damage to all enemies ", "in the room and gives them a slowing ", "effect for 4 seconds ", "REPENTANCE - Enemies killed by Spider ", "Butt will now spawn friendly blue ", "spiders ", }}

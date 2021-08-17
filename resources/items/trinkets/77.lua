@@ -1,0 +1,1 @@
+return {title = "Blister", id = "77", description = {"Tears have a stronger knockback effect ", "while this trinket is held ", }}

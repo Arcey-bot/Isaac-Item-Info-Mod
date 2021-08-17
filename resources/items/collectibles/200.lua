@@ -1,0 +1,1 @@
+return {title = "Mom's Eyeshadow", id = "200", description = {"Tears have a random chance to charm ", "enemies ", "Charmed enemies will prioritize ", "attacking other enemies in the room, ", "otherwise they will still attack Isaac ", "The chance to charm enemies is affected ", "by your luck stat and at +27 Luck it ", "will activate every time ", }}

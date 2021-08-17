@@ -1,0 +1,1 @@
+return {title = "Contract From Below", id = "241", description = {"Doubles pickups and chests from ", "clearing a room ", "Also gives a 30% chance for room clear ", "rewards to not spawn ", "Doesn't affect coins spawned in Greed ", "Mode ", }}

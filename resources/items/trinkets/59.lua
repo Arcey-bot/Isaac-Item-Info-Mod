@@ -1,0 +1,1 @@
+return {title = "Cain's Eye", id = "59", description = {"Gives a 25% chance to reveal map icons ", "at the start of a new floor (The same ", "effect as the Compass) ", }}

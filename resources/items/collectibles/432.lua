@@ -1,0 +1,1 @@
+return {title = "Glitter Bombs", id = "432", description = {"+5 bombs", "Isaac's normal bombs become pink and ", "causes them to drop random pickups when ", "they explode (e.g. keys, coins, bombs, ", "trinkets) ", "Bombs have a chance to charm enemies", }}

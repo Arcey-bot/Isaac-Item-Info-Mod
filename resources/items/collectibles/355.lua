@@ -1,0 +1,1 @@
+return {title = "Mom's Pearls", id = "355", description = {"+0.38 Range Up", "+1 Luck Up", "+1 Soul Heart", }}

@@ -1,0 +1,1 @@
+return {title = "???'s Soul", id = "57", description = {"Creates a familiar which moves around ", "the room in a similar fashion to The ", "Peeper, shooting tears in the same ", "direction as Isaac ", }}

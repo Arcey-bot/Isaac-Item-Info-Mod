@@ -1,0 +1,1 @@
+return {title = "Cursed Penny", id = "172", description = {"While held, you will be teleported to a ", "random room everytime you pick up a ", "coin ", }}
