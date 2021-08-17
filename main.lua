@@ -5,7 +5,6 @@ local NUM_COLLECTIBLES = CollectibleType.NUM_COLLECTIBLES - 1
 local NUM_TRINKETS = TrinketType.NUM_TRINKETS - 1
 
 -- TODO: Description text scrolling
--- TODO: Menu to get floor item descriptions
 
 -- Table holding Active/Passive/Trinkets in Isaac's inventory
 local collectedItems = {}
@@ -18,8 +17,11 @@ local collectedItemIDs = {
 local collectedItemSprites = {}
 
 local floorItems = {}
+local floorItemIDs = {}
+local floorItemSprites = {}
 
-local menuOpen = false
+local heldMenuOpen = false
+local floorMenuOpen = false
 
 local menuCursorPos = Vector(1, 1)
 -- Offset 0 shows items 1-16, 1 shows items 17-32, etc.
@@ -153,26 +155,27 @@ local function updateHeldCollectibles()
 end
 
 -- settings is a table with the same properties as textAttrs.header/body
-local function renderText(str, settings)
+local function renderText(str, settings --[[table]])
     settings.writer:DrawStringScaled(str, settings.pos.X + settings.offset.X, settings.pos.Y + settings.offset.Y, settings.scale.X, settings.scale.Y, settings.color, settings.boxWidth, settings.center)
 end
 
 -- Handles displaying all relevant text of selected item
-local function renderSelectedItemText()
+local function renderSelectedItemText(collection --[[table]], collectionIDs --[[table]])
     -- Index of selected item in collectedItemIDs
     local index = (menuCursorPos.Y - 1) * itemMenuAttrs.layout.X + menuCursorPos.X + menuItemsOffset
     -- local item = require('resources/items/collectibles/'..tostring(collectedItemIDs[index])..'.lua')
     local item 
-    if collectedItems[index] then
-        if collectedItems[index]:IsCollectible() then
-            item = require('resources/items/collectibles/'..tostring(collectedItemIDs[index])..'.lua')
+
+    -- TODO: I would love to make this not look like eye vomit. More like the declaration above
+    if collection[index] then
+        if collection[index]:IsCollectible() then
+            item = require('resources/items/collectibles/'..tostring(collectionIDs[index])..'.lua')
         else
-            item = require('resources/items/trinkets/'..tostring(collectedItemIDs[index])..'.lua')
+            item = require('resources/items/trinkets/'..tostring(collectionIDs[index])..'.lua')
         end
     else
         item = require('resources/items/collectibles/nil.lua')
     end
-
     renderText(item.title, textAttrs.header)
 
     local yOffset = 16
@@ -186,9 +189,9 @@ end
 -- Render the collected item's icons to the menu screen
 -- Offset is number denoting starting position in collectedItemSprites table
 --      Used to display items when there are more than can fit on one screen
-local function renderMenuItems(offset)
+local function renderMenuItems(collection --[[table]], collectionSprites --[[table]], offset --[[int]])
     -- Ensure player has at least one item to render
-    if next(collectedItems) then
+    if next(collection) then
         local itemPosInMenu
         local index
         local item
@@ -197,10 +200,10 @@ local function renderMenuItems(offset)
             for j=1, itemMenuAttrs.layout.X do
                 index = (i - 1) * itemMenuAttrs.layout.X + j + offset
                 -- Render a player's item if available
-                if collectedItemSprites[index] then
-                    item = collectedItemSprites[index]
+                if collectionSprites[index] then
+                    item = collectionSprites[index]
                     item:Load("gfx/ui/menuitem.anm2", true)
-                    item:ReplaceSpritesheet(0, collectedItems[index].GfxFileName)
+                    item:ReplaceSpritesheet(0, collection[index].GfxFileName)
                     item:LoadGraphics()
                     item:SetFrame("Idle", 0)
 
@@ -298,30 +301,50 @@ function mod:onRender()
     if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() then
         updateHeldCollectibles()
         updateHeldTrinkets()
-        menuOpen = not menuOpen
+        heldMenuOpen = not heldMenuOpen
         -- Reset cursor to beginning when menu is closed
         menuCursorPos = Vector(1, 1)
         menuItemsOffset = 0
     end
 
-    if Input.IsButtonPressed(Keyboard.KEY_N, 0) and not Game():IsPaused() then
-        -- Only care about Type 5, Variants 100 & 350
-        local ents = Isaac.GetRoomEntities()
+    if Input.IsButtonTriggered(Keyboard.KEY_N, 0) and not Game():IsPaused() then
+        -- TODO: This is pretty damn ugly too
+        for _, v in ipairs(Isaac.GetRoomEntities()) do
+            -- It is something we can pickup
+            if v.Type == EntityType.ENTITY_PICKUP then
+                -- It is a collectible
+                if v.Variant == PickupVariant.PICKUP_COLLECTIBLE then
+                    local item = Isaac.GetItemConfig():GetCollectible(v.SubType)
 
-        for _, v in ipairs(ents) do
-            -- Type tells us it is pickupable
-            -- Variant tells us it is collectible/trinket/etc
-            -- Subtype tells us exactly what item it is. I.e. 34 is Book of Belial
-            Isaac.DebugString('Type - '..tostring(v.Type))
-            Isaac.DebugString('Subtype - '..tostring(v.SubType))
-            Isaac.DebugString('Variant - '..tostring(v.Variant))
+                    table.insert(floorItems, item)
+                    table.insert(floorItemIDs, item.ID)
+                    table.insert(floorItemSprites, Sprite())
+                -- It is a trinket
+                elseif v.Variant == PickupVariant.PICKUP_TRINKET then
+                    local item = Isaac.GetItemConfig():GetTrinket(v.SubType)
+
+                    table.insert(floorItems, item)
+                    table.insert(floorItemIDs, item.ID)
+                    table.insert(floorItemSprites, Sprite())
+                end
+            end
+        end
+
+        floorMenuOpen = not floorMenuOpen
+        menuCursorPos = Vector(1, 1)
+        menuItemsOffset = 0
+
+        if not floorMenuOpen then
+            floorItems = {}
+            floorItemIDs = {}
+            floorItemSprites = {}
         end
     end
 
-    if menuOpen then
+    if heldMenuOpen then
         -- Close menu
         if Input.IsActionTriggered(ButtonAction.ACTION_MENUBACK, 0) then
-            menuOpen = false
+            heldMenuOpen = false
             menuCursorPos = Vector(1, 1)
             menuItemsOffset = 0
         end
@@ -330,19 +353,31 @@ function mod:onRender()
         itemMenu:SetFrame("Idle", 0)
         itemMenu:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.pos))
 
-        renderMenuItems(menuItemsOffset)
-
-        renderSelectedItemText()
-
+        renderMenuItems(collectedItems, collectedItemSprites, menuItemsOffset)
+        renderSelectedItemText(collectedItems, collectedItemIDs)
         handleCursorMovement()
-
         renderMenuCursor()
 
+    elseif floorMenuOpen then
+        if Input.IsActionTriggered(ButtonAction.ACTION_MENUBACK, 0) then
+            floorMenuOpen = false
+            menuCursorPos = Vector(1, 1)
+            menuItemsOffset = 0
+        end
+       
+        -- Create menu that items will be drawn on upon
+        itemMenu:SetFrame("Idle", 0)
+        itemMenu:RenderLayer(0, Isaac.WorldToRenderPosition(itemMenuAttrs.pos))
+
+        renderMenuItems(floorItems, floorItemSprites, menuItemsOffset)
+        renderSelectedItemText(floorItems, floorItemIDs)
+        handleCursorMovement()
+        renderMenuCursor()
     end
 end
 
 function mod:onInput(entity, hook, button)
-	if menuOpen and entity ~= nil then
+	if heldMenuOpen and entity ~= nil then
 		if hook == InputHook.GET_ACTION_VALUE then
 			return 0
 		else
@@ -363,5 +398,3 @@ mod:AddCallback(ModCallbacks.MC_POST_RENDER, mod.onRender)
 mod:AddCallback(ModCallbacks.MC_POST_RENDER, mod.debugText)
 
 mod:AddCallback(ModCallbacks.MC_INPUT_ACTION, mod.onInput)
-
--- POST_PICKUP_INIT is useful if we can detect items on the floor somehow
