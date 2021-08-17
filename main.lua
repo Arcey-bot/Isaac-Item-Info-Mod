@@ -164,6 +164,22 @@ local function renderText(str, settings --[[table]])
     settings.writer:DrawStringScaled(str, settings.pos.X + settings.offset.X, settings.pos.Y + settings.offset.Y, settings.scale.X, settings.scale.Y, settings.color, settings.boxWidth, settings.center)
 end
 
+-- Takes number of lines the item description contains
+local function handleTextScroll(lines --[[int]])
+    if not Game():IsPaused() then
+        if Input.IsActionTriggered(ButtonAction.ACTION_UP, 0) then
+            if descTextOffset ~= 0 then
+                descTextOffset = descTextOffset - 1
+            end
+        end
+        if Input.IsActionTriggered(ButtonAction.ACTION_DOWN, 0) then
+            if (descTextOffset + 1) * MAX_LINES <= lines then
+                descTextOffset = descTextOffset + 1
+            end 
+        end
+    end
+end
+
 -- Handles displaying all relevant text of selected item
 local function renderSelectedItemText(collection --[[table]], collectionIDs --[[table]])
     -- Index of selected item in collectedItemIDs
@@ -184,14 +200,19 @@ local function renderSelectedItemText(collection --[[table]], collectionIDs --[[
     renderText(item.title, textAttrs.header)
 
     local yOffset = 16
-    for i=1 + descTextOffset, #item.description do
-        renderText(item.description[i], textAttrs.body)
-        textAttrs.body.offset.Y = yOffset + textAttrs.body.offset.Y 
-    end
-    -- for _, str in ipairs(item.description) do
-    --     renderText(str, textAttrs.body)
+    -- for i=1 + descTextOffset, #item.description do
+    --     renderText(item.description[i], textAttrs.body)
     --     textAttrs.body.offset.Y = yOffset + textAttrs.body.offset.Y 
     -- end
+    for i=1 + descTextOffset, MAX_LINES + descTextOffset do
+        if item.description[i] then
+            renderText(item.description[i], textAttrs.body)
+            textAttrs.body.offset.Y = yOffset + textAttrs.body.offset.Y 
+        else
+            break
+        end
+    end
+    handleTextScroll(#item.description)
     textAttrs.body.offset.Y = 0
 end
 
@@ -237,21 +258,6 @@ local function renderMenuItems(collection --[[table]], collectionSprites --[[tab
                     
                 end
             end
-        end
-    end
-end
-
--- TODO: Reset descTextOffset on menu closes/item switch
-local function handleTextScroll()
-    if not Game():IsPaused() then
-        if Input.IsActionTriggered(ButtonAction.ACTION_UP, 0) then
-            if descTextOffset ~= 0 then
-                descTextOffset = descTextOffset - 1
-            end
-        end
-        if Input.IsActionTriggered(ButtonAction.ACTION_DOWN, 0) then
-            -- If descText != number of lines - MAX_LINES 
-            descTextOffset = descTextOffset + 1
         end
     end
 end
@@ -333,6 +339,7 @@ function mod:onRender()
         -- Reset cursor to beginning when menu is closed
         menuCursorPos = Vector(1, 1)
         menuItemsOffset = 0
+        descTextOffset = 0
     end
 
     if Input.IsButtonTriggered(Keyboard.KEY_N, 0) and not Game():IsPaused() and not heldMenuOpen then
@@ -361,6 +368,7 @@ function mod:onRender()
         floorMenuOpen = not floorMenuOpen
         menuCursorPos = Vector(1, 1)
         menuItemsOffset = 0
+        descTextOffset = 0
 
         if not floorMenuOpen then
             floorItems = {}
@@ -385,7 +393,7 @@ function mod:onRender()
         renderSelectedItemText(collectedItems, collectedItemIDs)
         handleCursorMovement()
         renderMenuCursor()
-        handleTextScroll()
+        -- handleTextScroll()
 
     elseif floorMenuOpen then
         if Input.IsActionTriggered(ButtonAction.ACTION_MENUBACK, 0) then
@@ -402,7 +410,7 @@ function mod:onRender()
         renderSelectedItemText(floorItems, floorItemIDs)
         handleCursorMovement()
         renderMenuCursor()
-        handleTextScroll()
+        -- handleTextScroll()
     end
 end
 
@@ -417,9 +425,9 @@ function mod:onInput(entity, hook, button)
 end
 
 function mod:debugText()
-    Isaac.RenderText(str1, 75, 50, 255, 0, 0, 255)
-    Isaac.RenderText(str2, 75, 75, 0, 255, 0, 255)
-    Isaac.RenderText(str3, 200, 50, 0, 0, 255, 255)
+    Isaac.RenderText(str1, 75, 25, 255, 0, 0, 255)
+    Isaac.RenderText(str2, 75, 50, 0, 255, 0, 255)
+    Isaac.RenderText(str3, 75, 75, 0, 0, 255, 255)
 end
 
 -- Callbacks
