@@ -1,0 +1,1 @@
+return {title = "Store Credit", id = "13", description = {"While this trinket is held, all items ", "in the Shop cost 0 coins ", "After buying any 0 cent item in the ", "Shop, the trinket disappears ", }}

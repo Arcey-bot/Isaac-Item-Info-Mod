@@ -1,0 +1,1 @@
+return {title = "Petrified Poop", id = "2", description = {"While held, Isaac has a significantly ", "higher chance to find drops when ", "breaking poops ", }}

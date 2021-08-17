@@ -1,0 +1,1 @@
+return {title = "Walnut", id = "108", description = {"The Walnut has a chance to break when ", "taking damage from an explosion. If it ", "does, it will drop a random trinket, ", "coin, heart and key ", "The Walnut trinket is destroyed once ", "the effect activates ", }}

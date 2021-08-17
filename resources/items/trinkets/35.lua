@@ -1,0 +1,1 @@
+return {title = "Curved Horn", id = "35", description = {"+2 Damage Up", }}

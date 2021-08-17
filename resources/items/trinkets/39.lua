@@ -1,0 +1,1 @@
+return {title = "Cancer", id = "39", description = {"-2 Tear Delay (Tears Up)", "The fire rate increase is applied in ", "such a way that the higher your tear ", "stat is, the more effective Cancer is ", "Breaks the normal fire rate cap, ", "allowing you to fire faster than the ", "normal maximum ", }}

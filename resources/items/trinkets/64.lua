@@ -1,0 +1,1 @@
+return {title = "Rainbow Worm", id = "64", description = {"Gives your tears a random worm effect ", "every few seconds ", "The possible tear effects include: Whip ", "Worm, Ring Worm, Wiggle Worm, Flat ", "Worm, Hook Worm, Pulse Worm, Tape Worm ", "and Lazy Worm ", }}

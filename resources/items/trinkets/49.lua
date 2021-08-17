@@ -1,0 +1,1 @@
+return {title = "Bloody Penny", id = "49", description = {"Everytime you pick up a penny, you have ", "a 25% chance to spawn a red heart on ", "the floor ", }}

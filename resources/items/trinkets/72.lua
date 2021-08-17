@@ -1,0 +1,1 @@
+return {title = "Watch Battery", id = "72", description = {"Gives a +6.66% chance of a getting a ", "small battery after clearing a room ", "Gives a +2.0% chance for pickups to be ", "small batteries ", "Gives a +5.0% chance to add an extra ", "charge to your active item after ", "clearing a room ", }}

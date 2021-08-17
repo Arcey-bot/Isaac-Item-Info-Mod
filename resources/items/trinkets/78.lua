@@ -1,0 +1,1 @@
+return {title = "Second Hand", id = "78", description = {"Increases the time that status effects ", "stay on enemies. e.g. With poison ", "effects, the damage over time poison ", "will last for much longer. ", }}

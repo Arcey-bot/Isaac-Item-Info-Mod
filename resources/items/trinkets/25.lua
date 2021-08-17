@@ -1,0 +1,1 @@
+return {title = "Mysterious Candy", id = "25", description = {"Causes Isaac to create poops randomly", }}

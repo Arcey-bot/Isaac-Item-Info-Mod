@@ -1,0 +1,1 @@
+return {title = "Used Diaper", id = "93", description = {"While held, gives the Skatole effect ", "only in certain rooms, which will turn ", "hostile flies to neutral and stop ", "others from shooting ", "Attack, Dart and Ring Flies turn into ", "neutral Black Flies and Pooters and Fat ", "Flies will no longer fire at you ", }}

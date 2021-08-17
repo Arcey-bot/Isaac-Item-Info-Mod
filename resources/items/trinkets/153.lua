@@ -1,0 +1,1 @@
+return {title = "Mom's Lock", id = "153", description = {"Has a high chance to give you the ", "effect of a random Mom item every room ", }}

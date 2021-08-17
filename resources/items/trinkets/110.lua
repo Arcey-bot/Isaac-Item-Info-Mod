@@ -1,0 +1,1 @@
+return {title = "Silver Dollar", id = "110", description = {"While held, shops will now appear on ", "the womb floors (The Womb, Utero and ", "Scarred Womb) ", }}

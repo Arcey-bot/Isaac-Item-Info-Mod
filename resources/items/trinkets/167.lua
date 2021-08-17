@@ -1,0 +1,1 @@
+return {title = "Polished Bone", id = "167", description = {"Gives a small chance to spawn a ", "friendly Bony when clearing a room, ", "which will throw bones at enemies until ", "it takes enough damage to die ", "Can be either the regular white Bony or ", "the black variant ", }}

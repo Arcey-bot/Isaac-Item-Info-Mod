@@ -1,0 +1,1 @@
+return {title = "Black Tooth", id = "95", description = {"Some tears will randomly become a black ", "tooth, that deal double your normal ", "tear damage and can poison enemies ", }}

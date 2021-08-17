@@ -1,0 +1,1 @@
+return {title = "Broken Ankh", id = "28", description = {"Has a 22.22% chance to respawn with 3 ", "Soul hearts as Blue Baby when you die ", }}

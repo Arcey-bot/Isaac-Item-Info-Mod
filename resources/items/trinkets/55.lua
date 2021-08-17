@@ -1,0 +1,1 @@
+return {title = "Maggy's Faith", id = "55", description = {"At the start of a new floor, you get an ", "eternal heart ", }}

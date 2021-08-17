@@ -1,0 +1,1 @@
+return {title = "Blue Key", id = "150", description = {"Doors can be opened without using up a ", "key ", "However, when entering the door you are ", "taken to a blue womb room with enemies ", "to defeat. This room will always drop a ", "reward at the end, then allow you to ", "exit back to the real floor ", }}

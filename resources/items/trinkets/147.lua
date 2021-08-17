@@ -1,0 +1,1 @@
+return {title = "Charged Penny", id = "147", description = {"Every time you pick up a coin, you have ", "a small chance to gain 1 bar of charge ", "on your active item ", "In Antibirth this trinket was called ", "Electric Penny ", }}

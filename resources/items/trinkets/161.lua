@@ -1,0 +1,1 @@
+return {title = "Wicked Crown", id = "161", description = {"Causes Item rooms to appear in Sheol", }}

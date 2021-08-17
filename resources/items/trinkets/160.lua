@@ -1,0 +1,1 @@
+return {title = "Lucky Sack", id = "160", description = {"Spawns a sack at the start of each new ", "floor ", }}

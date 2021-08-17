@@ -1,0 +1,1 @@
+return {title = "Mom's Pearl", id = "38", description = {"Grants a secondary chance of any ", "non-specific heart drop turning into a ", "soul heart ", }}

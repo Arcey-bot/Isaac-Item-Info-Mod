@@ -1,0 +1,1 @@
+return {title = "Cartridge", id = "8", description = {"When Isaac takes damage, there is a ", "chance he will gain the Gamekid effect, ", "turning him invincible and dealing ", "contact damage to any enemies he ", "touches ", "The chance to activate the ", "invincibility effect is affected by ", "your luck stat and at +38 Luck it will ", "activate every time you get hit ", }}

@@ -1,0 +1,1 @@
+return {title = "Safety Cap", id = "44", description = {"Gives Isaac a higher chance to find ", "pills ", }}

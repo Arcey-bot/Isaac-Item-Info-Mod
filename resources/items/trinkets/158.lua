@@ -1,0 +1,1 @@
+return {title = "Torn Pocket", id = "158", description = {"Every time you take damage, you drop up ", "to 2 different types of consumables on ", "the ground ", "Dropped consumables can be any variant ", "of its kind - e.g. a bomb can become a ", "troll bomb, or a dropped coin can ", "become a dime ", "Does nothing if you have no consumables", }}

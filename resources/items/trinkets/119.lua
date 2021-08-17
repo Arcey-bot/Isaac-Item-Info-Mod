@@ -1,0 +1,1 @@
+return {title = "Stem Cell", id = "119", description = {"Stem Cell heals Isaac's red heart ", "containers to 50% each floor ", "If Isaac already has 50% health or ", "more, it heals half of a heart instead ", }}

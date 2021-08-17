@@ -1,0 +1,1 @@
+return {title = "Lil Larva", id = "86", description = {"Destroying poops now gives you a blue ", "fly ", }}

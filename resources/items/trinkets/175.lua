@@ -1,0 +1,1 @@
+return {title = "Strange Key", id = "175", description = {"Opens the door to the Blue Womb, ", "regardless of whether you meet the 30 ", "minute speed timer ", "Opening Pandora's Box while holding ", "this item will ignore the normal effect ", "and instead spawn 6 item pedestals from ", "random item pools. Both the box and ", "trinket are consumed when this happens ", }}

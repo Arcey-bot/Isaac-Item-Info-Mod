@@ -1,0 +1,1 @@
+return {title = "Hook Worm", id = "26", description = {"Tears now move forwards at right ", "angles, shifting left and right across ", "the room ", "Grants spectral tears", "Increases your range stat by +10.0 ", "while held but due to the fire pattern, ", "your tears travel a similar distance to ", "normal ", }}

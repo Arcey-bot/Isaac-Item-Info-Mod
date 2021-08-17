@@ -1,0 +1,1 @@
+return {title = "Pay To Win", id = "112", description = {"While held, restock boxes will always ", "spawn in item rooms ", }}

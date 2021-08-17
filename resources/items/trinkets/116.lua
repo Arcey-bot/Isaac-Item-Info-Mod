@@ -1,0 +1,1 @@
+return {title = "Locust of Death", id = "116", description = {"Upon entering a room with enemies, ", "spawns a Black Locust that deals ", "quadruple Isaac's damage, applied as ", "two hits of double damage ", }}

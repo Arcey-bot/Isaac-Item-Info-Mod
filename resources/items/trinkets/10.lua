@@ -1,0 +1,1 @@
+return {title = "Wiggle Worm", id = "10", description = {"Tears now move in a wave fashion across ", "the room ", "Grants spectral tears", "+0.4 Tears up", }}

@@ -1,0 +1,1 @@
+return {title = "Cursed Skull", id = "43", description = {"When you take damage while on 1/2 a ", "heart, you are teleported back to the ", "previous room ", }}

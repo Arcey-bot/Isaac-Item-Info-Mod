@@ -1,0 +1,1 @@
+return {title = "Tape Worm", id = "65", description = {"While held, Tape Worm doubles your ", "range stat and halves your tear height ", "stat ", }}

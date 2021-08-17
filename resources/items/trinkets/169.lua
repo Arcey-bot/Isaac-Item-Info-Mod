@@ -1,0 +1,1 @@
+return {title = "Kid's Drawing", id = "169", description = {"Dropping this trinket again removes the ", "transformation if you dont have 3 other ", "Guppy items ", }}

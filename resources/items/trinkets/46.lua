@@ -1,0 +1,1 @@
+return {title = "Isaac's Fork", id = "46", description = {"After clearing a room, you have a ", "chance to heal for half a red heart ", }}

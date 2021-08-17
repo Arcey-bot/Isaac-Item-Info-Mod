@@ -1,0 +1,1 @@
+return {title = "Tonsil", id = "97", description = {"Every time you take damage you have a ", "very small chance to gain a Tonsil ", "familiar, which follows you and blocks ", "enemy projectiles ", "This effect can happen twice before the ", "Tonsil trinket is destroyed ", "Does not deal contact damage to enemies", }}

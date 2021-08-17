@@ -1,0 +1,1 @@
+return {title = "A Missing Page", id = "48", description = {"When taking damage, Isaac has a chance ", "to deal damage to the entire room in a ", "Necronomicon style effect ", "The chance to damage enemies is ", "affected by your luck stat and at +50 ", "or more Luck it will activate 50% of ", "the time ", }}

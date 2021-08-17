@@ -1,0 +1,1 @@
+return {title = "Match Stick", id = "41", description = {"Gives Isaac a higher chance to find ", "bombs ", "Picking up the Match Stick is the only ", "way to remove the Tick trinket ", }}

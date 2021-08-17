@@ -1,0 +1,1 @@
+return {title = "RC Remote", id = "179", description = {"Familiars follow Isaac's exact ", "movements, (similar to how Jacob & Esau ", "work) instead of following loosely like ", "they usually do ", "Holding the drop button (Ctrl on Steam ", "version) causes them to stop moving ", "Doesn't affect some familiars with ", "specific movement patterns, e.g. Abel ", }}

@@ -1,0 +1,1 @@
+return {title = "Rosary Bead", id = "7", description = {"Increases your chances to find an Angel ", "Room instead of a Devil Room ", "Normally there is a 50%/50% chance of a ", "Angel or Devil room with if a door ", "spawns after the boss. The Rosary Bead ", "changes this to a 75%/25% chance of an ", "angel or devil room (respectively) ", }}

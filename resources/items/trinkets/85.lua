@@ -1,0 +1,1 @@
+return {title = "Karma", id = "85", description = {"Donating to a Donation Machine has a ", "chance to heal Isaac for a full red ", "heart or spawn a Beggar ", }}

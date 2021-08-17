@@ -1,0 +1,1 @@
+return {title = "Chewed Pen", id = "130", description = {"Tears have a chance to slow enemies", }}

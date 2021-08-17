@@ -1,0 +1,1 @@
+return {title = "Locust of Conquest", id = "117", description = {"At the start of each new hostile room ", "you spawn 2-5 white attack flies, which ", "will target a nearby enemy and deal ", "double your tear damage to it ", }}

@@ -1,0 +1,1 @@
+return {title = "Forgotten Lullaby", id = "141", description = {"Gives your familiars improved rate of ", "fire while held ", "In Antibirth this trinket was called ", "Song of the Siren ", }}

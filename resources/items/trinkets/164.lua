@@ -1,0 +1,1 @@
+return {title = "Ring Cap", id = "164", description = {"Drops 2 bombs at once (only 1 bomb is ", "removed from your total) ", }}

@@ -1,0 +1,1 @@
+return {title = "Bat Wing", id = "118", description = {"When killing an enemy, you have a very ", "small chance to gain the ability to fly ", "for the rest of the room ", }}

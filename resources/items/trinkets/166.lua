@@ -1,0 +1,1 @@
+return {title = "Modeling Clay", id = "166", description = {"Each brand new room, this trinket has a ", "chance to transform into a copy of a ", "random passive item, which gives you ", "the effect for the duration of this ", "room ", }}

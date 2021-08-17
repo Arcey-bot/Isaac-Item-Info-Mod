@@ -1,0 +1,1 @@
+return {title = "Butt Penny", id = "24", description = {"Everytime you pick up a coin, you fart", }}

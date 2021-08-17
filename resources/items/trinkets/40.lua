@@ -1,0 +1,1 @@
+return {title = "Red Patch", id = "40", description = {"You have a chance when taking damage to ", "gain +1.8 Damage Up for the rest of the ", "room ", }}

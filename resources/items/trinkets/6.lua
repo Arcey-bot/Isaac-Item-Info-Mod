@@ -1,0 +1,1 @@
+return {title = "Broken Magnet", id = "6", description = {"Has a partial Magneto effect and will ", "attract coins, pulling them into Isaac ", "from a distance ", "Does not attract other pickups like the ", "full Magneto item does ", }}

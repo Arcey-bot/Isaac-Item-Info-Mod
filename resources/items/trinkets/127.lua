@@ -1,0 +1,1 @@
+return {title = "Baby-Bender", id = "127", description = {"While held this trinket gives your ", "familiars homing shots ", "Added as part of the Afterbirth+ ", "Booster Pack #5. Based on the Steam ", "Workshop mod created by Ink Tears ", }}

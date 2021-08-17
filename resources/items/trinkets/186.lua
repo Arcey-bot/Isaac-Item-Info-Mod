@@ -1,0 +1,1 @@
+return {title = "Apollyon's Best Friend", id = "186", description = {"Gives you a red attack fly, that will ", "charge at enemies in the same direction ", "you are shooting ", "Deals damage equal to your current tear ", "damage ", "Stops charging once it hits an enemy ", "and returns to Isaac's side ", }}

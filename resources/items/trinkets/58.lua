@@ -1,0 +1,1 @@
+return {title = "Samson's Lock", id = "58", description = {"When you kill an enemy, you have a ", "chance to get +0.5 damage up for the ", "current room ", }}

@@ -1,0 +1,1 @@
+return {title = "Panic Button", id = "149", description = {"If your active item is fully charged, ", "when you take damage it will ", "automatically activate ", "It doesn't activate for free - the ", "charges are used up as normal if this ", "effect activates ", }}

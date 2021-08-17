@@ -1,0 +1,1 @@
+return {title = "Bag Lunch", id = "105", description = {"Every time you take damage you have a ", "very small chance to spawn the Lunch ", "item, which gives +1 HP up ", "When the effect triggers, this trinket ", "is destroyed ", }}

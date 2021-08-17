@@ -1,0 +1,1 @@
+return {title = "Rusted Key", id = "36", description = {"Gives Isaac a higher chance to find ", "keys and chests ", }}

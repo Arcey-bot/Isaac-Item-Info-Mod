@@ -1,0 +1,1 @@
+return {title = "Mom's Locket", id = "87", description = {"While held, you heal for half a red ", "heart every time you use a key to open ", "a door or golden chest ", "Changes all half red hearts into full ", "hearts ", "Hearts dropped from Tainted Magdalene's ", "mechanic will be always full red hearts ", }}

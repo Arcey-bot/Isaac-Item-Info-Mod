@@ -1,0 +1,1 @@
+return {title = "Myosotis", id = "137", description = {"Pickups left on current floor will ", "appear in the starting room of the next ", "floor, up to a maximum of 4 pickups ", }}

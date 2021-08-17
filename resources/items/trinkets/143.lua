@@ -1,0 +1,1 @@
+return {title = "Old Capacitor", id = "143", description = {"Your active item no longer gains ", "charges, but battery drops become much ", "more common ", }}

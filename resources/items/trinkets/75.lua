@@ -1,0 +1,1 @@
+return {title = "Error", id = "75", description = {"Gives a different trinket effect per ", "room, randomly choosing between any of ", "the other available trinkets in the ", "game ", "Each room is locked to a specific ", "trinket effect, meaning if you exit and ", "re-enter a room, that specific room ", "will always have the same effect. ", }}

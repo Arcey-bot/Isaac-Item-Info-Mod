@@ -1,0 +1,1 @@
+return {title = "Cracked Dice", id = "67", description = {"Every time you get hit, you have a ", "chance to activate the D6, D20, D8 or ", "D12 effect ", }}

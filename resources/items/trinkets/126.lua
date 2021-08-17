@@ -1,0 +1,1 @@
+return {title = "Rotten Penny", id = "126", description = {"While held, spawns +1 friendly blue fly ", "every time you pick up a coin ", "Added as part of the Afterbirth+ ", "Booster Pack #5. Based on the Steam ", "Workshop mod created by Eufuu ", }}

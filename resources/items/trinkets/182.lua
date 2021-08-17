@@ -1,0 +1,1 @@
+return {title = "Beth's Essence", id = "182", description = {"Taking damage gives you a chance to ", "spawn a flame orbital, similar to the ", "ones created by Book of Virtues ", "Entering an Angel Room gives you +5 ", "flame orbitals. The angel room spawned ", "by The Stairway item also counts ", "Giving money to a beggar gives a flame ", "orbital ", }}

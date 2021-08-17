@@ -1,0 +1,1 @@
+return {title = "Short Fuse", id = "133", description = {"Placed bombs explode almost instantly", "This was called Exploded Firecracker in ", "Antibirth ", }}

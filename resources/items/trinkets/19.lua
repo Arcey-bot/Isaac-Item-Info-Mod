@@ -1,0 +1,1 @@
+return {title = "Paper Clip", id = "19", description = {"Allows you to unlock golden chests ", "without needing a key ", "Does not work on locked rooms", "Cain starts with this trinket after ", "donating 68 coins to the Greed Donation ", "Machine ", }}

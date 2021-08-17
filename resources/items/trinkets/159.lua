@@ -1,0 +1,1 @@
+return {title = "Gilded Key", id = "159", description = {"All new chests become locked Golden ", "chests ", }}

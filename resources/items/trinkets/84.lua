@@ -1,0 +1,1 @@
+return {title = "Rib of Greed", id = "84", description = {"Forces the Greed and Super Greed mini ", "bosses to no longer appear in shops or ", "secret rooms ", "Holding Rib of Greed increase your ", "chance to receive coin drops ", }}

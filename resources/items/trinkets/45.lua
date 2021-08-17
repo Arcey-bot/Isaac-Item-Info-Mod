@@ -1,0 +1,1 @@
+return {title = "Ace of Spades", id = "45", description = {"Gives Isaac a higher chance to find ", "Tarot cards after clearing a room or ", "from chests ", }}

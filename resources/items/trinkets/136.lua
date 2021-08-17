@@ -1,0 +1,1 @@
+return {title = "Broken Padlock", id = "136", description = {"Explosions can open locked doors", "This includes key blocks and golden ", "chests ", }}

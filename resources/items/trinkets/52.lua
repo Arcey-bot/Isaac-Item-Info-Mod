@@ -1,0 +1,1 @@
+return {title = "Counterfeit Penny", id = "52", description = {"When picking up a coin, you have a ", "chance to automatically gain one more ", "coin ", }}
