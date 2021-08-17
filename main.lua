@@ -256,6 +256,7 @@ local function handleTextScroll()
     end
 end
 
+-- Handle moving the cursor in menu and updating related data 
 local function handleCursorMovement()
     -- The game is not actually "paused", the player's inputs are essentially hijacked though
         --      Basically, you can still be attacked by enemies while this menu is open
@@ -275,7 +276,7 @@ local function handleCursorMovement()
                 end
                 menuCursorPos.Y = 1 
             end
-
+            descTextOffset = 0
         end
         -- Move cursor up
         if Input.IsActionTriggered(ButtonAction.ACTION_MENUUP, 0) then
@@ -292,6 +293,7 @@ local function handleCursorMovement()
                 end
                 menuCursorPos.Y = itemMenuAttrs.layout.Y
             end
+            descTextOffset = 0
         end
         -- Move cursor right
         if Input.IsActionTriggered(ButtonAction.ACTION_MENURIGHT, 0) then
@@ -299,6 +301,7 @@ local function handleCursorMovement()
             if menuCursorPos.X > itemMenuAttrs.layout.X then
                 menuCursorPos.X = 1
             end
+            descTextOffset = 0
         end
         -- Move cursor left
         if Input.IsActionTriggered(ButtonAction.ACTION_MENULEFT, 0) then
@@ -306,6 +309,7 @@ local function handleCursorMovement()
             if menuCursorPos.X < 1 then
                 menuCursorPos.X = itemMenuAttrs.layout.X
             end
+            descTextOffset = 0
         end
     end
 end
