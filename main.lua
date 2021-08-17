@@ -28,6 +28,8 @@ local floorMenuOpen = false
 local menuCursorPos = Vector(1, 1)
 -- Offset 0 shows items 1-16, 1 shows items 17-32, etc.
 local menuItemsOffset = 0
+local descTextOffset = 0
+local MAX_LINES = 12
 local itemMenu = Sprite()
 itemMenu:Load("gfx/ui/itemmenu.anm2", true)
 
@@ -66,6 +68,7 @@ local textAttrs = {
         writer = Font(),
     },
 }
+
 
 textAttrs.header.writer:Load(textAttrs.header.font)
 textAttrs.body.writer:Load(textAttrs.body.font)
@@ -181,10 +184,14 @@ local function renderSelectedItemText(collection --[[table]], collectionIDs --[[
     renderText(item.title, textAttrs.header)
 
     local yOffset = 16
-    for _, str in ipairs(item.description) do
-        renderText(str, textAttrs.body)
+    for i=1 + descTextOffset, #item.description do
+        renderText(item.description[i], textAttrs.body)
         textAttrs.body.offset.Y = yOffset + textAttrs.body.offset.Y 
     end
+    -- for _, str in ipairs(item.description) do
+    --     renderText(str, textAttrs.body)
+    --     textAttrs.body.offset.Y = yOffset + textAttrs.body.offset.Y 
+    -- end
     textAttrs.body.offset.Y = 0
 end
 
@@ -234,58 +241,73 @@ local function renderMenuItems(collection --[[table]], collectionSprites --[[tab
     end
 end
 
+-- TODO: Reset descTextOffset on menu closes/item switch
+local function handleTextScroll()
+    if not Game():IsPaused() then
+        if Input.IsActionTriggered(ButtonAction.ACTION_UP, 0) then
+            if descTextOffset ~= 0 then
+                descTextOffset = descTextOffset - 1
+            end
+        end
+        if Input.IsActionTriggered(ButtonAction.ACTION_DOWN, 0) then
+            -- If descText != number of lines - MAX_LINES 
+            descTextOffset = descTextOffset + 1
+        end
+    end
+end
+
 local function handleCursorMovement()
     -- The game is not actually "paused", the player's inputs are essentially hijacked though
         --      Basically, you can still be attacked by enemies while this menu is open
-        if not Game():IsPaused() then
-            -- Move cursor down
-            if Input.IsActionTriggered(ButtonAction.ACTION_MENUDOWN, 0) then
-                menuCursorPos.Y = menuCursorPos.Y + 1
+    if not Game():IsPaused() then
+        -- Move cursor down
+        if Input.IsActionTriggered(ButtonAction.ACTION_MENUDOWN, 0) then
+            menuCursorPos.Y = menuCursorPos.Y + 1
 
-                -- Moving beyond bounds current menu page
-                if menuCursorPos.Y > itemMenuAttrs.layout.Y then
-                    -- There are enough items to render another page
-                    if #collectedItemIDs > menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) then
-                        menuItemsOffset = menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)  
-                    -- Not enough items to render another page, wrap around to initial page
-                    else
-                        menuItemsOffset = 0
-                    end
-                    menuCursorPos.Y = 1 
+            -- Moving beyond bounds current menu page
+            if menuCursorPos.Y > itemMenuAttrs.layout.Y then
+                -- There are enough items to render another page
+                if #collectedItemIDs > menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) then
+                    menuItemsOffset = menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)  
+                -- Not enough items to render another page, wrap around to initial page
+                else
+                    menuItemsOffset = 0
                 end
+                menuCursorPos.Y = 1 
+            end
 
-            end
-            -- Move cursor up
-            if Input.IsActionTriggered(ButtonAction.ACTION_MENUUP, 0) then
-                menuCursorPos.Y = menuCursorPos.Y - 1
-                if menuCursorPos.Y < 1 then
-                    -- There is a previous "page"/layout to move to
-                    if menuItemsOffset > 0 then
-                        menuItemsOffset = menuItemsOffset - (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)
-                    -- If there are more items than can be shown on first page, move to last page
-                    else
-                        --  Offset + 16 gives the index of every item that will be rendered with that offset 
-                        -- Ex: ceil(49 items / (4 * 4)) = 4.     4 - 1 = 3.      3 * 4 * 4 = 48, exactly the offset the 49th item should have
-                        menuItemsOffset = math.ceil(#collectedItemIDs / (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) - 1) * itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y
-                    end
-                    menuCursorPos.Y = itemMenuAttrs.layout.Y
+        end
+        -- Move cursor up
+        if Input.IsActionTriggered(ButtonAction.ACTION_MENUUP, 0) then
+            menuCursorPos.Y = menuCursorPos.Y - 1
+            if menuCursorPos.Y < 1 then
+                -- There is a previous "page"/layout to move to
+                if menuItemsOffset > 0 then
+                    menuItemsOffset = menuItemsOffset - (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)
+                -- If there are more items than can be shown on first page, move to last page
+                else
+                    --  Offset + 16 gives the index of every item that will be rendered with that offset 
+                    -- Ex: ceil(49 items / (4 * 4)) = 4.     4 - 1 = 3.      3 * 4 * 4 = 48, exactly the offset the 49th item should have
+                    menuItemsOffset = math.ceil(#collectedItemIDs / (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) - 1) * itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y
                 end
-            end
-            -- Move cursor right
-            if Input.IsActionTriggered(ButtonAction.ACTION_MENURIGHT, 0) then
-                menuCursorPos.X = menuCursorPos.X + 1
-                if menuCursorPos.X > itemMenuAttrs.layout.X then
-                    menuCursorPos.X = 1
-                end
-            end
-            -- Move cursor left
-            if Input.IsActionTriggered(ButtonAction.ACTION_MENULEFT, 0) then
-                menuCursorPos.X = menuCursorPos.X - 1
-                if menuCursorPos.X < 1 then
-                    menuCursorPos.X = itemMenuAttrs.layout.X
-                end
+                menuCursorPos.Y = itemMenuAttrs.layout.Y
             end
         end
+        -- Move cursor right
+        if Input.IsActionTriggered(ButtonAction.ACTION_MENURIGHT, 0) then
+            menuCursorPos.X = menuCursorPos.X + 1
+            if menuCursorPos.X > itemMenuAttrs.layout.X then
+                menuCursorPos.X = 1
+            end
+        end
+        -- Move cursor left
+        if Input.IsActionTriggered(ButtonAction.ACTION_MENULEFT, 0) then
+            menuCursorPos.X = menuCursorPos.X - 1
+            if menuCursorPos.X < 1 then
+                menuCursorPos.X = itemMenuAttrs.layout.X
+            end
+        end
+    end
 end
 
 local function renderMenuCursor()
@@ -359,6 +381,7 @@ function mod:onRender()
         renderSelectedItemText(collectedItems, collectedItemIDs)
         handleCursorMovement()
         renderMenuCursor()
+        handleTextScroll()
 
     elseif floorMenuOpen then
         if Input.IsActionTriggered(ButtonAction.ACTION_MENUBACK, 0) then
@@ -375,6 +398,7 @@ function mod:onRender()
         renderSelectedItemText(floorItems, floorItemIDs)
         handleCursorMovement()
         renderMenuCursor()
+        handleTextScroll()
     end
 end
 
