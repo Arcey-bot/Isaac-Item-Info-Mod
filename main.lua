@@ -3,8 +3,10 @@ local mod = RegisterMod("Item Info", 1)
 -- Highest valid Item ID in this game's version
 local NUM_COLLECTIBLES = CollectibleType.NUM_COLLECTIBLES - 1
 local NUM_TRINKETS = TrinketType.NUM_TRINKETS - 1
+local MAX_LINES = 12
 
--- TODO: Description text scrolling
+-- TODO: Text on menus to denote what menu is currently being viewed
+-- TODO: Change buttons to prompt menus?
 
 -- Table holding Active/Passive/Trinkets in Isaac's inventory
 local collectedItems = {}
@@ -26,6 +28,8 @@ local floorMenuOpen = false
 local menuCursorPos = Vector(1, 1)
 -- Offset 0 shows items 1-16, 1 shows items 17-32, etc.
 local menuItemsOffset = 0
+local descTextOffset = 0
+local descTextOffsetStep = 4
 local itemMenu = Sprite()
 itemMenu:Load("gfx/ui/itemmenu.anm2", true)
 
@@ -64,6 +68,7 @@ local textAttrs = {
         writer = Font(),
     },
 }
+
 
 textAttrs.header.writer:Load(textAttrs.header.font)
 textAttrs.body.writer:Load(textAttrs.body.font)
@@ -159,6 +164,22 @@ local function renderText(str, settings --[[table]])
     settings.writer:DrawStringScaled(str, settings.pos.X + settings.offset.X, settings.pos.Y + settings.offset.Y, settings.scale.X, settings.scale.Y, settings.color, settings.boxWidth, settings.center)
 end
 
+-- Takes number of lines the item description contains
+local function handleTextScroll(lines --[[int]])
+    if not Game():IsPaused() then
+        if Input.IsActionTriggered(ButtonAction.ACTION_UP, 0) then
+            if descTextOffset ~= 0 then
+                descTextOffset = descTextOffset - MAX_LINES
+            end
+        end
+        if Input.IsActionTriggered(ButtonAction.ACTION_DOWN, 0) then
+            if (descTextOffset + 1) * MAX_LINES <= lines then
+                descTextOffset = descTextOffset + MAX_LINES
+            end 
+        end
+    end
+end
+
 -- Handles displaying all relevant text of selected item
 local function renderSelectedItemText(collection --[[table]], collectionIDs --[[table]])
     -- Index of selected item in collectedItemIDs
@@ -179,10 +200,21 @@ local function renderSelectedItemText(collection --[[table]], collectionIDs --[[
     renderText(item.title, textAttrs.header)
 
     local yOffset = 16
-    for _, str in ipairs(item.description) do
-        renderText(str, textAttrs.body)
-        textAttrs.body.offset.Y = yOffset + textAttrs.body.offset.Y 
+    local limit = MAX_LINES + descTextOffset
+    for i=1 + descTextOffset, limit do
+        if item.description[i] then
+            -- Add ellipses if there is more text to be scrolled through than rendered on screen
+            if i == limit and limit < #item.description then 
+                renderText(item.description[i]..'...', textAttrs.body)
+            else 
+                renderText(item.description[i], textAttrs.body)
+            end
+            textAttrs.body.offset.Y = yOffset + textAttrs.body.offset.Y 
+        else
+            break
+        end
     end
+    handleTextScroll(#item.description)
     textAttrs.body.offset.Y = 0
 end
 
@@ -232,58 +264,62 @@ local function renderMenuItems(collection --[[table]], collectionSprites --[[tab
     end
 end
 
+-- Handle moving the cursor in menu and updating related data 
 local function handleCursorMovement()
     -- The game is not actually "paused", the player's inputs are essentially hijacked though
         --      Basically, you can still be attacked by enemies while this menu is open
-        if not Game():IsPaused() then
-            -- Move cursor down
-            if Input.IsActionTriggered(ButtonAction.ACTION_MENUDOWN, 0) then
-                menuCursorPos.Y = menuCursorPos.Y + 1
+    if not Game():IsPaused() then
+        -- Move cursor down
+        if Input.IsActionTriggered(ButtonAction.ACTION_MENUDOWN, 0) then
+            menuCursorPos.Y = menuCursorPos.Y + 1
 
-                -- Moving beyond bounds current menu page
-                if menuCursorPos.Y > itemMenuAttrs.layout.Y then
-                    -- There are enough items to render another page
-                    if #collectedItemIDs > menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) then
-                        menuItemsOffset = menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)  
-                    -- Not enough items to render another page, wrap around to initial page
-                    else
-                        menuItemsOffset = 0
-                    end
-                    menuCursorPos.Y = 1 
+            -- Moving beyond bounds current menu page
+            if menuCursorPos.Y > itemMenuAttrs.layout.Y then
+                -- There are enough items to render another page
+                if #collectedItemIDs > menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) then
+                    menuItemsOffset = menuItemsOffset + (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)  
+                -- Not enough items to render another page, wrap around to initial page
+                else
+                    menuItemsOffset = 0
                 end
-
+                menuCursorPos.Y = 1 
             end
-            -- Move cursor up
-            if Input.IsActionTriggered(ButtonAction.ACTION_MENUUP, 0) then
-                menuCursorPos.Y = menuCursorPos.Y - 1
-                if menuCursorPos.Y < 1 then
-                    -- There is a previous "page"/layout to move to
-                    if menuItemsOffset > 0 then
-                        menuItemsOffset = menuItemsOffset - (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)
-                    -- If there are more items than can be shown on first page, move to last page
-                    else
-                        --  Offset + 16 gives the index of every item that will be rendered with that offset 
-                        -- Ex: ceil(49 items / (4 * 4)) = 4.     4 - 1 = 3.      3 * 4 * 4 = 48, exactly the offset the 49th item should have
-                        menuItemsOffset = math.ceil(#collectedItemIDs / (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) - 1) * itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y
-                    end
-                    menuCursorPos.Y = itemMenuAttrs.layout.Y
-                end
-            end
-            -- Move cursor right
-            if Input.IsActionTriggered(ButtonAction.ACTION_MENURIGHT, 0) then
-                menuCursorPos.X = menuCursorPos.X + 1
-                if menuCursorPos.X > itemMenuAttrs.layout.X then
-                    menuCursorPos.X = 1
-                end
-            end
-            -- Move cursor left
-            if Input.IsActionTriggered(ButtonAction.ACTION_MENULEFT, 0) then
-                menuCursorPos.X = menuCursorPos.X - 1
-                if menuCursorPos.X < 1 then
-                    menuCursorPos.X = itemMenuAttrs.layout.X
-                end
-            end
+            descTextOffset = 0
         end
+        -- Move cursor up
+        if Input.IsActionTriggered(ButtonAction.ACTION_MENUUP, 0) then
+            menuCursorPos.Y = menuCursorPos.Y - 1
+            if menuCursorPos.Y < 1 then
+                -- There is a previous "page"/layout to move to
+                if menuItemsOffset > 0 then
+                    menuItemsOffset = menuItemsOffset - (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y)
+                -- If there are more items than can be shown on first page, move to last page
+                else
+                    --  Offset + 16 gives the index of every item that will be rendered with that offset 
+                    -- Ex: ceil(49 items / (4 * 4)) = 4.     4 - 1 = 3.      3 * 4 * 4 = 48, exactly the offset the 49th item should have
+                    menuItemsOffset = math.ceil(#collectedItemIDs / (itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y) - 1) * itemMenuAttrs.layout.X * itemMenuAttrs.layout.Y
+                end
+                menuCursorPos.Y = itemMenuAttrs.layout.Y
+            end
+            descTextOffset = 0
+        end
+        -- Move cursor right
+        if Input.IsActionTriggered(ButtonAction.ACTION_MENURIGHT, 0) then
+            menuCursorPos.X = menuCursorPos.X + 1
+            if menuCursorPos.X > itemMenuAttrs.layout.X then
+                menuCursorPos.X = 1
+            end
+            descTextOffset = 0
+        end
+        -- Move cursor left
+        if Input.IsActionTriggered(ButtonAction.ACTION_MENULEFT, 0) then
+            menuCursorPos.X = menuCursorPos.X - 1
+            if menuCursorPos.X < 1 then
+                menuCursorPos.X = itemMenuAttrs.layout.X
+            end
+            descTextOffset = 0
+        end
+    end
 end
 
 local function renderMenuCursor()
@@ -298,16 +334,17 @@ local function renderMenuCursor()
 end
 
 function mod:onRender()
-    if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() then
+    if Input.IsButtonTriggered(Keyboard.KEY_J, 0) and not Game():IsPaused() and not floorMenuOpen then
         updateHeldCollectibles()
         updateHeldTrinkets()
         heldMenuOpen = not heldMenuOpen
         -- Reset cursor to beginning when menu is closed
         menuCursorPos = Vector(1, 1)
         menuItemsOffset = 0
+        descTextOffset = 0
     end
 
-    if Input.IsButtonTriggered(Keyboard.KEY_N, 0) and not Game():IsPaused() then
+    if Input.IsButtonTriggered(Keyboard.KEY_N, 0) and not Game():IsPaused() and not heldMenuOpen then
         -- TODO: This is pretty damn ugly too
         for _, v in ipairs(Isaac.GetRoomEntities()) do
             -- It is something we can pickup
@@ -333,6 +370,7 @@ function mod:onRender()
         floorMenuOpen = not floorMenuOpen
         menuCursorPos = Vector(1, 1)
         menuItemsOffset = 0
+        descTextOffset = 0
 
         if not floorMenuOpen then
             floorItems = {}
@@ -387,9 +425,9 @@ function mod:onInput(entity, hook, button)
 end
 
 function mod:debugText()
-    Isaac.RenderText(str1, 75, 50, 255, 0, 0, 255)
-    Isaac.RenderText(str2, 75, 75, 0, 255, 0, 255)
-    Isaac.RenderText(str3, 200, 50, 0, 0, 255, 255)
+    Isaac.RenderText(str1, 75, 25, 255, 0, 0, 255)
+    Isaac.RenderText(str2, 75, 50, 0, 255, 0, 255)
+    Isaac.RenderText(str3, 75, 75, 0, 0, 255, 255)
 end
 
 -- Callbacks
