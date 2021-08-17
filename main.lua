@@ -3,9 +3,9 @@ local mod = RegisterMod("Item Info", 1)
 -- Highest valid Item ID in this game's version
 local NUM_COLLECTIBLES = CollectibleType.NUM_COLLECTIBLES - 1
 local NUM_TRINKETS = TrinketType.NUM_TRINKETS - 1
+local MAX_LINES = 12
 
 -- TODO: Text on menus to denote what menu is currently being viewed
--- TODO: Description text scrolling
 -- TODO: Change buttons to prompt menus?
 
 -- Table holding Active/Passive/Trinkets in Isaac's inventory
@@ -29,7 +29,7 @@ local menuCursorPos = Vector(1, 1)
 -- Offset 0 shows items 1-16, 1 shows items 17-32, etc.
 local menuItemsOffset = 0
 local descTextOffset = 0
-local MAX_LINES = 12
+local descTextOffsetStep = 4
 local itemMenu = Sprite()
 itemMenu:Load("gfx/ui/itemmenu.anm2", true)
 
@@ -169,12 +169,12 @@ local function handleTextScroll(lines --[[int]])
     if not Game():IsPaused() then
         if Input.IsActionTriggered(ButtonAction.ACTION_UP, 0) then
             if descTextOffset ~= 0 then
-                descTextOffset = descTextOffset - 1
+                descTextOffset = descTextOffset - MAX_LINES
             end
         end
         if Input.IsActionTriggered(ButtonAction.ACTION_DOWN, 0) then
             if (descTextOffset + 1) * MAX_LINES <= lines then
-                descTextOffset = descTextOffset + 1
+                descTextOffset = descTextOffset + MAX_LINES
             end 
         end
     end
@@ -200,13 +200,15 @@ local function renderSelectedItemText(collection --[[table]], collectionIDs --[[
     renderText(item.title, textAttrs.header)
 
     local yOffset = 16
-    -- for i=1 + descTextOffset, #item.description do
-    --     renderText(item.description[i], textAttrs.body)
-    --     textAttrs.body.offset.Y = yOffset + textAttrs.body.offset.Y 
-    -- end
-    for i=1 + descTextOffset, MAX_LINES + descTextOffset do
+    local limit = MAX_LINES + descTextOffset
+    for i=1 + descTextOffset, limit do
         if item.description[i] then
-            renderText(item.description[i], textAttrs.body)
+            -- Add ellipses if there is more text to be scrolled through than rendered on screen
+            if i == limit and limit < #item.description then 
+                renderText(item.description[i]..'...', textAttrs.body)
+            else 
+                renderText(item.description[i], textAttrs.body)
+            end
             textAttrs.body.offset.Y = yOffset + textAttrs.body.offset.Y 
         else
             break
@@ -393,7 +395,6 @@ function mod:onRender()
         renderSelectedItemText(collectedItems, collectedItemIDs)
         handleCursorMovement()
         renderMenuCursor()
-        -- handleTextScroll()
 
     elseif floorMenuOpen then
         if Input.IsActionTriggered(ButtonAction.ACTION_MENUBACK, 0) then
@@ -410,7 +411,6 @@ function mod:onRender()
         renderSelectedItemText(floorItems, floorItemIDs)
         handleCursorMovement()
         renderMenuCursor()
-        -- handleTextScroll()
     end
 end
 
